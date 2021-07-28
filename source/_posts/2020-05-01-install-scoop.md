@@ -25,8 +25,6 @@ scoopって知ってる？便利だよ～
 
 sudo回で使ってる``scoop``を入れます。~~投稿順序逆だね~~
 
-ここではroot=管理者権限
-
 ## 前提環境
 
 - PowerShell (^5) または　PowerShell Core
@@ -39,7 +37,7 @@ sudo回で使ってる``scoop``を入れます。~~投稿順序逆だね~~
 ## インストール
 
 ```powershell
-#非root
+#非administrator
 iwr -useb get.scoop.sh | iex
 ```
 

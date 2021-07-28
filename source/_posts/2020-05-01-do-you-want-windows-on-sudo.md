@@ -29,8 +29,6 @@ Windowsにsudo[^0]ほしいけどわからない！！とか、調べても本�
 
 [^1]: 日本語で検索するとよく出てくるやつは、別窓だったり、色が出なかったりと色々と問題がある。
 
-ここではroot=管理者権限
-
 ## Q.使えるものはあるの？
 
 A.あります
@@ -46,7 +44,7 @@ A.あります
 
 ### 使えるやつ
 
-*[choco]: 要rootだが、少ない手間でたくさんのパッケージを入れられる。
+*[choco]: 要administratorだが、少ない手間でたくさんのパッケージを入れられる。
 
 ::: tip
 chocoのインストール手順は準備中です。
@@ -65,10 +63,10 @@ scoopのインストール方法は[こちら](2020-05-01-install-scoop.md)
 ### gerardog/gsudoの場合（個人的なオススメ）
 
 ```powershell{1-2}
-#非rootでできるのでオススメ
+#非administratorでできるのでオススメ
 scoop install gsudo
 
-#要root
+#要administrator
 choco install gsudo
 ```
 
@@ -105,7 +103,6 @@ sudo notepad C:\Windows\System32\drivers\etc\hosts
 
 ## 最後に
 
-root（管理者）権限なので扱いには気をつけましょう。
+管理者権限なので扱いには気をつけましょう。
 
-Linuxやmacを使っているあなたもですよ？
-
+Linuxやmacを使っているあなたもですよ？rootの扱いには気をつけましょう。
