@@ -43,7 +43,14 @@ sudo回で使ってる``scoop``を入れます。~~投稿順序逆だね~~
 iwr -useb get.scoop.sh | iex
 ```
 
-上記のコマンドを実行した際エラーが発生した場合は、次の物を実行した後に再度上記のコマンドを実行してください。
+上記のコマンドを実行した際以下のようなエラーが発生した場合は、次のコマンドを実行した後に再度上記のコマンドを実行してください。
+
+```powershell
+#エラー内容
+PowerShell requires an execution policy in [Unrestricted, RemoteSigned, ByPass] to run Scoop.
+For example, to set the execution policy to 'RemoteSigned' please run :
+'Set-ExecutionPolicy RemoteSigned -scope CurrentUser'
+```
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
