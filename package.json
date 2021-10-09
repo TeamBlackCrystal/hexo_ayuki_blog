@@ -18,7 +18,7 @@
     "@teampimcserver/hexo-toc": "^1.1.0-path2",
     "@teampimcserver/hexo-user-posts-count": "^1.0.0",
     "hexo": "^5.4.0",
-    "hexo-cookieconsent": "^1.0.0",
+    "hexo-cookieconsent": "https://github.com/yupix/hexo-cookieconsent.git",
     "hexo-filter-auto-crossorigin": "^1.0.1",
     "hexo-filter-optimize": "^0.3.1",
     "hexo-fontawesome": "^2.2.1",
