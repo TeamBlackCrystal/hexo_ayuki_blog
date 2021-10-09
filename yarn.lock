@@ -48,6 +48,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@teampimcserver/hexo-cookieconsent@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@teampimcserver/hexo-cookieconsent@npm:1.0.1"
+  dependencies:
+    bluebird: ^3.5.3
+    cheerio: ^1.0.0-rc.2
+  checksum: 8e94d22cda9b0cf40ca511aa35fb50c07c4f8dfcba6f4ac609cb8d12d51e891c5580940d4d41861044bb57b4879fce6e5cf32d3446da79fa676f7806500e297d
+  languageName: node
+  linkType: hard
+
 "@teampimcserver/hexo-deployer-git@npm:^3.0.0-path1":
   version: 3.0.0-path1
   resolution: "@teampimcserver/hexo-deployer-git@npm:3.0.0-path1"
@@ -401,13 +411,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ayukisblog@workspace:."
   dependencies:
+    "@teampimcserver/hexo-cookieconsent": ^1.0.1
     "@teampimcserver/hexo-deployer-git": ^3.0.0-path1
     "@teampimcserver/hexo-pwa": ^0.1.3-path2
     "@teampimcserver/hexo-reading-time": ^1.0.3-path1
     "@teampimcserver/hexo-toc": ^1.1.0-path2
     "@teampimcserver/hexo-user-posts-count": ^1.0.0
     hexo: ^5.4.0
-    hexo-cookieconsent: "https://github.com/yupix/hexo-cookieconsent.git"
     hexo-filter-auto-crossorigin: ^1.0.1
     hexo-filter-optimize: ^0.3.1
     hexo-fontawesome: ^2.2.1
@@ -1982,16 +1992,6 @@ fsevents@~2.3.1:
   bin:
     hexo: bin/hexo
   checksum: 4137f5ec7c1ed86d9b6333345560df1d0e0589df94620f61519259439d03b5d180b23dc6f34749d3f484f5429eeecb19b0c23607c769d2e5d1d67448b72951b4
-  languageName: node
-  linkType: hard
-
-"hexo-cookieconsent@https://github.com/yupix/hexo-cookieconsent.git":
-  version: 1.0.0
-  resolution: "hexo-cookieconsent@https://github.com/yupix/hexo-cookieconsent.git#commit=6453f754d3610abfccd86c2f48b7c80beb968ef2"
-  dependencies:
-    bluebird: ^3.5.3
-    cheerio: ^1.0.0-rc.2
-  checksum: f443f7875dd83d18a548d03bc0dbe7ebfc282039ec30362b44a06d3c1a118a1be3a63a91afe6fe02b0fb15b3a2c5ebebbe7e95882717c9d52edae386f1986a68
   languageName: node
   linkType: hard
 
