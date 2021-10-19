@@ -12,7 +12,7 @@ tags:
 - 配布物
 excerpt: 'PythonでMisskeyで使えるBotを作ろう!'
 date: 2021-10-19
-cover: '/image/cover/created_mi.py.svg'
+cover: 'https://s3.akarinext.org/assets/*/ayuki_blog/created_mi.py.png'
 ---
 
 <!-- toc -->

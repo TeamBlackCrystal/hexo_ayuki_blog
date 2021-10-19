@@ -4,6 +4,12 @@ if (page.title) {
     title = page.title
 }
 %>
+<%
+var description = theme.web_description
+if (page.excerpt) {
+    description = page.excerpt
+}
+%>
 <title><%= title %>-<%- theme.suffix %></title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,6 +28,15 @@ if (page.title) {
     <meta name="keywords" content="<%- theme.keyword %>">
     <meta name="description" content="<%- theme.web_description %>">
 <% } %>
+
+<!-- ogp関連 -->
+<meta property="og:site_name" content="<%- theme.title %>"/>
+<meta property="og:title" content="<%- title %>"/>
+<meta property="og:description" content="<%- theme.web_description %>"/>
+<meta property="og:url" content="https://blog.akarinext.org">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="<%- page.cover %>"/>
+
 <%- js('js/jquery.min.js') %>
 <%- partial('_widget/analytics') %>
 <style>
