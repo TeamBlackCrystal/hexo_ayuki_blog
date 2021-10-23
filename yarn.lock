@@ -418,6 +418,7 @@ __metadata:
     "@teampimcserver/hexo-toc": ^1.1.0-path2
     "@teampimcserver/hexo-user-posts-count": ^1.0.0
     hexo: ^5.4.0
+    hexo-admonition: ^1.1.2
     hexo-filter-auto-crossorigin: ^1.0.1
     hexo-filter-optimize: ^0.3.1
     hexo-fontawesome: ^2.2.1
@@ -1975,6 +1976,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"hexo-admonition@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "hexo-admonition@npm:1.1.2"
+  dependencies:
+    markdown-it: ^9.1.0
+  checksum: 1fe53283cf2e6a11125072bfd506f963406074bd9f1da5fddb8d7d7a0089d63e324ea12b1a224e83f4f5b387e6f557b63c07c073cd5d51a606d22c09b18d8297
+  languageName: node
+  linkType: hard
+
 "hexo-cli@npm:^4.0.0":
   version: 4.2.0
   resolution: "hexo-cli@npm:4.2.0"
@@ -3128,6 +3138,21 @@ fsevents@~2.3.1:
   bin:
     markdown-it: bin/markdown-it.js
   checksum: b07c928536d55f49e80dbca8e6d0145f05e1156eee25018bccd81ecf3435afbd84bfef5a569d5cf63bf6e5fd8a38c08ea7bbc6afe4a95cba84788bbacd698cfd
+  languageName: node
+  linkType: hard
+
+"markdown-it@npm:^9.1.0":
+  version: 9.1.0
+  resolution: "markdown-it@npm:9.1.0"
+  dependencies:
+    argparse: ^1.0.7
+    entities: ~1.1.1
+    linkify-it: ^2.0.0
+    mdurl: ^1.0.1
+    uc.micro: ^1.0.5
+  bin:
+    markdown-it: bin/markdown-it.js
+  checksum: 83fd8f1a61bbd62878d8dbb0565e772763fe034b76a0a9782402244fe01e7a12dffae57fb6ae68354e8772adf9fca3a1181b90a72af502be9c13c6e5552d5725
   languageName: node
   linkType: hard
 
