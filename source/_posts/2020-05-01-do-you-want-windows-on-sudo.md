@@ -15,9 +15,9 @@ date: 2020-05-01
 
 <!-- more -->
 
-::: tip
-欲しいときあるよね？
-:::
+!!! info tip
+    欲しいときあるよね？
+
 
 <!-- toc -->
 
@@ -46,12 +46,9 @@ A.あります
 
 *[choco]: 要administratorだが、少ない手間でたくさんのパッケージを入れられる。
 
-::: tip
-chocoのインストール手順は準備中です。
-
-scoopのインストール方法は[こちら](2020-05-01-install-scoop.md)
-
-:::
+!!! info tip
+    chocoのインストール手順は準備中です。
+    scoopのインストール方法は[こちら](2020-05-01-install-scoop.md)
 
 - choco
 - scoop
@@ -91,15 +88,14 @@ sudo choco install windows-terminal
 sudo notepad C:\Windows\System32\drivers\etc\hosts
 ```
 
-::: warning 
-何も気にせず乱用してはいけません。
+!!! warning 
+    何も気にせず乱用してはいけません。
+    ウイルス等の感染の原因になります。
 
-ウイルス等の感染の原因になります。
-:::
 
-::: danger
-``rm``や``rd``(及び``rmdir``)などのファイルを削除するコマンドに対して``C:\``や``/``を指定してはいけません。(OSや個人データをを破壊する可能性があります。)
-:::
+!!! error danger
+    ``rm``や``rd``(及び``rmdir``)などのファイルを削除するコマンドに対して``C:\``や``/``を指定してはいけません。(OSや個人データをを破壊する可能性があります。)
+
 
 ## 最後に
 
