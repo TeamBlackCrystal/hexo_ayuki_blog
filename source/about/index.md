@@ -10,7 +10,7 @@ layout: "about"
 ---
 
 ## 本サイトについて
-本サイトはhexoという静的サイトのテーマ[Quiet](https://github.com/qiaobug/hexo-theme-quiet)を使用し、運営を行わせていただいています。
+本サイトはhexoという静的サイトのテーマ[Quiet](https://github.com/qiaobug/hexo-theme-quiet)を改造した上で使用し、運営を行わせていただいています。
 
 ## 画像などについて
 
