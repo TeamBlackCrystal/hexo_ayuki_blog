@@ -63,8 +63,6 @@
     </div>
 </div>
 <div class="change-page" style="justify-content: center;">
-    <% if(page.prev !== 0){ %>
-    <% } %>
     <div class="p-page">
         <a href="<%- url_for(page.prev_link) %>">
             <div class="previous">
@@ -87,8 +85,6 @@
                 <a class="<%= pagination_class %>" href="<%- url_for(`/page/${post_count}`) %>"><%= post_count %></a>
             <% } %>
         <% } %>
-    <% } %>
-    <% if(page.next !== 0){ %>
     <% } %>
     <div class="n-page">
         <a href="<%- url_for(page.next_link) %>">
