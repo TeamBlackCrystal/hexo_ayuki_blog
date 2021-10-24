@@ -48,11 +48,10 @@ A.あります
 
 !!! info tip
     chocoのインストール手順は準備中です。
-    scoopのインストール方法は[こちら](2020-05-01-install-scoop.md)
+    scoopのインストール方法は {%post_link 2020-05-01-install-scoop 'こちら'%}
 
 - choco
 - scoop
-
 ## インストール
 
 実際に入れてみましょう。
