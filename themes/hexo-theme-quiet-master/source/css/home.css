@@ -208,7 +208,6 @@
     flex-basis: 0;
     justify-content: flex-start;
     align-items: center;
-    flex-grow: 1;
 }
 
 .change-page .p-page a {
@@ -217,7 +216,7 @@
 }
 
 .change-page .p-page a .previous {
-    width: 120px;
+    width: 5em;
     height: 40px;
     text-align: center;
     line-height: 40px;
@@ -236,7 +235,7 @@
     flex-basis: 0;
     justify-content: flex-end;
     align-items: center;
-    flex-grow: 1;
+    margin-left: 18px;
 }
 
 .change-page .n-page a {
@@ -245,7 +244,7 @@
 }
 
 .change-page .n-page a .next {
-    width: 120px;
+    width: 5em;
     height: 40px;
     text-align: center;
     line-height: 40px;
@@ -267,4 +266,24 @@
 .change-page .p-page a .previous:hover {
     margin-top: -15px;
     cursor: pointer;
+}
+
+.pagination {
+    width: 2em;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+    color: #898FA0;
+    margin-left: 18px;
+    box-shadow: 0 20px 40px 0 rgba(50, 50, 50, 0.1);
+    transition: ease-in-out;
+    -moz-transition: margin-top .5s;
+    -webkit-transition: margin-top .5s;
+    -o-transition: margin-top .5s;
+}
+
+.pagination-active {
+    background: #006AFF;
+    color: white;
 }

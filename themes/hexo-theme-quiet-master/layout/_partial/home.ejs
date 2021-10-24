@@ -62,27 +62,43 @@
         <% }) %>
     </div>
 </div>
-<div class="change-page">
+<div class="change-page" style="justify-content: center;">
     <% if(page.prev !== 0){ %>
-        <div class="p-page">
-            <a href="<%- url_for(page.prev_link) %>">
-                <div class="previous">
-                    前のページへ
-                </div>
-            </a>
-        </div>
+    <% } %>
+    <div class="p-page">
+        <a href="<%- url_for(page.prev_link) %>">
+            <div class="previous">
+                &lt;
+            </div>
+        </a>
+    </div>
+    <% if (page.total >= 1) { %>
+        <% for (let post_count = page.current; post_count < page.current + 4 && post_count < page.total + 1; post_count++) { %>
+            <%
+                var pagination_class = 'pagination'
+                if (post_count === page.current) {
+                    pagination_class = 'pagination pagination-active'
+                } %>
+            <% if (post_count === 1) { %>
+                <a class="<%= pagination_class %>"href="#"><%= post_count %></a>
+            <% } else if (post_count === page.current){ %>
+                <a class="<%= pagination_class %>"href="#"><%= post_count %></a>
+            <% } else { %>
+                <a class="<%= pagination_class %>" href="<%- url_for(`/page/${post_count}`) %>"><%= post_count %></a>
+            <% } %>
+        <% } %>
     <% } %>
     <% if(page.next !== 0){ %>
-        <div class="n-page">
-            <a href="<%- url_for(page.next_link) %>">
-                <div class="next">
-                    次のページへ
-                </div>
-            </a>
-        </div>
     <% } %>
+    <div class="n-page">
+        <a href="<%- url_for(page.next_link) %>">
+            <div class="next">
+                &gt;
+            </div>
+        </a>
+    </div>
 </div>
 
 <script>$(function () {
-        $('.feed').addClass('move');
-    })</script>
+		$('.feed').addClass('move');
+	})</script>
