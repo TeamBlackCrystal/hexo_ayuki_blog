@@ -31,7 +31,7 @@ date: 2021-11-27
 
 ### インストール
 
-```shell
+```bash
 sudo apt install pgpool2
 ```
 
@@ -87,7 +87,7 @@ backend_application_name0 = 'server0'
 
 あとはpostgresとpgpoolを再起動しておしまい
 
-```shell
+```bash
 # 失敗する場合は再起動するといいらしい。
 sudo systemctl restart postgresql
 sudo systemctl restart pgpool2
