@@ -33,7 +33,7 @@ from mi import Note
 from mi.ext import commands
 from mi.router import Router
 
-class MyBot(commands.Cog):
+class MyBot(commands.Bot):
     def __init__(self, cmd_prefix: str):
         super().__init__(cmd_prefix)
     
