@@ -75,13 +75,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@teampimcserver/hexo-cookieconsent@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@teampimcserver/hexo-cookieconsent@npm:1.0.1"
+"@teampimcserver/hexo-cookieconsent@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@teampimcserver/hexo-cookieconsent@npm:1.0.2"
   dependencies:
     bluebird: ^3.5.3
     cheerio: ^1.0.0-rc.2
-  checksum: 8e94d22cda9b0cf40ca511aa35fb50c07c4f8dfcba6f4ac609cb8d12d51e891c5580940d4d41861044bb57b4879fce6e5cf32d3446da79fa676f7806500e297d
+  checksum: 7231c86969796d96f057c2938dc2f54988bd91c7607fdd8c1d398bee3d191305304f948f5f8c29ecd24682a9259680b8b20a3de13b38073dd7b877abe90d785a
   languageName: node
   linkType: hard
 
@@ -515,7 +515,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ayukisblog@workspace:."
   dependencies:
-    "@teampimcserver/hexo-cookieconsent": ^1.0.1
+    "@teampimcserver/hexo-cookieconsent": ^1.0.2
     "@teampimcserver/hexo-deployer-git": ^3.0.0-path1
     "@teampimcserver/hexo-pwa": ^0.1.3-path2
     "@teampimcserver/hexo-reading-time": ^1.0.3-path1
