@@ -75,7 +75,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@teampimcserver/hexo-cookieconsent@npm:^1.0.2":
+"@teampimcserver/hexo-cookieconsent@npm:1.0.2":
   version: 1.0.2
   resolution: "@teampimcserver/hexo-cookieconsent@npm:1.0.2"
   dependencies:
@@ -85,7 +85,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@teampimcserver/hexo-deployer-git@npm:^3.0.0-path1":
+"@teampimcserver/hexo-deployer-git@npm:3.0.0-path1":
   version: 3.0.0-path1
   resolution: "@teampimcserver/hexo-deployer-git@npm:3.0.0-path1"
   dependencies:
@@ -99,7 +99,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@teampimcserver/hexo-pwa@npm:^0.1.3-path2":
+"@teampimcserver/hexo-pwa@npm:0.1.3-path2":
   version: 0.1.3-path2
   resolution: "@teampimcserver/hexo-pwa@npm:0.1.3-path2"
   dependencies:
@@ -108,7 +108,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@teampimcserver/hexo-reading-time@npm:^1.0.3-path1":
+"@teampimcserver/hexo-reading-time@npm:1.0.3-path1":
   version: 1.0.3-path1
   resolution: "@teampimcserver/hexo-reading-time@npm:1.0.3-path1"
   dependencies:
@@ -118,7 +118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@teampimcserver/hexo-toc@npm:^1.1.0-path2":
+"@teampimcserver/hexo-toc@npm:1.1.0-path2":
   version: 1.1.0-path2
   resolution: "@teampimcserver/hexo-toc@npm:1.1.0-path2"
   dependencies:
@@ -131,7 +131,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@teampimcserver/hexo-user-posts-count@npm:^1.0.0":
+"@teampimcserver/hexo-user-posts-count@npm:1.0.0":
   version: 1.0.0
   resolution: "@teampimcserver/hexo-user-posts-count@npm:1.0.0"
   checksum: b02e82aa6094593327ac2f758b239023ca085a25acf3ed400e16fa76f8a373beee7e5c04f341dfc9f7f8f2336565de4ab5f321f5e597681cef1eb6c5d3f93f94
@@ -503,30 +503,30 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ayukisblog@workspace:."
   dependencies:
-    "@teampimcserver/hexo-cookieconsent": ^1.0.2
-    "@teampimcserver/hexo-deployer-git": ^3.0.0-path1
-    "@teampimcserver/hexo-pwa": ^0.1.3-path2
-    "@teampimcserver/hexo-reading-time": ^1.0.3-path1
-    "@teampimcserver/hexo-toc": ^1.1.0-path2
-    "@teampimcserver/hexo-user-posts-count": ^1.0.0
-    hexo: ^6.0.0
-    hexo-admonition: ^1.1.2
-    hexo-filter-auto-crossorigin: ^1.0.1
-    hexo-filter-optimize: ^0.3.1
+    "@teampimcserver/hexo-cookieconsent": 1.0.2
+    "@teampimcserver/hexo-deployer-git": 3.0.0-path1
+    "@teampimcserver/hexo-pwa": 0.1.3-path2
+    "@teampimcserver/hexo-reading-time": 1.0.3-path1
+    "@teampimcserver/hexo-toc": 1.1.0-path2
+    "@teampimcserver/hexo-user-posts-count": 1.0.0
+    hexo: 6.3.0
+    hexo-admonition: 1.1.2
+    hexo-filter-auto-crossorigin: 1.0.1
+    hexo-filter-optimize: 0.3.1
     hexo-fontawesome: 2.3.0
-    hexo-generator-archive: ^1.0.0
-    hexo-generator-category: ^1.0.0
-    hexo-generator-index: ^2.0.0
-    hexo-generator-tag: ^1.0.0
+    hexo-generator-archive: 1.0.0
+    hexo-generator-category: 1.0.0
+    hexo-generator-index: 2.0.0
+    hexo-generator-tag: 1.0.0
     hexo-lazyload-image: 1.0.12
-    hexo-renderer-ejs: ^2.0.0
-    hexo-renderer-multi-markdown-it: ^0.1.5
-    hexo-renderer-stylus: ^2.0.1
+    hexo-renderer-ejs: 2.0.0
+    hexo-renderer-multi-markdown-it: 0.1.5
+    hexo-renderer-stylus: 2.0.1
     hexo-server: 3.0.0
-    hexo-theme-landscape: ^0.0.3
-    markdown-it-container: ^3.0.0
+    hexo-theme-landscape: 0.0.3
+    markdown-it-container: 3.0.0
     markdown-it-emoji: 2.0.2
-    markdown-it-footnote: ^3.0.3
+    markdown-it-footnote: 3.0.3
     node-gyp: 9.2.0
   languageName: unknown
   linkType: soft
@@ -2276,7 +2276,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-admonition@npm:^1.1.2":
+"hexo-admonition@npm:1.1.2":
   version: 1.1.2
   resolution: "hexo-admonition@npm:1.1.2"
   dependencies:
@@ -2305,14 +2305,14 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-filter-auto-crossorigin@npm:^1.0.1":
+"hexo-filter-auto-crossorigin@npm:1.0.1":
   version: 1.0.1
   resolution: "hexo-filter-auto-crossorigin@npm:1.0.1"
   checksum: 9e8ec02d9e6a0e037e112cf7f76e6c3e8fd33a53cfddd397193d932ce00c371a7f3b874d5b7de64a3347e22e5f25decefc0fc17f24e189953912c7be60b71ab8
   languageName: node
   linkType: hard
 
-"hexo-filter-optimize@npm:^0.3.1":
+"hexo-filter-optimize@npm:0.3.1":
   version: 0.3.1
   resolution: "hexo-filter-optimize@npm:0.3.1"
   dependencies:
@@ -2365,7 +2365,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-generator-archive@npm:^1.0.0":
+"hexo-generator-archive@npm:1.0.0":
   version: 1.0.0
   resolution: "hexo-generator-archive@npm:1.0.0"
   dependencies:
@@ -2374,7 +2374,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-generator-category@npm:^1.0.0":
+"hexo-generator-category@npm:1.0.0":
   version: 1.0.0
   resolution: "hexo-generator-category@npm:1.0.0"
   dependencies:
@@ -2383,7 +2383,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-generator-index@npm:^2.0.0":
+"hexo-generator-index@npm:2.0.0":
   version: 2.0.0
   resolution: "hexo-generator-index@npm:2.0.0"
   dependencies:
@@ -2393,7 +2393,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-generator-tag@npm:^1.0.0":
+"hexo-generator-tag@npm:1.0.0":
   version: 1.0.0
   resolution: "hexo-generator-tag@npm:1.0.0"
   dependencies:
@@ -2445,7 +2445,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-renderer-ejs@npm:^2.0.0":
+"hexo-renderer-ejs@npm:2.0.0":
   version: 2.0.0
   resolution: "hexo-renderer-ejs@npm:2.0.0"
   dependencies:
@@ -2454,7 +2454,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-renderer-multi-markdown-it@npm:^0.1.5":
+"hexo-renderer-multi-markdown-it@npm:0.1.5":
   version: 0.1.5
   resolution: "hexo-renderer-multi-markdown-it@npm:0.1.5"
   dependencies:
@@ -2489,7 +2489,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-renderer-stylus@npm:^2.0.1":
+"hexo-renderer-stylus@npm:2.0.1":
   version: 2.0.1
   resolution: "hexo-renderer-stylus@npm:2.0.1"
   dependencies:
@@ -2515,7 +2515,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-theme-landscape@npm:^0.0.3":
+"hexo-theme-landscape@npm:0.0.3":
   version: 0.0.3
   resolution: "hexo-theme-landscape@npm:0.0.3"
   checksum: ce26cdc035c973487a71b2c68fcc8af8a0f0eeb2a5f8fb7ba155beb73a2bb2264f3057147000c7d3047c3fa9762fe766fe34a402eb28d5e732789a4a9bf8952d
@@ -2555,7 +2555,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo@npm:^6.0.0":
+"hexo@npm:6.3.0":
   version: 6.3.0
   resolution: "hexo@npm:6.3.0"
   dependencies:
@@ -3496,17 +3496,17 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"markdown-it-container@npm:3.0.0":
+  version: 3.0.0
+  resolution: "markdown-it-container@npm:3.0.0"
+  checksum: 7d011d1151770a80a8eb15436556fbf5b7f0579ec81a57675fa93dbde4ff3958ea87b2048f688d3e1179dfe3dcb03e80891da5f6c28fb056980d8fc7bd5bdc43
+  languageName: node
+  linkType: hard
+
 "markdown-it-container@npm:^2.0.0":
   version: 2.0.0
   resolution: "markdown-it-container@npm:2.0.0"
   checksum: d6ace394dcd17e0ee23252a9c62b8c19e616b54ef1d25a9f2ae723171fb968fb5fa1ee046eb7c7e5a85dea77e8a4f3ee8c9019aab714254767fbd35e0ba1afb2
-  languageName: node
-  linkType: hard
-
-"markdown-it-container@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "markdown-it-container@npm:3.0.0"
-  checksum: 7d011d1151770a80a8eb15436556fbf5b7f0579ec81a57675fa93dbde4ff3958ea87b2048f688d3e1179dfe3dcb03e80891da5f6c28fb056980d8fc7bd5bdc43
   languageName: node
   linkType: hard
 
@@ -3531,17 +3531,17 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"markdown-it-footnote@npm:3.0.3":
+  version: 3.0.3
+  resolution: "markdown-it-footnote@npm:3.0.3"
+  checksum: 5b488bddc1f3c25095f111c48042cc5c211f6519ff390740c363e59610a765abe601718bb35fdaa0d507067d1adf4a2254d91ae3765055a56b3ae871384b62d3
+  languageName: node
+  linkType: hard
+
 "markdown-it-footnote@npm:^3.0.2":
   version: 3.0.2
   resolution: "markdown-it-footnote@npm:3.0.2"
   checksum: dab9173ddcf91d2ae41938afcaceee4cbf5c886505eb0389df0cb624e8beb387f8660c537cefee069f94780c097d390ec0f183ad1ed36d07e2d0b9dce68afd7f
-  languageName: node
-  linkType: hard
-
-"markdown-it-footnote@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "markdown-it-footnote@npm:3.0.3"
-  checksum: 5b488bddc1f3c25095f111c48042cc5c211f6519ff390740c363e59610a765abe601718bb35fdaa0d507067d1adf4a2254d91ae3765055a56b3ae871384b62d3
   languageName: node
   linkType: hard
 
