@@ -525,7 +525,7 @@ __metadata:
     hexo-server: ^2.0.0
     hexo-theme-landscape: ^0.0.3
     markdown-it-container: ^3.0.0
-    markdown-it-emoji: ^2.0.0
+    markdown-it-emoji: 2.0.2
     markdown-it-footnote: ^3.0.3
     node-gyp: ^8.4.1
   languageName: unknown
@@ -3460,17 +3460,17 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"markdown-it-emoji@npm:2.0.2":
+  version: 2.0.2
+  resolution: "markdown-it-emoji@npm:2.0.2"
+  checksum: 1e0fa4cea7da784f5e973acba459c8c13a733490a1a5d8173cb7a624eb027bf33106bc0a5883bfc44c6f58a55c2eabb13297a0d9f0449141b8968d88b7de6d0c
+  languageName: node
+  linkType: hard
+
 "markdown-it-emoji@npm:^1.4.0":
   version: 1.4.0
   resolution: "markdown-it-emoji@npm:1.4.0"
   checksum: 13d5c652709f804cce29c8ba51150f7343e93ae352500ac1ad4a3503ff8e52172964d9a99fe4b07b989ed3ed01959c0518f65998b788fd5dc85a20cea3379aaf
-  languageName: node
-  linkType: hard
-
-"markdown-it-emoji@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "markdown-it-emoji@npm:2.0.0"
-  checksum: e277818e1434ccbd26485993200dbf6ceed6ffe1927b2573f99c5c7490a497d4b644140648d1f0c3de082e9bc1f482438ca4641fbbe7ef0dc85ed1d5f1b81bb0
   languageName: node
   linkType: hard
 
