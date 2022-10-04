@@ -19,7 +19,7 @@
     "@teampimcserver/hexo-reading-time": "^1.0.3-path1",
     "@teampimcserver/hexo-toc": "^1.1.0-path2",
     "@teampimcserver/hexo-user-posts-count": "^1.0.0",
-    "hexo": "^5.4.0",
+    "hexo": "^6.0.0",
     "hexo-admonition": "^1.1.2",
     "hexo-filter-auto-crossorigin": "^1.0.1",
     "hexo-filter-optimize": "^0.3.1",
