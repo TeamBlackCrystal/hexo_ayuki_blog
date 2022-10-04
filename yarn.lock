@@ -518,7 +518,7 @@ __metadata:
     hexo-generator-category: ^1.0.0
     hexo-generator-index: ^2.0.0
     hexo-generator-tag: ^1.0.0
-    hexo-lazyload-image: ^1.0.10
+    hexo-lazyload-image: 1.0.12
     hexo-renderer-ejs: ^2.0.0
     hexo-renderer-multi-markdown-it: ^0.1.5
     hexo-renderer-stylus: ^2.0.1
@@ -2411,12 +2411,12 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"hexo-lazyload-image@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "hexo-lazyload-image@npm:1.0.10"
+"hexo-lazyload-image@npm:1.0.12":
+  version: 1.0.12
+  resolution: "hexo-lazyload-image@npm:1.0.12"
   dependencies:
     uglify-js: ^3.0.27
-  checksum: b6cf379faa28830d472610cbf62fc653d81e412e96de544af1fd36f5bcc80a70ba34b1d485cd39c8f35e5dc2607d602b1af4ae6240ffa0fcdd64aae0e3abb115
+  checksum: 951dbf9ea186f418565596ff97b849c7004d73322c951632bd13c9ef03a57895f4cbf91e8cc0b5f1647e1a3ea91346258ba0a4fbfcd5069f02ad38c4037529ca
   languageName: node
   linkType: hard
 
