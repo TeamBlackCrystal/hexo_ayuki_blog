@@ -3,7 +3,6 @@ title: その他
 date: 2020-11-03
 author: 'TeamPimcServer'
 aubot: あゆき's BLOG
-portrait: 'https://s3.akarinext.org/assets/*/twin_icon.webp'
 describe: 'あきとゆぴによる共同ブログです'
 type: "about"
 layout: "about"

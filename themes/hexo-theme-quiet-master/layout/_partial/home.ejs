@@ -1,66 +1,87 @@
-<div class="header-bg">
-    <div class="bg-content">
-		<span>
-			<img class="site-logo" src="<%- theme.topIcon.homeIcon %>" alt="Q">
-		</span>
-        <h2>
-            <%- theme.home_describe %>
-        </h2>
-    </div>
-</div>
+<div class="home">
+	<%- partial('_widget/header_body',{message:theme.headers.home.message,icon:theme.headers.home.icon}) %>
 <div class="main">
-    <div class="feed">
-        <% page.posts.each(function (post, i) { %>
-            <div class="feed-display">
-                <a href="<%- url_for(post.path) %>">
-                    <h2 class="feed-title">
-                        <%= post.title %>
-                    </h2>
-                    <h6 class="feed-subtitle">
-                        <%= post.excerpt %>
-                    </h6>
+    <% if(theme.home_layout === 'block-card'){ %>
+        <div class="post-block" id="content">
+            <% page.posts.each(function (post,i) { %>
+                <a href="<%- url_for(post.path) %>" class="post-block-content">
                     <% if(post.cover){ %>
                         <img src="<%= post.cover %>" alt="Quiet">
                     <% }else{ %>
                         <img src="<%- theme.default_cover %>" alt="Quiet">
                     <% } %>
-                </a>
-                <div class="feed-meat">
-                    <div class="meat-info">
-                        <div style=" display: flex;">
-                            <% if (post.author) { %>
-                                <% for(const each of theme.linksList || []) { %>
-                                    <% if (post.author == each.title) { %>
-                                        <img src="<%- each.image %>" alt="Quiet" width="30" height="30"
-                                             style="border-radius: 1em;">
-                                        <% break %>
-                                    <% } %>
-
-                                <% } %>
-                            <% } else { %>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 20 20">
-                                    <g>
-                                        <path fill="#12183A"
-                                              d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
-                                        </path>
-                                    </g>
-                                </svg>
-                            <% } %>
-                            <div class="info-auth">
-                                <a href="">
-                                    <%- post.author %>
-                                </a>
+                    <div class="post-block-content-info">
+                        <h2><%= post.title %></h2>
+                        <span class="post-block-content-info-excerpt">
+                            <%= post.excerpt %>
+                        </span>
+                        <div class="post-block-content-info-exhibition">
+                            <div class="post-block-content-info-exhibition-tags">
+                                <span class="post-tag">
+                                    <%- post.categories.data[0] ? post.categories.data[0].name : theme.author ? theme.author : 'Quiet' %>
+                                </span>
+                                <span class="post-tag">
+                                    <%- date(post.date, "YYYY-MM-DD" ) %>
+                                </span>
                             </div>
-                        </div>
-                        <div class="info-data">
-                            <%- date(post.date, "YYYY-MM-DD") %>
+                            <div class="meat-type"></div>
                         </div>
                     </div>
-                    <div class="meat-type"></div>
+                </a>
+            <% }) %>
+        </div>
+    <% }else{ %>
+        <div class="post-card" id="content">
+            <% page.posts.each(function (post,i) { %>
+                <div class="post-card-display">
+                    <a href="<%- url_for(post.path) %>">
+                        <h2 class="post-card-title">
+                            <%= post.title %>
+                        </h2>
+
+                        <% if(post.cover){ %>
+                            <img src="<%= post.cover %>" alt="Quiet">
+                        <% }else{ %>
+                            <img src="<%- theme.default_cover %>" alt="Quiet">
+                        <% } %>
+                    </a>
+                    <div class="post-card-meat">
+                        <div class="meat-info">
+                            <div class="info-auth" style=" display: flex;">
+                                <% if (post.author) { %>
+                                    <% for(const each of theme.linksList || []) { %>
+                                        <% if (post.author == each.title) { %>
+                                            <img src="<%- each.image %>" alt="Quiet" width="30" height="30"
+                                                    style="border-radius: 1em;">
+                                            <% break %>
+                                        <% } %>
+                                    <% } %>
+                                <% } else { %>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 20 20">
+                                        <g>
+                                            <path fill="#12183A"
+                                                    d="M6.187 15.265A6.47 6.47 0 0 0 10 16.5a6.47 6.47 0 0 0 3.813-1.235A4.99 4.99 0 0 0 10 13.5a4.99 4.99 0 0 0-3.813 1.765zM5.082 14.25A6.485 6.485 0 0 1 10 12c1.965 0 3.726.872 4.918 2.25a6.5 6.5 0 1 0-9.836 0zM10 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                <% } %>
+                                <div class="info-auth">
+                                    <a href="">
+                                        <%- post.author %>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info-data">
+                                <%- date(post.date, "YYYY-MM-DD" ) %>
+                            </div>
+                        </div>
+                        <div class="meat-type"></div>
+                    </div>
                 </div>
-            </div>
-        <% }) %>
-    </div>
+            <% }) %>
+        </div>
+    <% } %>
+    
 </div>
 <div class="change-page" style="justify-content: center;">
     <div class="p-page">
@@ -94,7 +115,7 @@
         </a>
     </div>
 </div>
-
+</div>
 <script>$(function () {
 		$('.feed').addClass('move');
 	})</script>
