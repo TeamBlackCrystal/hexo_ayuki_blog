@@ -164,13 +164,6 @@ cookieconsent:
     }
   }
 
-toc:
-  maxdepth: 3
-  class: toc
-  slugify: transliteration
-  decodeEntities: false
-  anchor: false
-
 markdown:
   render:
     html: true
@@ -235,7 +228,7 @@ minify:
       - '**/*.min.js'
 
 lazyload:
-  enable: true
+  enable: false
   onlypost: false # optional
   loadingImg: # optional eg ./images/loading.gif
   isSPA: false # optional

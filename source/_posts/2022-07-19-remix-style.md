@@ -12,6 +12,7 @@ tags:
 - SSR
 - Server-side render
 - TypeScript
+comments: true
 ---
 
 # 概要
@@ -131,7 +132,9 @@ export default function CreateUser() {
 - データのIDがコンポーネントに来る
 - データのIDからアイテムのデータを取得してコンポーネントとして表示したい
 
-```tsx:routes/index.tsx
+### routes/index.tsx
+
+```tsx
 export const action: ActionFunction = async({request}) => {
     const formData = await request.formData();
     const intent = formData.get('intent')
@@ -142,7 +145,9 @@ export const action: ActionFunction = async({request}) => {
 }
 ```
 
-```tsx:components/item.tsx
+### components/item.tsx
+
+```tsx
 export const Item = () => {
 	const [item, setItem] = useState(null)
 	const fetcher = useFetcher()
