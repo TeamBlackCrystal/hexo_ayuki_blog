@@ -413,15 +413,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"atob@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "atob@npm:2.1.2"
-  bin:
-    atob: bin/atob.js
-  checksum: 597c0d1a740bb6522c98bea8fe362ae9420b4203af588d2bd470326d9abd4504264956b8355923d7019a21527ef5e6526a7b4455862ec5178ccd81e0ea289d5f
-  languageName: node
-  linkType: hard
-
 "autolinker@npm:~0.28.0":
   version: 0.28.1
   resolution: "autolinker@npm:0.28.1"
@@ -455,9 +446,7 @@ __metadata:
     hexo-renderer-ejs: ^2.0.0
     hexo-renderer-less: ^4.0.0
     hexo-renderer-multi-markdown-it: ^0.1.5
-    hexo-renderer-stylus: ^2.1.0
     hexo-server: ^3.0.0
-    hexo-theme-landscape: ^0.0.3
     markdown-it-container: ^3.0.0
     markdown-it-emoji: ^2.0.2
     markdown-it-footnote: ^3.0.3
@@ -1090,17 +1079,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "css@npm:3.0.0"
-  dependencies:
-    inherits: ^2.0.4
-    source-map: ^0.6.1
-    source-map-resolve: ^0.6.0
-  checksum: a62cc8350fa1f6805a81447dc4a1df30f37316bcb671e4669531b5ddf24a8dd7024324ce321a8ec0b1dd48baafb38781ae4b0d80fa7c7f5adab5f46b8b9e29c8
-  languageName: node
-  linkType: hard
-
 "cssom@npm:^0.4.4":
   version: 0.4.4
   resolution: "cssom@npm:0.4.4"
@@ -1170,7 +1148,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
+"debug@npm:4, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.3":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
   dependencies:
@@ -1202,13 +1180,6 @@ __metadata:
   version: 10.4.1
   resolution: "decimal.js@npm:10.4.1"
   checksum: 62b5a0747e4a0b8ff78350618c473a92473714d029d310a94185002819c08d663a652da544b88434e18573c480b77c8f9de6def9a98ae3d9b3c070b5d6d536d3
-  languageName: node
-  linkType: hard
-
-"decode-uri-component@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "decode-uri-component@npm:0.2.0"
-  checksum: d8cb28c33f7b0a70b159b5fa126aee821ba090396689bd46ad2c423c3a658c504d2743ab18060fd5ed1cae5377bdd3632760a8e98ba920ff49637d43dc6a9687
   languageName: node
   linkType: hard
 
@@ -1873,7 +1844,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
+"glob@npm:^7.1.3, glob@npm:^7.1.4":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -2226,16 +2197,6 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"hexo-renderer-stylus@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "hexo-renderer-stylus@npm:2.1.0"
-  dependencies:
-    nib: ^1.2.0
-    stylus: ^0.57.0
-  checksum: 9af0d9b6e2825d329d5d9a31cfa0cbd01673f008fb286b2c4989bb39f7daccf320721d6566c4f57641546c950a1c21be0d000ccdc2902fe78e08a4e3475e120d
-  languageName: node
-  linkType: hard
-
 "hexo-server@npm:^3.0.0":
   version: 3.0.0
   resolution: "hexo-server@npm:3.0.0"
@@ -2249,13 +2210,6 @@ fsevents@~2.3.2:
     picocolors: ^1.0.0
     serve-static: ^1.14.1
   checksum: e82d26b85a2e1cb58f38aff441307db6df305d109d178b91292551a4da507febd597fc2fbd37ccaae4862af503d352fc7eaf474f4e353604e4269b77e02086a1
-  languageName: node
-  linkType: hard
-
-"hexo-theme-landscape@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "hexo-theme-landscape@npm:0.0.3"
-  checksum: ce26cdc035c973487a71b2c68fcc8af8a0f0eeb2a5f8fb7ba155beb73a2bb2264f3057147000c7d3047c3fa9762fe766fe34a402eb28d5e732789a4a9bf8952d
   languageName: node
   linkType: hard
 
@@ -3669,15 +3623,6 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"nib@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "nib@npm:1.2.0"
-  peerDependencies:
-    stylus: "*"
-  checksum: 564a29c746d0771465155e9f0c1dd16a10dbfab4e5b752e0dba40e394fb1d9b00bac88b251c78414116367ad14061617e240f0144c75cb1fec43d4d527d47181
-  languageName: node
-  linkType: hard
-
 "nice-try@npm:^1.0.4":
   version: 1.0.5
   resolution: "nice-try@npm:1.0.5"
@@ -4479,14 +4424,14 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0, safer-buffer@npm:^2.1.2":
+"safer-buffer@npm:>= 2.1.2 < 3, safer-buffer@npm:>= 2.1.2 < 3.0.0":
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: 549ba83f5b314b59898efe3422120ce1ca7987a6eae5925a5fa5db930dc414d4a9dde0a5594f89638cd6ea60b6840ea961872908933ac2428d1726489db46fa5
   languageName: node
   linkType: hard
 
-"sax@npm:^1.2.4, sax@npm:~1.2.4":
+"sax@npm:^1.2.4":
   version: 1.2.4
   resolution: "sax@npm:1.2.4"
   checksum: 9d7668d69105e89e2c1a4b2fdc12c72e1a2f78b825f7b4a8a2ea5cdfebf70920bd17715bed55264c3b3959616a0695f8ad2d098bf6944fbd0953ee9c695dceef
@@ -4664,16 +4609,6 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"source-map-resolve@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "source-map-resolve@npm:0.6.0"
-  dependencies:
-    atob: ^2.1.2
-    decode-uri-component: ^0.2.0
-  checksum: 9bbd2656937ce422f1526026638a91dacba0822f1ab954ac34728c9b4f2960dbfc22a8463af9fbf74f28f3722263444df79b2b5ffa07de07dbcda2ec5a8c7513
-  languageName: node
-  linkType: hard
-
 "source-map@npm:0.4.x":
   version: 0.4.4
   resolution: "source-map@npm:0.4.4"
@@ -4687,13 +4622,6 @@ fsevents@~2.3.2:
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
   checksum: 8647829a0611724114022be455ca1c8a2c8ae61df81c5b3667d9b398207226a1e21174fb7bbf0b4dbeb27ac358222afb5a14f1c74a62a62b8883b012e5eb1270
-  languageName: node
-  linkType: hard
-
-"source-map@npm:^0.7.3":
-  version: 0.7.4
-  resolution: "source-map@npm:0.7.4"
-  checksum: 537ca237b2f0cfd5922e0f74166516e02deb871ac91f55d0fb28e08283b25e31501e0708ac8a939d67764c79eaefed1c0343be7307699c7a10f3fd9989c56fa7
   languageName: node
   linkType: hard
 
@@ -4845,22 +4773,6 @@ fsevents@~2.3.2:
   dependencies:
     min-indent: ^1.0.0
   checksum: 4a7860e94372753b90a48d032758464efbf194880880fd7636965b7137ae4af24ce77a43d223a602cac787e2e95214aaa2f2470a65986e3d6ffa0e1c3dd887f6
-  languageName: node
-  linkType: hard
-
-"stylus@npm:^0.57.0":
-  version: 0.57.0
-  resolution: "stylus@npm:0.57.0"
-  dependencies:
-    css: ^3.0.0
-    debug: ^4.3.2
-    glob: ^7.1.6
-    safer-buffer: ^2.1.2
-    sax: ~1.2.4
-    source-map: ^0.7.3
-  bin:
-    stylus: bin/stylus
-  checksum: 7f8d580b22845a2f802389a96ee378718e5db993f7d4f76010ee9b057dd806f923802181e536723f4acc5634b633f8a598d068d11589d70c5f07c6231266b5b2
   languageName: node
   linkType: hard
 
