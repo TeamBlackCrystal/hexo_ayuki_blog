@@ -33,7 +33,7 @@ Remixには LoaderFunction という物があります。例として以下の�
 
 ```tsx
 export const loader: LoaderFunction = async({params}) => {
-	return await prisma.user.findFirst({where: {id.params.userId}}
+	return await prisma.user.findFirst({where: {id: params.userId}}
 }
 
 export default function ShowUser() {
