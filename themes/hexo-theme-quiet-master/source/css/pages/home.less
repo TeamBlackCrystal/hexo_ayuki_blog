@@ -243,6 +243,7 @@
 		color: @textColorTheme;
 		.p-page {
 			display: flex;
+			flex-direction: row-reverse;
 			flex-basis: 0;
 			justify-content: flex-start;
 			align-items: center;
@@ -272,6 +273,7 @@
 		}
 		.n-page {
 			display: flex;
+			flex-direction: row-reverse;
 			flex-basis: 0;
 			justify-content: flex-end;
 			align-items: center;
@@ -304,8 +306,9 @@
 }
 
 .pagination {
-	margin: 8px;
     height: 40px;
+	margin-left: 4px;
+	margin-right: 4px;
     text-align: center;
     line-height: 40px;
     border-radius: 10px;
