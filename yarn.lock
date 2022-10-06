@@ -449,6 +449,7 @@ __metadata:
     hexo-generator-archive: ^1.0.0
     hexo-generator-category: ^1.0.0
     hexo-generator-index: ^2.0.0
+    hexo-generator-seo-friendly-sitemap: ^0.2.1
     hexo-generator-tag: ^1.0.0
     hexo-lazyload-image: ^1.0.12
     hexo-renderer-ejs: ^2.0.0
@@ -511,6 +512,13 @@ __metadata:
     inherits: ^2.0.4
     readable-stream: ^3.4.0
   checksum: 15d009339c2eeaedb9dab39c48f910a2fd6a9ba11400e61990917ebf3b25fa32cd9b80c7531a95467078258f6a59bd3f5d93323565423a7843855a16a1794261
+  languageName: node
+  linkType: hard
+
+"bluebird@npm:3.5.4":
+  version: 3.5.4
+  resolution: "bluebird@npm:3.5.4"
+  checksum: cb8a92086555f42db1fea8796add290e440a5b4f8daa72f57bc4d893f85181949837950839a7c2148880c5e3c34025a06f1d1898bdc7dc77802d3ff84b267c74
   languageName: node
   linkType: hard
 
@@ -1416,6 +1424,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ejs@npm:2.6.1":
+  version: 2.6.1
+  resolution: "ejs@npm:2.6.1"
+  checksum: 797c2c87fd05bd4af23996e71631d5c423e3fbd0f9746c7b840bfff4e8bfee79e8da4acf1c8a85a0b963aeb88755cc79e0b3edf8317304809851e8bd61e91d7b
+  languageName: node
+  linkType: hard
+
 "ejs@npm:^3.1.6":
   version: 3.1.8
   resolution: "ejs@npm:3.1.8"
@@ -2088,6 +2103,20 @@ fsevents@~2.3.2:
     hexo-pagination: 1.0.0
     timsort: ^0.3.0
   checksum: cd66d28d7dadf61640e1444db8e0296d4865abd46b83f6ec9081a1ce2c49edb1cdf98a8b66eec0d43539e205dc11eba962f8cfb641f5850635e331209a421b4a
+  languageName: node
+  linkType: hard
+
+"hexo-generator-seo-friendly-sitemap@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "hexo-generator-seo-friendly-sitemap@npm:0.2.1"
+  dependencies:
+    bluebird: 3.5.4
+    ejs: 2.6.1
+    lodash: 4.17.12
+    moment: 2.24.0
+    pretty-data: 0.40.0
+    url-join: 4.0.0
+  checksum: 1b22c7471faee3650d3ea251170af96073a7c4a214b09f8e5d45788a9210ccdd0d964b5bc3f0617b23332a274d5d595dfd366c3343c0acd693d4eb135ad116ee
   languageName: node
   linkType: hard
 
@@ -3005,6 +3034,13 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"lodash@npm:4.17.12":
+  version: 4.17.12
+  resolution: "lodash@npm:4.17.12"
+  checksum: 6fc98369f954229cbb6e4ce1a27a4202a17b4ad67b8def64322e9351414eef405b8783ecbe1b8f0334e52935ae8c43cd3bcc8abd78500227d491516a9a9d96aa
+  languageName: node
+  linkType: hard
+
 "lodash@npm:^3.2.0":
   version: 3.10.1
   resolution: "lodash@npm:3.10.1"
@@ -3553,6 +3589,13 @@ fsevents@~2.3.2:
   dependencies:
     moment: ">= 2.9.0"
   checksum: 2c8d98397f8512f2b3f8f8079914b22f7ef7ac8a0bd466bf00b2316d2f424c96198f2dc422b3eb4c07cf0f73172ca9d8919b8ff689eb7c88718de7bd2834be55
+  languageName: node
+  linkType: hard
+
+"moment@npm:2.24.0":
+  version: 2.24.0
+  resolution: "moment@npm:2.24.0"
+  checksum: 983617bc51c8121a88d9530671fb9e5dc2c71d67ba5bf1b16ebef25b51bd3d1291f17735ac33e8604f4984a275561dfe0fb883664eceacf8f67291ffd26acee9
   languageName: node
   linkType: hard
 
@@ -4123,6 +4166,13 @@ fsevents@~2.3.2:
   version: 1.1.2
   resolution: "prelude-ls@npm:1.1.2"
   checksum: 189c969c92151b0de7a6e5d2ae0c4e50bbec5675cdd9fee3b7509d9d74b6416787ee36a8c12a07e8afb01454a8185b695b3395912484fa118e071fea45223b9b
+  languageName: node
+  linkType: hard
+
+"pretty-data@npm:0.40.0":
+  version: 0.40.0
+  resolution: "pretty-data@npm:0.40.0"
+  checksum: b153b4acc397710f8409deef4ce4b15a768a3e87d6ceb049bac95d581f1a5685939ef11f5b0e5259b1bc0163dbeaf81a94f5520655d5aaca0a5ffaffc2605962
   languageName: node
   linkType: hard
 
@@ -5163,6 +5213,13 @@ fsevents@~2.3.2:
   version: 1.1.3
   resolution: "upper-case@npm:1.1.3"
   checksum: 82bfe8d6e11981608c68629de8221daf7c7e091aef9243bd7595a306beaeb9ff145afeaf003f5f1fbe1acb20de30e52421cc4564b7617375da52838da9173d19
+  languageName: node
+  linkType: hard
+
+"url-join@npm:4.0.0":
+  version: 4.0.0
+  resolution: "url-join@npm:4.0.0"
+  checksum: e2e657db59560e9882bcf586a2a1423a23ddea62dbc6334e257549026065f6a43dcaa5ae8db6d23cc9e24dba07899abdb2668a8081b3f0abd6f0a53dc83bc649
   languageName: node
   linkType: hard
 

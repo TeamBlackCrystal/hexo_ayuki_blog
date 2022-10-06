@@ -107,6 +107,11 @@ deploy:
   repo: https://github.com/TeamPimcServer/ayuki_blog.git
   branch: gh-pages
 
+# サイトマップに関する設定
+sitemap:
+  path: sitemap.xml
+
+
 pwa:
   manifest:
     path: /manifest.json
