@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="manifest" href="/manifest.json">
+		
+<title>Remixの流儀 -あゆき's BLOG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="Dev,Remix,React,React18,remix-run,SSR,Server-side render,TypeScript,">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.webp" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z"></path>
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>TeamPimcServer</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class="shelter">
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img" style="background: url('/image/imagenotfound.svg')">
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+                
+                    <li><a href="/tags/Dev">Dev</a></li>
+                
+                    <li><a href="/tags/Remix">Remix</a></li>
+                
+                    <li><a href="/tags/React">React</a></li>
+                
+                    <li><a href="/tags/React18">React18</a></li>
+                
+                    <li><a href="/tags/remix-run">remix-run</a></li>
+                
+                    <li><a href="/tags/SSR">SSR</a></li>
+                
+                    <li><a href="/tags/Server-side render">Server-side render</a></li>
+                
+                    <li><a href="/tags/TypeScript">TypeScript</a></li>
+                
+            
+        </ul>
+
+        <h1>Remixの流儀</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    
+                        <img src="/image/icon/yupix.webp" style="height: 40px; width: 40px; border-radius: 15%;">
+                    
+                
+                <span class="post-header-info-author-text"> <a href="/about">ゆぴ</a></span>
+                <div class="post-header-info-author-categories">
+
+                </div>
+                <p>2022-07-19 00:00:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+    <div id="article" class="post-content-info">
+      
+  
+      <h1 id="概要"><a class="anchor" href="#概要">#</a> 概要</h1>
+<p>この記事では結構新しめな React ベースのフレームワークである Remix についてご紹介します。</p>
+<h2 id="初めに"><a class="anchor" href="#初めに">#</a> 初めに</h2>
+<p>Remix ってなんだよ！って人のために少しだけご紹介します。Remix はサーバーサイドレンダリング（SSR）の最近よく聞く SPA とは少し違ったアプローチをとっているフレームワークです。<br>
+Remix の特徴は以下のような点にあります。<br>
+コンポーネントでエラーが出ても、そのコンポーネントのみがエラーを出すこれにより、一部のコンポーネントがエラーを出してもページ全体がエラーで汚染されることが無くなり、原因が分かりやすくなっています。<br>
+SSR なので OGP などが容易に設定できます。これに関しては後述しますが、取得したデータをもとに OGP を設定できて非常に便利です。<br>
+他にも多くの機能がありますが、ここから先はあなたご自身の手でお試しください！では記事をどうぞ！</p>
+<h2 id="データの取得"><a class="anchor" href="#データの取得">#</a> データの取得</h2>
+<p>Remix には LoaderFunction という物があります。例として以下のように書くことができます。今回は例として Prisma を用いたデータの取得を行ってみます。</p>
+<figure class="highlight tsx"><table><tbody><tr><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">loader</span>: <span class="hljs-title class_">LoaderFunction</span> = <span class="hljs-title function_">async</span>({params}) =&gt; {<br>	<span class="hljs-keyword">return</span> <span class="hljs-keyword">await</span> prisma.<span class="hljs-property">user</span>.<span class="hljs-title function_">findFirst</span>({<span class="hljs-attr">where</span>: {<span class="hljs-attr">id</span>: params.<span class="hljs-property">userId</span>}}<br>}<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">ShowUser</span>(<span class="hljs-params"></span>) {<br>	<span class="hljs-keyword">const</span> user = <span class="hljs-title function_">useLoaderData</span>();<br>    <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Hello {user.name}!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>}<br></code></pre></td></tr></tbody></table></figure>
+<p>この方法の素晴らしい点は <code>loader</code>  という名前の関数を export しておくことで自動で実行できる点です。ただ、loader は定義した場合必ず何か値を返す必要があります。返さないと <code>loader</code>  が定義されていますが、何も返されませんでしたみたいなエラーが出ると思います。</p>
+<h2 id="データの取得上級"><a class="anchor" href="#データの取得上級">#</a> データの取得（上級）</h2>
+<p>さて、先ほどのコードを書いていて TypeScript を使っている皆さんはきっとこう思ったことでしょう。「これ、Prisma の include とか使ってリレーション入れた場合の型どうすればいいんだ？」とその回答は Remix の公式ドキュメントの<a target="_blank" rel="noopener" href="https://remix.run/docs/en/v1/guides/data-loading#databases">このセクション</a>にあります。ですが、一応見つけるのに苦労する方もいると思うのでここで紹介しておきます。コードは Remix のドキュメントからお借りしました。</p>
+<figure class="highlight tsx"><table><tbody><tr><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { <span class="hljs-title class_">LoaderFunction</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"@remix-run/node"</span>; <span class="hljs-comment">// or "@remix-run/cloudflare"</span><br><span class="hljs-keyword">import</span> { json } <span class="hljs-keyword">from</span> <span class="hljs-string">"@remix-run/node"</span>; <span class="hljs-comment">// or "@remix-run/cloudflare"</span><br><span class="hljs-keyword">import</span> { useLoaderData } <span class="hljs-keyword">from</span> <span class="hljs-string">"@remix-run/react"</span>;<br><br><span class="hljs-keyword">import</span> { db } <span class="hljs-keyword">from</span> <span class="hljs-string">"~/db.server"</span>;<br><br><span class="hljs-keyword">type</span> <span class="hljs-title class_">LoaderData</span> = <span class="hljs-title class_">Awaited</span>&lt;<span class="hljs-title class_">ReturnType</span>&lt;<span class="hljs-keyword">typeof</span> getLoaderData&gt;&gt;;<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getLoaderData</span>(<span class="hljs-params">productId: <span class="hljs-built_in">string</span></span>) {<br>  <span class="hljs-keyword">const</span> product = <span class="hljs-keyword">await</span> db.<span class="hljs-property">product</span>.<span class="hljs-title function_">findUnique</span>({<br>    <span class="hljs-attr">where</span>: {<br>      <span class="hljs-attr">id</span>: productId,<br>    },<br>    <span class="hljs-attr">select</span>: {<br>      <span class="hljs-attr">id</span>: <span class="hljs-literal">true</span>,<br>      <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>,<br>      <span class="hljs-attr">imgSrc</span>: <span class="hljs-literal">true</span>,<br>    },<br>  });<br><br>  <span class="hljs-keyword">return</span> product;<br>}<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">loader</span>: <span class="hljs-title class_">LoaderFunction</span> = <span class="hljs-keyword">async</span> ({<br>  params,<br>}) =&gt; {<br>  <span class="hljs-keyword">return</span> json&lt;<span class="hljs-title class_">LoaderData</span>&gt;(<br>    <span class="hljs-keyword">await</span> <span class="hljs-title function_">getLoaderData</span>(params.<span class="hljs-property">productId</span>)<br>  );<br>};<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">Product</span>(<span class="hljs-params"></span>) {<br>  <span class="hljs-keyword">const</span> product = useLoaderData&lt;<span class="hljs-title class_">LoaderData</span>&gt;();<br>  <span class="hljs-keyword">return</span> (<br>    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></span><br><span class="language-xml">      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Product {product.id}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></span><br><span class="language-xml">      {/* ... */}</span><br><span class="language-xml">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br>  );<br>}<br></code></pre></td></tr></tbody></table></figure>
+<p>先ほどのデータの取得と何が違うのかというと <code>getLoaderData</code>  という関数を作成し、 <code>LoaderData</code>  という定数に <code>getLoaderData</code>  の戻り値を型として取得し、 <code>useLoaderData</code>  の型は <code>LoaderData</code>  だよ！と伝えています。いたって普通のことかもしれないですが、TypeScript に慣れてないと案外出てこない考えでした。</p>
+<h2 id="データの送信"><a class="anchor" href="#データの送信">#</a> データの送信</h2>
+<p>データの送信はデータの取得と似た名前の関数  <code>actionFunction</code>  と  <code>useFetcher</code>  を使用します。</p>
+<figure class="highlight tsx"><table><tbody><tr><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">action</span>: <span class="hljs-title class_">ActionFunction</span> = <span class="hljs-keyword">async</span> ({ request }) =&gt; {<br>    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">await</span> request.<span class="hljs-title function_">formData</span>();<br>    <span class="hljs-keyword">const</span> intent = formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">"intent"</span>);<br>    <span class="hljs-keyword">const</span> name = formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">"name"</span>);<br>    <span class="hljs-keyword">if</span> (intent === <span class="hljs-string">"createUser"</span>) {<br>        <span class="hljs-keyword">return</span> <span class="hljs-title function_">json</span>(<span class="hljs-keyword">await</span> <span class="hljs-title function_">createUser</span>(name));<br>    }<br>};<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">CreateUser</span>(<span class="hljs-params"></span>) {<br>	<span class="hljs-keyword">const</span> fetcher = <span class="hljs-title function_">useFetcher</span>();<br>    <br>    <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> { <span class="hljs-comment">// データに変更が生じた際に発火する</span><br>    	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fetcher.<span class="hljs-property">data</span>)<br>    }, [fetcher.<span class="hljs-property">data</span>])<br>    <br>    <span class="hljs-keyword">const</span> <span class="hljs-title function_">submitUserData</span> = (<span class="hljs-params"></span>) =&gt; {<br>    	fetcher.<span class="hljs-title function_">submit</span>({<span class="hljs-attr">intent</span>: <span class="hljs-string">"createUser"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"exampleUser"</span>}, {<span class="hljs-attr">method</span>: <span class="hljs-string">"post"</span>})<br>    }<br><br>	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span> =&gt;</span> submitUserData()}/&gt;</span><br>}<br></code></pre></td></tr></tbody></table></figure>
+<p>このコードでは intent にどういうアクションを起こさせるかを渡しています。これは何故かというと action はルーターごとに一つであり、Remix の公式 Discord などを見ていてもこの書き方が主流だと思っているからです。（他にいい方法あったら教えてください）また、  <code>fetcher.data</code>  はちゃんと useEffect などを用いて待機してあげる必要があります。いきなり使おうとすると undefined になったり null になったりするかもしれません（普通はそうなると思います）</p>
+<h2 id="コンポーネントからデータの取得がしたい"><a class="anchor" href="#コンポーネントからデータの取得がしたい">#</a> コンポーネントからデータの取得がしたい</h2>
+<p>正直私は気にしないのですが、デザインパターン的によくない場合もあるのかな？まあよくわかりませんが、ひとまずご紹介します。<br>
+まず、前提として、コンポーネントには loader や action は用意できない（すべきじゃない）です。これを解決する方法として先ほどのデータの送信を応用します。まず、ページに action を作成しておき、そこに fetcher を用いてデータを送信します。<br>
+私が実際に必要となった際の条件とどんなことをしたかを記載しておきます。</p>
+<ul>
+<li>データの ID がコンポーネントに来る</li>
+<li>データの ID からアイテムのデータを取得してコンポーネントとして表示したい</li>
+</ul>
+<h3 id="routesindextsx"><a class="anchor" href="#routesindextsx">#</a> routes/index.tsx</h3>
+<figure class="highlight tsx"><table><tbody><tr><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">action</span>: <span class="hljs-title class_">ActionFunction</span> = <span class="hljs-title function_">async</span>({request}) =&gt; {<br>    <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">await</span> request.<span class="hljs-title function_">formData</span>();<br>    <span class="hljs-keyword">const</span> intent = formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">'intent'</span>)<br>    <span class="hljs-keyword">const</span> id = <span class="hljs-title class_">Number</span>(formData.<span class="hljs-title function_">get</span>(<span class="hljs-string">'id'</span>))<br>    <span class="hljs-keyword">if</span> (intent === <span class="hljs-string">"getItemById"</span>) {<br>        <span class="hljs-keyword">return</span> <span class="hljs-title function_">json</span>(<span class="hljs-keyword">await</span> <span class="hljs-title function_">getItemById</span>(id))<br>    }<br>}<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="componentsitemtsx"><a class="anchor" href="#componentsitemtsx">#</a> components/item.tsx</h3>
+<figure class="highlight tsx"><table><tbody><tr><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title function_">Item</span> = (<span class="hljs-params"></span>) =&gt; {<br>	<span class="hljs-keyword">const</span> [item, setItem] = <span class="hljs-title function_">useState</span>(<span class="hljs-literal">null</span>)<br>	<span class="hljs-keyword">const</span> fetcher = <span class="hljs-title function_">useFetcher</span>()<br>    <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {<br>        fetcher.<span class="hljs-title function_">submit</span>({<span class="hljs-attr">intent</span>: <span class="hljs-string">"getItemById"</span>, <span class="hljs-attr">id</span>: <span class="hljs-number">1234567890</span>}, {<span class="hljs-attr">method</span>: <span class="hljs-string">"post"</span>, <span class="hljs-attr">action</span>: <span class="hljs-string">"/?index"</span>})<br>    }, [])<br>    <br>    <span class="hljs-title function_">useEffect</span>(<span class="hljs-function">() =&gt;</span> {<br>    	<span class="hljs-title function_">setItem</span>(fetcher.<span class="hljs-property">data</span>)<br>    }, [fetcher.<span class="hljs-property">data</span>])<br><br>	<span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;&gt;</span>{item.name}<span class="hljs-tag">&lt;/&gt;</span></span><br>}<br></code></pre></td></tr></tbody></table></figure>
+<p>あくまでこのコードは例です。私がこういうコードを書く必要があったのは SupaBase を用いてリアルタイム通信を行っていましたがリレーションは取得できない為（少なくとも私にはやり方がわからなかった）、prisma のリレーションを取得する必要があったためです。</p>
+<p>あと index とかに集中させるのは良くないと思うので適度分けるといいと思います。なんなら api/item.tsx みたいにしたほうがいいのかも？そこらへんは人によると思います。API みたいにデータを触ることしかしないならそういうのでもいいのかなと個人的には思います。</p>
+<h2 id="ogp-の設定"><a class="anchor" href="#ogpの設定">#</a> OGP の設定</h2>
+<p>OGP... 設定したいですよね？個人的にはアイテムの詳細ページとかを作るならぜひとも欲しいと思います。SPA だとちょっとめんどくさくてやる気になりませんでしたが、そう、Remix なら簡単です。</p>
+<p>OGP の設定には  <code>MetaFunction</code>  を使用します</p>
+<figure class="highlight tsx"><table><tbody><tr><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">type</span> <span class="hljs-title class_">LoaderData</span> = <span class="hljs-title class_">Awaited</span>&lt;<span class="hljs-title class_">ReturnType</span>&lt;<span class="hljs-keyword">typeof</span> getLoaderData&gt;&gt;;<br><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">meta</span>: <span class="hljs-title class_">MetaFunction</span> = <span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {<br>    <span class="hljs-keyword">let</span> <span class="hljs-attr">_data</span>: <span class="hljs-title class_">LoaderData</span> = data<br>    <span class="hljs-keyword">return</span> {<br>        <span class="hljs-attr">charset</span>: <span class="hljs-string">"utf-8"</span>,<br>        <span class="hljs-attr">title</span>: _data?.<span class="hljs-property">data</span>.<span class="hljs-property">name</span>,<br>        <span class="hljs-string">"og:title"</span>: _data?.<span class="hljs-property">data</span>.<span class="hljs-property">name</span>,<br>        <span class="hljs-string">"og:site_name"</span>: <span class="hljs-string">"テスト"</span>,<br>        <span class="hljs-string">"og:image"</span>: _data?.<span class="hljs-property">data</span>.<span class="hljs-property">icon_url</span>,<br>    };<br>};<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getLoaderData</span>(<span class="hljs-params"></span>) {<br>	<span class="hljs-keyword">return</span> {<span class="hljs-attr">name</span>: <span class="hljs-string">"ゆぴ"</span>, <span class="hljs-attr">image</span>: <span class="hljs-string">"リンク"</span>}<br>}<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">loader</span>: <span class="hljs-title class_">LoaderFunction</span> = <span class="hljs-keyword">async</span> () =&gt; {<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">json</span>(<span class="hljs-keyword">await</span> <span class="hljs-title function_">getLoaderData</span>());<br>};<br></code></pre></td></tr></tbody></table></figure>
+<p>こんな感じに loader で取得したデータを meta で使用することができます。loader で params を取得してパラメータの ID を用いてデータベースからアイテム情報を取得、OGP に表示みたいなことが簡単にできます。</p>
+<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<p>正直 fetcher に関しては 2 日ぐらい苦しんでいろいろと GitHub の数少ないリポジトリを探して、使い方が分かりました。fetcher.data が空にしかならなくて、割とマジで苦しんだ覚えがあります... 記事とかでも fetcher 使ってる人全くいなくて、大変でした。そういう方のお役に立てれば幸いです。最後にコードに関しては確認せず書いてるので少し間違ってたり、普通に動かないやつあるかもしれないので、見つけたら<a href="https://github.com/TeamPimcServer/ayuki_blog/issues">ここ</a>とかに連絡ください。</p>
+
+    </div>
+    <div id="gitalk-container"></div>
+  </div>
+  
+  <script>
+    
+  Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+    dragToClose: true,
+    Toolbar: true,
+    closeButton: "top",
+    Image: {
+      zoom: true,
+    },
+    on: {
+      initCarousel: (fancybox) => {
+        const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+      "Carousel.change": (fancybox, carousel, to, from) => {
+        const slide = carousel.slides[to];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+    },
+  });
+  </script>
+  
+  <style>
+      #noneimg img {
+          display: none;
+          z-index: 9999;
+          /* width: 600px !important; */
+          min-width: 0%;
+          max-width: 90%;
+          max-height: 80%;
+          border-radius: 0px;
+          position: fixed;
+          box-shadow: 0 0 0px #c3c3c300 !important;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto !important;
+      }
+  
+      @media screen and (max-width:600px) {
+          #noneimg img {
+              max-width: 88%
+          }
+      }
+  </style>
+  
+    <div class="Last-Next">
+    
+        <div class="none-last">
+            <span>前の投稿</span>
+            <p>現在の記事が最新の記事です</p>
+        </div>
+    
+
+    
+        <a href="/2022/07/12/2022-07-12-about-fmpe/">
+            <div class="next">
+                <span>次の投稿</span>
+                <p>FMProjectEについて</p>
+            </div>
+        </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"defaultGitalkClientID","clientSecret":"defaultGitalkClientSecret","repo":"ayuki_blog","owner":"TeamPimcServer","admin":"yupix,sousuke0422"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
+
+</body><script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.cookieconsent.initialise({"palette":{"popup":{"background":"#5E73B6","text":"#ffffff"},"button":{"background":"#f1f5fb","text":"#333333"}},"theme":"classic","position":"bottom","static":false,"content":{"message":"このウェブサイトでは、Cookieを使用して、ウェブサイトで最高のエクスペリエンスを得られるようにしています。","dismiss":"同意する","link":"詳しく見る","href":"/cookiepolicy/index"}})});</script></html>

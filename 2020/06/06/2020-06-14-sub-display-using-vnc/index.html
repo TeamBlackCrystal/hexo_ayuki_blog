@@ -1,0 +1,587 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="manifest" href="/manifest.json">
+		
+<title>ArchLinuxにVNCを使ってサブディスプレイを作る -あゆき's BLOG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="ja,archlinux,解説,vnc,">
+<meta name="description" content="ArchLinuxにVNCを使ってサブディスプレイを作る">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.webp" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z"></path>
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>TeamPimcServer</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class="shelter">
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img" style="background: url('/image/imagenotfound.svg')">
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+                
+                    <li><a href="/tags/ja">ja</a></li>
+                
+                    <li><a href="/tags/archlinux">archlinux</a></li>
+                
+                    <li><a href="/tags/解説">解説</a></li>
+                
+                    <li><a href="/tags/vnc">vnc</a></li>
+                
+            
+        </ul>
+
+        <h1>ArchLinuxにVNCを使ってサブディスプレイを作る</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    
+                        <img src="/image/icon/yupix.webp" style="height: 40px; width: 40px; border-radius: 15%;">
+                    
+                
+                <span class="post-header-info-author-text"> <a href="/about">ゆぴ</a></span>
+                <div class="post-header-info-author-categories">
+
+                </div>
+                <p>2020-06-06 00:00:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+    <div id="article" class="post-content-info">
+      
+  
+      <h2 id="まずはじめに"><a class="anchor" href="#まずはじめに">#</a> まずはじめに</h2>
+<p>Ubuntu などのメジャーなディストリビューションでは多くの記事がすでに出回っています。<br>
+そこで、ArchLinux だとパッケージが変わっていたり個人的によく忘れてしまうので備忘録として残しておきます。</p>
+<h2 id="やりかた"><a class="anchor" href="#やりかた">#</a> やりかた</h2>
+<h3 id="パッケージのインストール"><a class="anchor" href="#パッケージのインストール">#</a> パッケージのインストール</h3>
+<p>以下の 2 つのパッケージが必要です。</p>
+<ul>
+<li>tigervnc（公式パッケージ）</li>
+<li>x2vnc-no-xinerama（AUR）</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -S tigervnc<br>yay -S x2vnc-no-xinerama<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="サーバー側の準備"><a class="anchor" href="#サーバー側の準備">#</a> サーバー側の準備</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ vncserver :1<br>You will require a password to access your desktops.<br>Password: ******<br>Verify: ******<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="android-側の準備"><a class="anchor" href="#android-側の準備">#</a> Android　側の準備</h3>
+<p>クライアント側では Android で<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&amp;hl=ja"> VNC Viewer - Remote Desktop</a> を今回は使用します。<br>
+その他にも私の環境では<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=nine.viewer&amp;hl=ja"> VNC Viewer</a> での動作も確認しています。</p>
+<h3 id="マウスの行き来の準備"><a class="anchor" href="#マウスの行き来の準備">#</a> マウスの行き来の準備</h3>
+<p>ここで使用するパスワードはさきほど<a href="#%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%81%B4%E3%81%AE%E6%BA%96%E5%82%99">サーバーの準備</a>で設定したパスワードを入力します</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ x2vnc -shared -west localhost:1<br>x2vnc: VNC server supports protocol version 3.8 (viewer 3.3)<br>Password: ******<br></code></pre></td></tr></tbody></table></figure>
+<p>これでマウスが行き来できるようになりました。</p>
+<div class="admonition warning"><p class="admonition-title">warning</p><p>注意点として、ウィンドウをサブディスプレイに持っていく事などはできません（その逆もしかり）</p>
+</div>
+<h3 id="起動"><a class="anchor" href="#起動">#</a> 起動</h3>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ vncserver :1 -geometry 1280x800 -alwaysshared<br>$ x2vnc -shared -west localhost:1<br></code></pre></td></tr></tbody></table></figure>
+<h4 id="x2vnc-のオプションについて"><a class="anchor" href="#x2vncのオプションについて">#</a> x2vnc のオプションについて</h4>
+<p>-west などはマウスカーソルをどの向きに持っていった際サブディスプレイに移動するかを設定するものです。<br>
+以下がその一覧です</p>
+<table>
+<thead>
+<tr>
+<th>オプション名</th>
+<th>使い方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-north</td>
+<td><strong>北</strong>方向にマウスを持っていくとサブディスプレイに繋がる</td>
+</tr>
+<tr>
+<td>-east</td>
+<td><strong>東</strong>方向にマウスを持っていくとサブディスプレイに繋がる</td>
+</tr>
+<tr>
+<td>-south</td>
+<td><strong>南</strong>方向にマウスを持っていくとサブディスプレイに繋がる</td>
+</tr>
+<tr>
+<td>-west</td>
+<td><strong>西</strong>方向にマウスを持っていくとサブディスプレイに繋がる</td>
+</tr>
+</tbody>
+</table>
+<h3 id="xstartup-の編集"><a class="anchor" href="#xstartupの編集">#</a> xstartup の編集</h3>
+<p>xstartup とは VNC のデスクトップ環境設定ファイルです。<br>
+デフォルトではおそらく<br>
+～/.vnc/xstartup<br>
+ にファイルが存在します</p>
+<p>このファイルを編集します。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ nano ~/.vnc/xstartup<br><br><span class="hljs-comment">#元からあった行を...で表しています</span><br>...<br><br><span class="hljs-comment">#⬇を追加</span><br><span class="hljs-built_in">exec</span> cinnamon &amp;<br></code></pre></td></tr></tbody></table></figure>
+<p>今回の場合は cinnamon が vncserver に接続すると表示されるはずです。<br>
+ここを自分のすでに入れてあるデスクトップ環境のコマンドに書き換えることで変更が可能です。</p>
+<h2 id="謝辞"><a class="anchor" href="#謝辞">#</a> 謝辞</h2>
+<p>この記事は<strong>ともの技術メモ</strong>様の記事を見て ArchLinux で実際にできるのか<br>
+パッケージ名などが違う為忘れないように書かせていただきました。<br>
+内容の多くが<strong>ともの技術メモ</strong>様の内容と被ってしまっている事をここで謝罪します。</p>
+<h2 id="参考"><a class="anchor" href="#参考">#</a> 参考</h2>
+<ul>
+<li>全般コマンド</li>
+</ul>
+<blockquote>
+<p>ともの技術メモ<br>
+<cite><a target="_blank" rel="noopener" href="https://tomono.tokyo/2016/08/09/6228/">https://tomono.tokyo/2016/08/09/6228/</a></cite></p>
+</blockquote>
+<ul>
+<li>xstartup の意味<br>
+<a target="_blank" rel="noopener" href="http://www.obenri.com/_vnc/vnc_server1.html">お便利サーバー.com</a></li>
+</ul>
+
+    </div>
+    <div id="gitalk-container"></div>
+  </div>
+  
+  <script>
+    
+  Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+    dragToClose: true,
+    Toolbar: true,
+    closeButton: "top",
+    Image: {
+      zoom: true,
+    },
+    on: {
+      initCarousel: (fancybox) => {
+        const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+      "Carousel.change": (fancybox, carousel, to, from) => {
+        const slide = carousel.slides[to];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+    },
+  });
+  </script>
+  
+  <style>
+      #noneimg img {
+          display: none;
+          z-index: 9999;
+          /* width: 600px !important; */
+          min-width: 0%;
+          max-width: 90%;
+          max-height: 80%;
+          border-radius: 0px;
+          position: fixed;
+          box-shadow: 0 0 0px #c3c3c300 !important;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto !important;
+      }
+  
+      @media screen and (max-width:600px) {
+          #noneimg img {
+              max-width: 88%
+          }
+      }
+  </style>
+  
+    <div class="Last-Next">
+    
+        <a href="/2020/06/06/2020-06-06-shellscript-variable-check/">
+            <div class="last">
+                <span>前の投稿</span>
+                <p>ShellScriptで変数に値があるかどうかを判断する方法</p>
+            </div>
+        </a>
+    
+
+    
+        <a href="/2020/05/01/2020-05-01-do-you-want-windows-on-sudo/">
+            <div class="next">
+                <span>次の投稿</span>
+                <p>Windowsにsudoが欲しいかい？</p>
+            </div>
+        </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"defaultGitalkClientID","clientSecret":"defaultGitalkClientSecret","repo":"ayuki_blog","owner":"TeamPimcServer","admin":"yupix,sousuke0422"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
+
+</body><script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.cookieconsent.initialise({"palette":{"popup":{"background":"#5E73B6","text":"#ffffff"},"button":{"background":"#f1f5fb","text":"#333333"}},"theme":"classic","position":"bottom","static":false,"content":{"message":"このウェブサイトでは、Cookieを使用して、ウェブサイトで最高のエクスペリエンスを得られるようにしています。","dismiss":"同意する","link":"詳しく見る","href":"/cookiepolicy/index"}})});</script></html>

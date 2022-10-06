@@ -1,0 +1,562 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="manifest" href="/manifest.json">
+		
+<title>Ayuskeyって何？ -あゆき's BLOG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="ja,Advent Calendar,Advent Calendar 2020,Misskey,">
+<meta name="description" content="XEのEOLに伴いこっちに移植">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.webp" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z"></path>
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>TeamPimcServer</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class="shelter">
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img" style="background: url('/image/imagenotfound.svg')">
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+                
+                    <li><a href="/tags/ja">ja</a></li>
+                
+                    <li><a href="/tags/Advent Calendar">Advent Calendar</a></li>
+                
+                    <li><a href="/tags/Advent Calendar 2020">Advent Calendar 2020</a></li>
+                
+                    <li><a href="/tags/Misskey">Misskey</a></li>
+                
+            
+        </ul>
+
+        <h1>Ayuskeyって何？</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    
+                        <img src="/image/icon/aki.webp" style="height: 40px; width: 40px; border-radius: 15%;">
+                    
+                
+                <span class="post-header-info-author-text"> <a href="/about">あき</a></span>
+                <div class="post-header-info-author-categories">
+
+                </div>
+                <p>2020-12-21 00:00:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+    <div id="article" class="post-content-info">
+      
+  
+      <p><strong><a target="_blank" rel="noopener" href="https://adventar.org/calendars/5026">Misskey Advent Calendar 2020</a> の 21 日目の記事です。</strong></p>
+<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<p>多分多くの人が初めてだと思います。<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/@aki">aki</a> といいます。<br>
+今回は私と<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/@yupix@ne.akarinext.org"> @yupix@ne.akarinext.org</a> 氏で作っている Ayuskey についてお話させていただきたいと思います。</p>
+<h3 id="名前の由来について"><a class="anchor" href="#名前の由来について">#</a> 名前の由来について</h3>
+<p>名前の由来は、<strong>a</strong>ki と<strong> yu</strong>pix からとって Ayu となっています。(このブログも同じ)<br>
+ なお、初期の頃は私一人で開発していたので Reiskey という名前をつけておりました。その頃の名残として、バージョンに <code>rei0784</code>  をつけるのを継承しています。</p>
+<h2 id="技術的なあれこれ"><a class="anchor" href="#技術的なあれこれ">#</a> 技術的なあれこれ</h2>
+<p>現在もパッケージ更新などのメンテナンスがされている<a href="https://github.com/mei23/misskey-v11"> mei23/misskey-v11</a> をベースに開発しています。<br>
+また、筆頭となる<a target="_blank" rel="noopener" href="https://kr.akirin.xyz">私のインスタンス</a>と<a target="_blank" rel="noopener" href="https://ne.akarinext.org"> yupix 氏のインスタンス</a>は、Raspberry Pi 4 で運用しているため、arm64 で動かしやすいように Dockerfile 等が調整されていたりします。</p>
+<p>動かなかったり、ビルドができなかったりした場合は気軽に<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/@aki"> @aki</a> までご連絡ください。</p>
+<h2 id="鯖缶にやさしく"><a class="anchor" href="#鯖缶にやさしく">#</a> 鯖缶にやさしく</h2>
+<p>全文検索で重い Elasticsearch を使う必要がなくなりました！！<br>
+本流にある<s>放置されていそうな</s><a href="https://github.com/syuilo/misskey/pull/5138"> #5138</a> をマージして sonic という検索エンジンを使えるようにしました。とても軽く、Raspberry Pi 4 であっても軽快に動作します。実際に、私のインスタンスで使用しております。(ただ、短い単語とかだと精度が終わってるので、要調整)</p>
+<p>他の鯖にある絵文字をコピーしたいときありますよね？<br>
+本流の api を移植してできるようにしました！！<br>
+現在は api を直接叩くのが 1 番安定していますが、GUI でのコピーができるように作業中です。</p>
+<h3 id="より高機能を目指して"><a class="anchor" href="#より高機能を目指して">#</a> より高機能を目指して</h3>
+<p>本来の misskey v11 にはあまりぼかし (blur) や透明度がついていないのですが、より近代的な見た目を目指しています。現在は未実装ですが重い環境では <code>インスタンスのurl/flags</code>  (例:<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/flags">kr.akirin.xyz/flags</a>) から無効化できるようにする予定です。最終的には他の設定と同じ場所に配置されます。</p>
+<h3 id="mfm-の拡張"><a class="anchor" href="#mfmの拡張">#</a> MFM の拡張</h3>
+<p>基本的に文法は m544 と互換性があります。<a target="_blank" rel="noopener" href="https://ti.akirin.xyz/mfm-cheat-sheet">チートシート</a> (私の m544 インスタンスに飛びます)<br>
+ <code>:@aki:</code>  や <code>:@rei_k@misskey.io:</code>  でアバター絵文字が使えます。なお、一部の場所 (こことか) だと動きませんが、普通にノートを投稿する分には問題なく使えます。</p>
+<style>
+@keyframes mfm-rainbow {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+</style>
+<p>Groundpolis からも一部取り入れさせて頂いている文法があります。<br>
+ <code>[rainbow kr更新しようぜ]</code></p>
+<p style="color: #99CC00; animation: mfm-rainbow 1s linear infinite both;">kr更新しようぜ</p>
+<p><code>[font.size=20px,color=#86b300 みすきーぐりーん]</code></p>
+<p style="font-size: 20px; color: #86b300">みすきーぐりーん</p>
+<p>ただ、Ayuskey 同士だと正常に表示できていますが、他の実装からだとうまく表示されないことが多いです。(逆は回転速度とかの指定に <code>ms</code>  を使わないようにすればだいたいいけそう)</p>
+<h3 id="独自機能"><a class="anchor" href="#独自機能">#</a> 独自機能</h3>
+<p>他の Misskey には存在しない独自の機能として bot であることを宣言するのと同じようにお嬢様 (Lady) であることを宣言できます。しっかりと連合できるように作ってあります。</p>
+<p>ブラーのところで書きましたが、実験的な機能を <code>/flags</code>  で有効化できます。<s>まあ、これ書いてる時点だとどれも今は機能しないんですけど</s></p>
+<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<p>読んでいただきありがとうございます。<br>
+もしよろしければ<a target="_blank" rel="noopener" href="https://kr.akirin.xyz">私のインスタンス</a>に登録していただけると幸いです。</p>
+<h2 id="おまけ"><a class="anchor" href="#おまけ">#</a> おまけ</h2>
+<h3 id="既知のバグ"><a class="anchor" href="#既知のバグ">#</a> 既知のバグ</h3>
+<p>トークの読み込みが終わらない =&gt;<s> 原因調査中...</s><a href="https://github.com/TeamOrangeServer/misskey/issues/61">#61</a> =&gt; <a href="https://github.com/TeamOrangeServer/misskey/releases/tag/11.37.1-rei0784-5.0.0-rc.10">5.0.0-rc.10</a> で解決<br>
+モバイルで引用 RN できない =&gt; 原因調査中...</p>
+<h3 id="夢は大きく-今後の目標"><a class="anchor" href="#夢は大きく-今後の目標">#</a> 夢は大きく 〜今後の目標〜</h3>
+<p>独自に Vue3 対応 =&gt;v12 と根本的に作りが違うのでほとんどバックポートで対応できないので、少なくとも init はほとんど書き直しです。<br>
+それと、BootstrapVue の対応ができたら少しずつやってみたいと思います。</p>
+<h3 id="xe-の終了に伴う記事の移植"><a class="anchor" href="#xeの終了に伴う記事の移植">#</a> XE の終了に伴う記事の移植</h3>
+<p>最初は XE (私の旧インスタンス) の pages で書いていたのですが、諸事情で Kr に移行することになったのでここのブログに移植することにしました。MFM 周りは実際の Ayuskey の css を引っ張って Markdown に書いて実現しているため、疲れました・・・</p>
+
+    </div>
+    <div id="gitalk-container"></div>
+  </div>
+  
+  <script>
+    
+  Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+    dragToClose: true,
+    Toolbar: true,
+    closeButton: "top",
+    Image: {
+      zoom: true,
+    },
+    on: {
+      initCarousel: (fancybox) => {
+        const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+      "Carousel.change": (fancybox, carousel, to, from) => {
+        const slide = carousel.slides[to];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+    },
+  });
+  </script>
+  
+  <style>
+      #noneimg img {
+          display: none;
+          z-index: 9999;
+          /* width: 600px !important; */
+          min-width: 0%;
+          max-width: 90%;
+          max-height: 80%;
+          border-radius: 0px;
+          position: fixed;
+          box-shadow: 0 0 0px #c3c3c300 !important;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto !important;
+      }
+  
+      @media screen and (max-width:600px) {
+          #noneimg img {
+              max-width: 88%
+          }
+      }
+  </style>
+  
+    <div class="Last-Next">
+    
+        <a href="/2021/02/02/2021-02-02-issue-management-tool/">
+            <div class="last">
+                <span>前の投稿</span>
+                <p>私的使ってみて便利なタスク管理ツール</p>
+            </div>
+        </a>
+    
+
+    
+        <a href="/2020/12/20/2020-12-20-new-ayuki-blog/">
+            <div class="next">
+                <span>次の投稿</span>
+                <p>リニューアルのお知らせ</p>
+            </div>
+        </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"defaultGitalkClientID","clientSecret":"defaultGitalkClientSecret","repo":"ayuki_blog","owner":"TeamPimcServer","admin":"yupix,sousuke0422"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
+
+</body><script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.cookieconsent.initialise({"palette":{"popup":{"background":"#5E73B6","text":"#ffffff"},"button":{"background":"#f1f5fb","text":"#333333"}},"theme":"classic","position":"bottom","static":false,"content":{"message":"このウェブサイトでは、Cookieを使用して、ウェブサイトで最高のエクスペリエンスを得られるようにしています。","dismiss":"同意する","link":"詳しく見る","href":"/cookiepolicy/index"}})});</script></html>

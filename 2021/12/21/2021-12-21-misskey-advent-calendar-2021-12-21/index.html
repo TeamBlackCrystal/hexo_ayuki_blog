@@ -1,0 +1,533 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="manifest" href="/manifest.json">
+		
+<title>PythonでMisskeyのBotFrameWorkを作ってみた -あゆき's BLOG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="ゆぴ,Mi.py,misskey,Misskeyアドベントカレンダー2021,">
+<meta name="description" content="">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.webp" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z"></path>
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>TeamPimcServer</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class="shelter">
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img" style="background: url('/image/imagenotfound.svg')">
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+                
+                    <li><a href="/tags/ゆぴ">ゆぴ</a></li>
+                
+                    <li><a href="/tags/Mi.py">Mi.py</a></li>
+                
+                    <li><a href="/tags/misskey">misskey</a></li>
+                
+                    <li><a href="/tags/Misskeyアドベントカレンダー2021">Misskeyアドベントカレンダー2021</a></li>
+                
+            
+        </ul>
+
+        <h1>PythonでMisskeyのBotFrameWorkを作ってみた</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    
+                        <img src="/image/icon/yupix.webp" style="height: 40px; width: 40px; border-radius: 15%;">
+                    
+                
+                <span class="post-header-info-author-text"> <a href="/about">ゆぴ</a></span>
+                <div class="post-header-info-author-categories">
+
+                </div>
+                <p>2021-12-21 17:41:26</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+    <div id="article" class="post-content-info">
+      
+  
+      <p>これは <a target="_blank" rel="noopener" href="https://adventar.org/calendars/6273">Misskey Advent Calendar</a> 21 日目の記事です。</p>
+<h1 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h1>
+<p>Python で Misskey の Bot を作って見る際に第一に選択肢に出てくるのが、 YuzuRyo61 さんの<a href="https://github.com/YuzuRyo61/Misskey.py"> Misskey.py</a> です。ですが、私は WebSocket を受信してリアルタイムにタイムラインや通知の情報を取得したかったため、この BotFrameWork を作ってみました。</p>
+<h2 id="使い方"><a class="anchor" href="#使い方">#</a> 使い方</h2>
+<p>まず、今回作成したライブラリ <a href="https://github.com/yupix/mi.py">Mi.py</a> をインストールします</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip install mi.py<br></code></pre></td></tr></tbody></table></figure>
+<p>次に実際に実行するためのコードを書きます。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> asyncio<br><span class="hljs-keyword">from</span> mi <span class="hljs-keyword">import</span> Note<br><span class="hljs-keyword">from</span> mi.ext <span class="hljs-keyword">import</span> commands<br><span class="hljs-keyword">from</span> mi.router <span class="hljs-keyword">import</span> Router<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyBot</span>(commands.Bot):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, cmd_prefix: <span class="hljs-built_in">str</span></span>):<br>        <span class="hljs-built_in">super</span>().__init__(cmd_prefix)<br>    <br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_ready</span>(<span class="hljs-params">self, ws</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f'<span class="hljs-subst">{self.i.username}</span>'</span> に接続しました)<br>        <span class="hljs-keyword">await</span> Router(ws).connect_channel([<span class="hljs-string">'global'</span>, <span class="hljs-string">'main'</span>])<br>    <br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_message</span>(<span class="hljs-params">self, note: Note</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f'<span class="hljs-subst">{note.author.username}</span>: <span class="hljs-subst">{note.content}</span>'</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>    uri = <span class="hljs-string">"wss://example.com/streaming"</span><br>    token = <span class="hljs-string">"This is your token"</span><br><br>    bot = MyBot(<span class="hljs-string">'!'</span>)<br>    asyncio.run(bot.start(url, token))<br></code></pre></td></tr></tbody></table></figure>
+<p>これで、グローバルタイムラインを受信する初期的な bot ができました。</p>
+<h2 id="投稿をしてみる"><a class="anchor" href="#投稿をしてみる">#</a> 投稿をしてみる</h2>
+<p>今度は投稿をしてみましょう、先程のコードを一部書き換えてみます</p>
+<figure class="highlight diff"><table><tbody><tr><td class="code"><pre><code class="hljs diff">async def on_ready(self, ws):<br>    print(f'{self.i.username}' に接続しました)<br>    await Router(ws).connect_channel(['global', 'main'])<br><span class="hljs-addition">+   res = await self.post_note('hello~')</span><br><span class="hljs-addition">+   print(res.author.username, res.content)</span><br></code></pre></td></tr></tbody></table></figure>
+<p>このように、自分で投稿し、そのレスポンスをオブジェクトとして取得することが可能です。</p>
+<h2 id="大変だったこと"><a class="anchor" href="#大変だったこと">#</a> 大変だったこと</h2>
+<p>今回のライブラリは絶賛開発中なのですが、Python の循環参照がとにかく最初の頃多く発生してとても大変でした。他には、非同期の websocket ライブラリが少なかったことなど、色々とあり、作成にとても時間がかかりました。（まだできてないですけど）</p>
+<h2 id="ドキュメントについて"><a class="anchor" href="#ドキュメントについて">#</a> ドキュメントについて</h2>
+<div class="admonition warning"><p class="admonition-title">warning</p><p>まだドキュメントは作成途中であり、一部のモデルが不足しています。</p>
+</div>
+<p><a target="_blank" rel="noopener" href="https://yupix.github.io/Mi.py/mi.html">ここ</a> に commit したら自動で生成するようにしてあるドキュメントがあるので、何かわからないことがあれば参考にしてみてください。</p>
+<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<p>このプロジェクトは一応頑張って作っているつもりなので、もしよければ、使った感想などを <a target="_blank" rel="noopener" href="https://rn.akarinext.org/@yupix">私の Misskey アカウント</a> に送ってくださるとモチベーションも上がってとても嬉しいです。<br>
+あと、MIT License で <a href="https://github.com/yupix/Mi.py">GitHub</a> にて公開しています。 pull request なども歓迎していますので、もしよければやってみてください。</p>
+<p>最後になりますが、Misskey は リアクションなどをインスタンスごとのカスタム絵文字で貰うことができ、自分のつぶやきに Twitter のようなハート以外のリアクションがほしいという方にも楽しめると思うので、Misskey にご興味がある場合は <a target="_blank" rel="noopener" href="https://join.misskey.page">joinmisskey</a> をぜひご覧ください。</p>
+<p>ここまでご覧頂きありがとうございました。</p>
+
+    </div>
+    <div id="gitalk-container"></div>
+  </div>
+  
+  <script>
+    
+  Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+    dragToClose: true,
+    Toolbar: true,
+    closeButton: "top",
+    Image: {
+      zoom: true,
+    },
+    on: {
+      initCarousel: (fancybox) => {
+        const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+      "Carousel.change": (fancybox, carousel, to, from) => {
+        const slide = carousel.slides[to];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+    },
+  });
+  </script>
+  
+  <style>
+      #noneimg img {
+          display: none;
+          z-index: 9999;
+          /* width: 600px !important; */
+          min-width: 0%;
+          max-width: 90%;
+          max-height: 80%;
+          border-radius: 0px;
+          position: fixed;
+          box-shadow: 0 0 0px #c3c3c300 !important;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto !important;
+      }
+  
+      @media screen and (max-width:600px) {
+          #noneimg img {
+              max-width: 88%
+          }
+      }
+  </style>
+  
+    <div class="Last-Next">
+    
+        <a href="/2022/07/12/2022-07-12-about-fmpe/">
+            <div class="last">
+                <span>前の投稿</span>
+                <p>FMProjectEについて</p>
+            </div>
+        </a>
+    
+
+    
+        <a href="/2021/11/29/2021-11-29-deriving-a-decorator-from-a-function-created-with-a-decorator-in-python/">
+            <div class="next">
+                <span>次の投稿</span>
+                <p>Pythonでデコレーターで作った関数からデコレーターを派生させる</p>
+            </div>
+        </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"defaultGitalkClientID","clientSecret":"defaultGitalkClientSecret","repo":"ayuki_blog","owner":"TeamPimcServer","admin":"yupix,sousuke0422"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
+
+</body><script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.cookieconsent.initialise({"palette":{"popup":{"background":"#5E73B6","text":"#ffffff"},"button":{"background":"#f1f5fb","text":"#333333"}},"theme":"classic","position":"bottom","static":false,"content":{"message":"このウェブサイトでは、Cookieを使用して、ウェブサイトで最高のエクスペリエンスを得られるようにしています。","dismiss":"同意する","link":"詳しく見る","href":"/cookiepolicy/index"}})});</script></html>

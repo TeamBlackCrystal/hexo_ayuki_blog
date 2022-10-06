@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="manifest" href="/manifest.json">
+		
+<title>pythonでの文字列の扱い方1 -あゆき's BLOG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="ja,archlinux,解説,python,変数,">
+<meta name="description" content="pythonでの文字列の扱い方について解説">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.webp" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z"></path>
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>TeamPimcServer</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class="shelter">
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img" style="background: url('/image/imagenotfound.svg')">
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+                
+                    <li><a href="/tags/ja">ja</a></li>
+                
+                    <li><a href="/tags/archlinux">archlinux</a></li>
+                
+                    <li><a href="/tags/解説">解説</a></li>
+                
+                    <li><a href="/tags/python">python</a></li>
+                
+                    <li><a href="/tags/変数">変数</a></li>
+                
+            
+        </ul>
+
+        <h1>pythonでの文字列の扱い方1</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    
+                        <img src="/image/icon/yupix.webp" style="height: 40px; width: 40px; border-radius: 15%;">
+                    
+                
+                <span class="post-header-info-author-text"> <a href="/about">ゆぴ</a></span>
+                <div class="post-header-info-author-categories">
+
+                </div>
+                <p>2020-09-20 00:00:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+    <div id="article" class="post-content-info">
+      
+  
+      <h2 id="まずはじめに"><a class="anchor" href="#まずはじめに">#</a> まずはじめに</h2>
+<p>ネットの拾い知識で python を触り始めたので、その際によく使うようなことを書いていきます。<br>
+初歩的なことだと思いますが、温かい目で見ていただけると幸いです。※間違っていたらごめんなさい</p>
+<p>今回は主に文字列の出力の際の変数の展開などを紹介します。</p>
+<h2 id="環境"><a class="anchor" href="#環境">#</a> 環境</h2>
+<ul>
+<li>ArchLinux</li>
+<li>python 3.8.5</li>
+</ul>
+<h2 id="一般的な文字列の出力"><a class="anchor" href="#一般的な文字列の出力">#</a> 一般的な文字列の出力</h2>
+<h3 id="変数を使わない文字列出力"><a class="anchor" href="#変数を使わない文字列出力">#</a> 変数を使わない文字列出力</h3>
+<p>ごく普通の文字列出力です</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-built_in">print</span>(<span class="hljs-string">'こんにちは'</span>)<br><br><span class="hljs-comment"># 出力結果: こんにちは</span><br></code></pre></td></tr></tbody></table></figure>
+<h3 id="変数を使った文字列出力"><a class="anchor" href="#変数を使った文字列出力">#</a> 変数を使った文字列出力</h3>
+<p>変数に出力したい文字列を入れてそれを print に入れて出力しています</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">hoge = <span class="hljs-string">'こんにちは'</span><br><span class="hljs-built_in">print</span>(hoge)<br><br><span class="hljs-comment"># 出力結果: こんにちは</span><br></code></pre></td></tr></tbody></table></figure>
+<h2 id="文字列の中で変数を展開する方法"><a class="anchor" href="#文字列の中で変数を展開する方法">#</a> 文字列の中で変数を展開する方法</h2>
+<p>基本的に文字列の中（シングルクォートかダブルクォート）の中で変数を展開する方法です</p>
+<h3 id="f-strings-を使った方法"><a class="anchor" href="#f-strings-を使った方法">#</a> F-strings を使った方法</h3>
+<p>個人的にはシンプルでとても使いやすいと思っています。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">hoge = <span class="hljs-string">'ゆぴ'</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">f'こんにちは<span class="hljs-subst">{hoge}</span>さん'</span>)<br><br><span class="hljs-comment"># 出力結果: こんにちはゆぴさん</span><br></code></pre></td></tr></tbody></table></figure>
+<h3 id="format-を使った方法"><a class="anchor" href="#format-を使った方法">#</a> format を使った方法</h3>
+<p>format に hoge 変数を私、{0} の場所に展開しています。</p>
+<h4 id="ひとつだけ展開する場合"><a class="anchor" href="#ひとつだけ展開する場合">#</a> ひとつだけ展開する場合</h4>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">hoge = <span class="hljs-string">'ゆぴ'</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">'こんにちは{0}さん'</span>.<span class="hljs-built_in">format</span>(hoge))<br></code></pre></td></tr></tbody></table></figure>
+<h4 id="複数展開する場合"><a class="anchor" href="#複数展開する場合">#</a> 複数展開する場合</h4>
+<p>数字を {} に入れない場合も紹介していますが、繰り返し使う際などには不便になる可能性があるため、format の引数にあった数字を入れることをおすすめします。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">hoge = <span class="hljs-string">'ゆぴ'</span><br>piyo = <span class="hljs-string">'あき'</span><br><br><span class="hljs-comment"># 数字を{}に入れない場合</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">'こんにちは{}と{}さん'</span>.<span class="hljs-built_in">format</span>(hoge, piyo))<br><br><span class="hljs-comment"># 出力結果: こんにちはゆぴとあきさん</span><br><br><br><br><span class="hljs-comment"># {}に数字を入れてformatの順番にそって使う方法</span><br><span class="hljs-built_in">print</span>(<span class="hljs-string">'こんにちは{0}と{1}さん'</span>.<span class="hljs-built_in">format</span>(hoge, piyo))<br><br><span class="hljs-comment"># 出力結果: こんにちはゆぴとあきさん</span><br></code></pre></td></tr></tbody></table></figure>
+<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<p>最後まで読んでくださりありがとうございました。一応動作テストはしていますが、私の知識に誤りがあった際は教えていただけると幸いです。<br>
+次回は文字列の置き換えなどを紹介します。</p>
+
+    </div>
+    <div id="gitalk-container"></div>
+  </div>
+  
+  <script>
+    
+  Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+    dragToClose: true,
+    Toolbar: true,
+    closeButton: "top",
+    Image: {
+      zoom: true,
+    },
+    on: {
+      initCarousel: (fancybox) => {
+        const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+      "Carousel.change": (fancybox, carousel, to, from) => {
+        const slide = carousel.slides[to];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+    },
+  });
+  </script>
+  
+  <style>
+      #noneimg img {
+          display: none;
+          z-index: 9999;
+          /* width: 600px !important; */
+          min-width: 0%;
+          max-width: 90%;
+          max-height: 80%;
+          border-radius: 0px;
+          position: fixed;
+          box-shadow: 0 0 0px #c3c3c300 !important;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto !important;
+      }
+  
+      @media screen and (max-width:600px) {
+          #noneimg img {
+              max-width: 88%
+          }
+      }
+  </style>
+  
+    <div class="Last-Next">
+    
+        <a href="/2020/10/07/2020-10-07-handling-strings-in-python_2/">
+            <div class="last">
+                <span>前の投稿</span>
+                <p>pythonでの文字列の扱い方2</p>
+            </div>
+        </a>
+    
+
+    
+        <a href="/2020/08/26/2020-08-26-update-fg/">
+            <div class="next">
+                <span>次の投稿</span>
+                <p>1.7.10のmodding環境構築方法</p>
+            </div>
+        </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"defaultGitalkClientID","clientSecret":"defaultGitalkClientSecret","repo":"ayuki_blog","owner":"TeamPimcServer","admin":"yupix,sousuke0422"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
+
+</body><script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.cookieconsent.initialise({"palette":{"popup":{"background":"#5E73B6","text":"#ffffff"},"button":{"background":"#f1f5fb","text":"#333333"}},"theme":"classic","position":"bottom","static":false,"content":{"message":"このウェブサイトでは、Cookieを使用して、ウェブサイトで最高のエクスペリエンスを得られるようにしています。","dismiss":"同意する","link":"詳しく見る","href":"/cookiepolicy/index"}})});</script></html>

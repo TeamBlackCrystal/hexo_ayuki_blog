@@ -1,0 +1,659 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="manifest" href="/manifest.json">
+		
+<title>标签 -あゆき's BLOG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+<meta name="keywords" content="hexo, あゆき's Blog, ayuki's blog">
+<meta name="description" content="あきとゆぴによる気ままな共同ブログ">
+
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
+
+	<body>
+		
+
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.webp" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+							<li class="select">
+								<a href="/tags">
+									TAGS
+								</a>
+								<span class="dot"></span>
+							</li>
+							
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z"></path>
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>TeamPimcServer</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class="shelter">
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+
+<div class="tags">
+    <div class="header-body-background">
+    <div class="header-body-background-content">
+        <span>
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imgtags.svg" alt="Quiet">
+        </span>
+
+        <h2>タグ一覧</h2>
+    </div>
+</div>
+    <div class="tags-content" id="content">
+        <div class="tags-content-data">
+            <h2>62 のタグがあります</h2>
+            
+                <a href="/tags/ja/" class="tag-ja" value="ja">
+                    <span># ja <i>23</i> </span>
+                </a>
+            
+                <a href="/tags/archlinux/" class="tag-archlinux" value="archlinux">
+                    <span># archlinux <i>6</i> </span>
+                </a>
+            
+                <a href="/tags/steam/" class="tag-steam" value="steam">
+                    <span># steam <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E8%A7%A3%E8%AA%AC/" class="tag-解説" value="解説">
+                    <span># 解説 <i>9</i> </span>
+                </a>
+            
+                <a href="/tags/%E8%87%AA%E5%B7%B1%E7%B4%B9%E4%BB%8B/" class="tag-自己紹介" value="自己紹介">
+                    <span># 自己紹介 <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%82%86%E3%81%B4/" class="tag-ゆぴ" value="ゆぴ">
+                    <span># ゆぴ <i>5</i> </span>
+                </a>
+            
+                <a href="/tags/windows/" class="tag-windows" value="windows">
+                    <span># windows <i>4</i> </span>
+                </a>
+            
+                <a href="/tags/scoop/" class="tag-scoop" value="scoop">
+                    <span># scoop <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/choco/" class="tag-choco" value="choco">
+                    <span># choco <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/sudo/" class="tag-sudo" value="sudo">
+                    <span># sudo <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/shellscript/" class="tag-shellscript" value="shellscript">
+                    <span># shellscript <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/qt5/" class="tag-qt5" value="qt5">
+                    <span># qt5 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/minecraft/" class="tag-minecraft" value="minecraft">
+                    <span># minecraft <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/modding/" class="tag-modding" value="modding">
+                    <span># modding <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/forge/" class="tag-forge" value="forge">
+                    <span># forge <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/gradle/" class="tag-gradle" value="gradle">
+                    <span># gradle <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/python/" class="tag-python" value="python">
+                    <span># python <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/%E5%A4%89%E6%95%B0/" class="tag-変数" value="変数">
+                    <span># 変数 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" class="tag-お知らせ" value="お知らせ">
+                    <span># お知らせ <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%81%82%E3%82%86%E3%81%8D-s-blog/" class="tag-あゆき's blog" value="あゆき's blog">
+                    <span># あゆき's blog <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%83%AA%E3%83%8B%E3%83%A5%E3%83%BC%E3%82%A2%E3%83%AB/" class="tag-リニューアル" value="リニューアル">
+                    <span># リニューアル <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Advent-Calendar/" class="tag-Advent Calendar" value="Advent Calendar">
+                    <span># Advent Calendar <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Advent-Calendar-2020/" class="tag-Advent Calendar 2020" value="Advent Calendar 2020">
+                    <span># Advent Calendar 2020 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Misskey/" class="tag-Misskey" value="Misskey">
+                    <span># Misskey <i>3</i> </span>
+                </a>
+            
+                <a href="/tags/Python/" class="tag-Python" value="Python">
+                    <span># Python <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86%E3%83%84%E3%83%BC%E3%83%AB/" class="tag-タスク管理ツール" value="タスク管理ツール">
+                    <span># タスク管理ツール <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%83%84%E3%83%BC%E3%83%AB/" class="tag-ツール" value="ツール">
+                    <span># ツール <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E6%AF%94%E8%BC%83/" class="tag-比較" value="比較">
+                    <span># 比較 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E9%9A%8F%E6%99%82%E6%9B%B4%E6%96%B0/" class="tag-随時更新" value="随時更新">
+                    <span># 随時更新 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/hexo/" class="tag-hexo" value="hexo">
+                    <span># hexo <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E4%B8%8D%E5%85%B7%E5%90%88/" class="tag-不具合" value="不具合">
+                    <span># 不具合 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/gpg/" class="tag-gpg" value="gpg">
+                    <span># gpg <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%83%A1%E3%83%A2/" class="tag-メモ" value="メモ">
+                    <span># メモ <i>3</i> </span>
+                </a>
+            
+                <a href="/tags/Windows10/" class="tag-Windows10" value="Windows10">
+                    <span># Windows10 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Windows11/" class="tag-Windows11" value="Windows11">
+                    <span># Windows11 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/BlueStacks/" class="tag-BlueStacks" value="BlueStacks">
+                    <span># BlueStacks <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Hyper-V/" class="tag-Hyper-V" value="Hyper-V">
+                    <span># Hyper-V <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Ayuskey/" class="tag-Ayuskey" value="Ayuskey">
+                    <span># Ayuskey <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/BotFrameWork/" class="tag-BotFrameWork" value="BotFrameWork">
+                    <span># BotFrameWork <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Mi-py/" class="tag-Mi.py" value="Mi.py">
+                    <span># Mi.py <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/%E9%85%8D%E5%B8%83%E7%89%A9/" class="tag-配布物" value="配布物">
+                    <span># 配布物 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E3%82%A2%E3%83%83%E3%83%97%E3%83%87%E3%83%BC%E3%83%88/" class="tag-アップデート" value="アップデート">
+                    <span># アップデート <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/ubuntu/" class="tag-ubuntu" value="ubuntu">
+                    <span># ubuntu <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/PostgreSQL/" class="tag-PostgreSQL" value="PostgreSQL">
+                    <span># PostgreSQL <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/pgpool/" class="tag-pgpool" value="pgpool">
+                    <span># pgpool <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/misskey/" class="tag-misskey" value="misskey">
+                    <span># misskey <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Misskey%E3%82%A2%E3%83%89%E3%83%99%E3%83%B3%E3%83%88%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC2021/" class="tag-Misskeyアドベントカレンダー2021" value="Misskeyアドベントカレンダー2021">
+                    <span># Misskeyアドベントカレンダー2021 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Dev/" class="tag-Dev" value="Dev">
+                    <span># Dev <i>2</i> </span>
+                </a>
+            
+                <a href="/tags/Minecraft/" class="tag-Minecraft" value="Minecraft">
+                    <span># Minecraft <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Modding/" class="tag-Modding" value="Modding">
+                    <span># Modding <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Forge/" class="tag-Forge" value="Forge">
+                    <span># Forge <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Zorin-OS-16-Core/" class="tag-Zorin OS 16 Core" value="Zorin OS 16 Core">
+                    <span># Zorin OS 16 Core <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Python3/" class="tag-Python3" value="Python3">
+                    <span># Python3 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/%E7%8B%AC%E5%AD%A6/" class="tag-独学" value="独学">
+                    <span># 独学 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Remix/" class="tag-Remix" value="Remix">
+                    <span># Remix <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/React/" class="tag-React" value="React">
+                    <span># React <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/React18/" class="tag-React18" value="React18">
+                    <span># React18 <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/remix-run/" class="tag-remix-run" value="remix-run">
+                    <span># remix-run <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/SSR/" class="tag-SSR" value="SSR">
+                    <span># SSR <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/Server-side-render/" class="tag-Server-side render" value="Server-side render">
+                    <span># Server-side render <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/TypeScript/" class="tag-TypeScript" value="TypeScript">
+                    <span># TypeScript <i>1</i> </span>
+                </a>
+            
+                <a href="/tags/vnc/" class="tag-vnc" value="vnc">
+                    <span># vnc <i>1</i> </span>
+                </a>
+            
+        </div>
+    </div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"defaultGitalkClientID","clientSecret":"defaultGitalkClientSecret","repo":"ayuki_blog","owner":"TeamPimcServer","admin":"yupix,sousuke0422"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
+
+</body><script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.cookieconsent.initialise({"palette":{"popup":{"background":"#5E73B6","text":"#ffffff"},"button":{"background":"#f1f5fb","text":"#333333"}},"theme":"classic","position":"bottom","static":false,"content":{"message":"このウェブサイトでは、Cookieを使用して、ウェブサイトで最高のエクスペリエンスを得られるようにしています。","dismiss":"同意する","link":"詳しく見る","href":"/cookiepolicy/index"}})});</script></html>

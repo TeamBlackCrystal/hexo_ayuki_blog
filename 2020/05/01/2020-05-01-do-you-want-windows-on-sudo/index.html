@@ -1,0 +1,590 @@
+<!DOCTYPE html><html lang="ja"><head><link rel="manifest" href="/manifest.json">
+		
+<title>Windowsにsudoが欲しいかい？ -あゆき's BLOG</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/image/favicon.ico">
+
+<link rel="stylesheet" href="/css/index.css">
+
+
+
+<meta name="keywords" content="ja,解説,windows,scoop,choco,sudo,">
+<meta name="description" content="Windowsにsudoを追加する方法">
+
+
+<script src="/js/jquery.min.js"></script>
+
+
+<script src="/js/index.js"></script>
+
+
+<script src="/js/fancybox.umd.js"></script>
+
+
+<script src="/js/fancybox-images.js"></script>
+
+
+<script src="/js/gitalk.min.js"></script>
+
+
+<script src="/js/hljs.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
+
+	<body>
+		
+	<div class="header">
+		<div class="header-top" id="header-top">
+			<div class="h-left">
+				<a href="/">
+					<img src="/image/logo.webp" alt="Quiet">
+				</a>
+			</div>
+			<div class="h-right">
+				<ul>
+					
+						
+								<li>
+									<a href="/">
+										HOME
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/archives">
+										ARCHIVE
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/categories">
+										CATEGORIES
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/tags">
+										TAGS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/links">
+										LINKS
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+						
+								<li>
+									<a href="/about">
+										ABOUT
+									</a>
+									<span class="dot"></span>
+								</li>
+								
+									
+				</ul>
+			</div>
+			<div class="h-right-close">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+					<path fill="none" d="M0 0h24v24H0z"></path>
+					<path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z" fill="rgba(68,68,68,1)"></path>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<div class="sidebar">
+    <div class="topo">
+        <h2>TeamPimcServer</h2>
+    </div>
+    <ul>
+        
+        <li>
+            <a href="/">HOME</a>
+        </li>
+        
+        <li>
+            <a href="/archives">ARCHIVE</a>
+        </li>
+        
+        <li>
+            <a href="/categories">CATEGORIES</a>
+        </li>
+        
+        <li>
+            <a href="/tags">TAGS</a>
+        </li>
+        
+        <li>
+            <a href="/links">LINKS</a>
+        </li>
+        
+        <li>
+            <a href="/about">ABOUT</a>
+        </li>
+        
+    </ul>
+    <div class="my_foot">
+        
+        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+            <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+        </a>
+        
+    </div>
+</div>
+<div class="shelter">
+</div>
+<style>
+    .shelter{
+        background-color: #333;
+        opacity:0.5;
+        cursor: pointer;
+        display: none; 
+        position: fixed;
+        left: 0;
+        top: 0; 
+        right: 0;
+        bottom: 0;
+        z-index: 1998;
+    }
+    .sidebar {
+        width: 66%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        bottom: 0;
+        background: #fff;
+        z-index: 1999;
+        text-align: center;
+        box-shadow: -6px 0 20px rgba(98, 94, 94, .815);
+    }
+
+    .topo {
+        width: 100%;
+        height: 200px;
+        background: url(https://api.ixiaowai.cn/gqapi/gqapi.php) no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end
+    }
+
+    .topo h2 {
+        color: #fff;
+        z-index: 1;
+        position: relative;
+        margin: 0 0 10px 10px;
+        font-size: 1.2em;
+        box-sizing: border-box
+    }
+
+    .topo:before {
+        content: '';
+        background-image: url(/image/pattern.png);
+        background-repeat: repeat;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1
+    }
+
+    .sidebar ul {
+        width: 100%;
+        margin-top: 50px
+    }
+
+    .sidebar ul li {
+        height: 50px;
+        list-style: none;
+        font-size: 1.2em;
+        text-align: right;
+        margin-right: 10px
+    }
+
+    .sidebar ul li a {
+        display: grid;
+        color: #5d606a;
+        text-overflow: ellipsis;
+        width: 100%;
+        text-decoration: none
+    }
+
+    .my_foot {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0
+    }
+
+    .my_foot a {
+        text-decoration: none;
+        margin-right: 10px;
+        display: inline-block
+    }
+
+    .my_foot a img {
+        width: 30px;
+        height: 30px
+    }
+</style>
+
+<script>
+    $( function () {
+	$( '.h-right-close>svg' )
+		.click( function () {
+			$( '.sidebar' )
+				.animate( {
+					right: "0"
+				}, 500 );
+			$( '.shelter' )
+				.fadeIn( "slow" )
+		} );
+	$( '.shelter' )
+		.click( function ( e ) {
+			$( '.sidebar' )
+				.animate( {
+					right: "-100%"
+				}, 500 );
+			$( '.shelter' )
+				.fadeOut( "slow" )
+		} )
+} )
+
+</script>
+
+<div class="post">
+    <div class="post-header-background post-header-img" style="background: url('/image/imagenotfound.svg')">
+    <div class="post-header-background-content">
+        <ul class="post-header-tag">
+            
+                
+                    <li><a href="/tags/ja">ja</a></li>
+                
+                    <li><a href="/tags/解説">解説</a></li>
+                
+                    <li><a href="/tags/windows">windows</a></li>
+                
+                    <li><a href="/tags/scoop">scoop</a></li>
+                
+                    <li><a href="/tags/choco">choco</a></li>
+                
+                    <li><a href="/tags/sudo">sudo</a></li>
+                
+            
+        </ul>
+
+        <h1>Windowsにsudoが欲しいかい？</h1>
+        <div class="post-header-info">
+            <div class="post-header-info-author">
+                
+                    
+                        <img src="/image/icon/aki.webp" style="height: 40px; width: 40px; border-radius: 15%;">
+                    
+                
+                <span class="post-header-info-author-text"> <a href="/about">あき</a></span>
+                <div class="post-header-info-author-categories">
+
+                </div>
+                <p>2020-05-01 00:00:00</p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="post-content" id="content">
+  
+    <div id="article" class="post-content-info">
+      
+  
+      <!-- more -->
+<div class="admonition info"><p class="admonition-title">tip
+</p><p>欲しいときあるよね？</p>
+</div>
+<!-- toc -->
+<ul>
+<li><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">はじめに</a></li>
+<li><a href="#q%E4%BD%BF%E3%81%88%E3%82%8B%E3%82%82%E3%81%AE%E3%81%AF%E3%81%82%E3%82%8B%E3%81%AE">Q. 使えるものはあるの？</a>
+<ul>
+<li><a href="#%E4%BD%BF%E3%81%88%E3%82%8B%E3%82%82%E3%81%AE">使えるもの</a></li>
+</ul>
+</li>
+<li><a href="#%E3%81%A9%E3%81%86%E3%82%84%E3%81%A3%E3%81%A6%E5%85%A5%E3%82%8C%E3%82%8B%E3%81%AE">どうやって入れるの？</a>
+<ul>
+<li><a href="#%E4%BD%BF%E3%81%88%E3%82%8B%E3%82%84%E3%81%A4">使えるやつ</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">インストール</a>
+<ul>
+<li><a href="#gerardoggsudo%E3%81%AE%E5%A0%B4%E5%90%88%E5%80%8B%E4%BA%BA%E7%9A%84%E3%81%AA%E3%82%AA%E3%82%B9%E3%82%B9%E3%83%A1">gerardog/gsudo の場合（個人的なオススメ）</a></li>
+<li><a href="#lukesampsonpsutilssudops1%E3%81%AE%E5%A0%B4%E5%90%88">lukesampson/psutils (sudo.ps1) の場合</a></li>
+</ul>
+</li>
+<li><a href="#how-to">How to</a></li>
+<li><a href="#%E6%9C%80%E5%BE%8C%E3%81%AB">最後に</a></li>
+</ul>
+<!-- tocstop -->
+<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<p>Windows に sudo<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> ほしいけどわからない！！とか、調べても本物に程遠い<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>のしか見つからない！！という人に向けて書いています。</p>
+<h2 id="q-使えるものはあるの"><a class="anchor" href="#q使えるものはあるの">#</a> Q. 使えるものはあるの？</h2>
+<p>A. あります</p>
+<h3 id="使えるもの"><a class="anchor" href="#使えるもの">#</a> 使えるもの</h3>
+<ul>
+<li><a href="https://github.com/gerardog/gsudo">gerardog/gsudo</a></li>
+<li><a href="https://github.com/lukesampson/psutils">lukesampson/psutils(sudo.ps1)</a></li>
+</ul>
+<h2 id="どうやって入れるの"><a class="anchor" href="#どうやって入れるの">#</a> どうやって入れるの？</h2>
+<p>めんどくさいのでパッケージマネージャーを使いましょう。</p>
+<h3 id="使えるやつ"><a class="anchor" href="#使えるやつ">#</a> 使えるやつ</h3>
+<div class="admonition info"><p class="admonition-title">tip
+</p><p>chocoのインストール手順は準備中です。
+scoopのインストール方法は <a href="/2020/05/01/2020-05-01-install-scoop/" title="scoopを入れよう！！">こちら</a></p>
+</div>
+<ul>
+<li><abbr title="要administratorだが、少ない手間でたくさんのパッケージを入れられる。">choco</abbr></li>
+<li>scoop</li>
+</ul>
+<h2 id="インストール"><a class="anchor" href="#インストール">#</a> インストール</h2>
+<p>実際に入れてみましょう。</p>
+<h3 id="gerardoggsudo-の場合個人的なオススメ"><a class="anchor" href="#gerardoggsudoの場合個人的なオススメ">#</a> gerardog/gsudo の場合（個人的なオススメ）</h3>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><code class="hljs powershell{1-2}">#非administratorでできるのでオススメ<br>scoop install gsudo<br><br>#要administrator<br>choco install gsudo<br></code></pre></td></tr></tbody></table></figure>
+<h3 id="lukesampsonpsutils-sudops1-の場合"><a class="anchor" href="#lukesampsonpsutilssudops1の場合">#</a> lukesampson/psutils (sudo.ps1) の場合</h3>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell">scoop install sudo<br></code></pre></td></tr></tbody></table></figure>
+<p>choco にも同名の物があるがこれは完成度低い<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
+<h2 id="how-to"><a class="anchor" href="#how-to">#</a> How to</h2>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell">sudo choco install windows<span class="hljs-literal">-terminal</span><br></code></pre></td></tr></tbody></table></figure>
+<figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment">#hostsファイルが楽に編集できるよ！やったね！！</span><br>sudo notepad C:\Windows\System32\drivers\etc\hosts<br></code></pre></td></tr></tbody></table></figure>
+<div class="admonition warning"><p class="admonition-title">warning</p><p>何も気にせず乱用してはいけません。
+ウイルス等の感染の原因になります。</p>
+</div>
+<div class="admonition error"><p class="admonition-title">danger
+</p><p><code>rm</code>や<code>rd</code>(及び<code>rmdir</code>)などのファイルを削除するコマンドに対して<code>C:\</code>や<code>/</code>を指定してはいけません。(OSや個人データをを破壊する可能性があります。)</p>
+</div>
+<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<p>管理者権限なので扱いには気をつけましょう。</p>
+<p>Linux や mac を使っているあなたもですよ？root の扱いには気をつけましょう。</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>Linux や mac に存在する root に昇格するコマンド。今回は、知っていることを前提としている。 <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>日本語で検索するとよく出てくるやつは、別窓だったり、色が出なかったりと色々と問題がある。 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p>別窓タイプ <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+    <div id="gitalk-container"></div>
+  </div>
+  
+  <script>
+    
+  Fancybox.bind('[data-fancybox="fancybox-gallery-img"]', {
+    dragToClose: true,
+    Toolbar: true,
+    closeButton: "top",
+    Image: {
+      zoom: true,
+    },
+    on: {
+      initCarousel: (fancybox) => {
+        const slide = fancybox.Carousel.slides[fancybox.Carousel.page];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+      "Carousel.change": (fancybox, carousel, to, from) => {
+        const slide = carousel.slides[to];
+        fancybox.$container.style.setProperty(
+          "--bg-image",
+          `url("${slide.$thumb.src}")`
+        );
+      },
+    },
+  });
+  </script>
+  
+  <style>
+      #noneimg img {
+          display: none;
+          z-index: 9999;
+          /* width: 600px !important; */
+          min-width: 0%;
+          max-width: 90%;
+          max-height: 80%;
+          border-radius: 0px;
+          position: fixed;
+          box-shadow: 0 0 0px #c3c3c300 !important;
+          left: 0;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto !important;
+      }
+  
+      @media screen and (max-width:600px) {
+          #noneimg img {
+              max-width: 88%
+          }
+      }
+  </style>
+  
+    <div class="Last-Next">
+    
+        <a href="/2020/06/06/2020-06-14-sub-display-using-vnc/">
+            <div class="last">
+                <span>前の投稿</span>
+                <p>ArchLinuxにVNCを使ってサブディスプレイを作る</p>
+            </div>
+        </a>
+    
+
+    
+        <a href="/2020/05/01/2020-05-01-how-to-loop-with-shell/">
+            <div class="next">
+                <span>次の投稿</span>
+                <p>ShellScriptで処理をループさせる方法</p>
+            </div>
+        </a>
+    
+</div>
+</div>
+		
+<div class="footer">
+	<div class="Copyright">
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+	</div>
+	<div class="contact">
+		
+		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
+		</a>
+		
+	</div>
+</div>
+
+<script src="/js/gotop.js"></script>
+
+
+<style type="text/css">
+    @media screen and (min-width: 600px) {
+        .goTop>span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            opacity: 0.8;
+            background: rgba(18, 24, 58, 0.06);
+            text-align: center;
+            transition: border .5s;
+            border: 1px solid rgba(18, 24, 58, 0.06);
+
+            -moz-transition: border .5s;
+            /* Firefox 4 */
+            -webkit-transition: border .5s;
+            /* Safari 和 Chrome */
+            -o-transition: border .5s;
+            /* Opera */
+        }
+
+        .goTop>span:hover {
+            border: 1px solid #6680B3;
+        }
+
+
+        .goTop {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+        }
+
+        .goTop>span>svg {
+            width: 20px;
+            height: 20px;
+            opacity: 0.7;
+        }
+
+    }
+
+    @media screen and (max-width: 600px) {
+        .goTop {
+            display: none;
+        }
+    }
+</style>
+<div class="goTop" id="js-go_top">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g>
+                <path d="M13 12v8h-2v-8H4l8-8 8 8z"></path>
+            </g>
+        </svg>
+    </span>
+</div>
+<script>
+    $( '#js-go_top' )
+	.gotoTop( {
+		offset: 500,
+		speed: 300,
+		animationShow: {
+			'transform': 'translate(0,0)',
+			'transition': 'transform .5s ease-in-out'
+		},
+		animationHide: {
+			'transform': 'translate(100px,0)',
+			'transition': 'transform .5s ease-in-out'
+		}
+	} );
+</script>
+
+    <!-- Gitalk -->
+    <script>
+        const data = '{"clientID":"defaultGitalkClientID","clientSecret":"defaultGitalkClientSecret","repo":"ayuki_blog","owner":"TeamPimcServer","admin":"yupix,sousuke0422"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
+        if(Boolean('true')){
+            gitalk.render('gitalk-container')
+        }
+    </script>
+
+<script>
+	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
+</script>
+	<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script>
+
+</body><script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script><script>window.addEventListener("load", function(){window.cookieconsent.initialise({"palette":{"popup":{"background":"#5E73B6","text":"#ffffff"},"button":{"background":"#f1f5fb","text":"#333333"}},"theme":"classic","position":"bottom","static":false,"content":{"message":"このウェブサイトでは、Cookieを使用して、ウェブサイトで最高のエクスペリエンスを得られるようにしています。","dismiss":"同意する","link":"詳しく見る","href":"/cookiepolicy/index"}})});</script></html>
