@@ -11,6 +11,9 @@ keyword: hexo, あゆき's Blog, ayuki's blog
 is_article_img: true  #false是否开启文章背景图显示(随机图片)
 # ogp
 web_description: あきとゆぴによる気ままな共同ブログ
+
+home_layout: card # card / block-card
+
 # メニューの名前
 menus_title:
   home: HOME
