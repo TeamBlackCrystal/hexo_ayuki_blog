@@ -109,6 +109,12 @@ linksList:
     link: 'https://discord.gg/CcT997U',
     image: '/image/icon/pimc-logo.svg'
   }
+
+linkIcons:
+  'ゆぴ': '/image/icon/yupix.webp'
+  'あき': '/image/icon/aki.webp'
+  'TeamPimcServer': '/image/icon/pimc-logo.svg'
+
 # 文字内点击图片放大相关配置
 picture:
   # 蒙版的颜色也就是 打开图片背景 显示的颜色
