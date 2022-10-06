@@ -95,9 +95,6 @@ include:
 exclude:
 ignore:
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
 theme: hexo-theme-quiet-master
 
 # Deployment
@@ -183,7 +180,6 @@ markdown:
         enable: true
         options:
           tocClassName: 'toc'
-          anchorClassName: 'anchor'
     - plugin:
         name: markdown-it-multimd-table
         enable: true
