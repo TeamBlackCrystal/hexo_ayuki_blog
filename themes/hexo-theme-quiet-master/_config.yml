@@ -60,20 +60,20 @@ headers:
       icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imgtags.svg"
     }
     links: {
-      message: "我和我的小伙伴们",
+      message: "本ブログの著者たち",
       icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imga20r7-cftji.svg"
     }
     categories: {
-      message: "文章分类",
+      message: "カテゴリ一覧",
       icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imgblogmyCategory.svg"
     }
 
 gitalk:
-  clientID: 02b3c # （需要替换）GitHub Application Client ID.
-  clientSecret: adfc7b4 #（需要替换）GitHub Application Client Secret.
-  repo: gimment #（需要替换）GitHub repository.
-  owner: duneng #（需要替换）GitHub repository 所有者，可以是个人或者组织。
-  admin: ['duneng'] #（需要替换）GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
+  clientID: defaultGitalkClientID # どうするか検討
+  clientSecret: defaultGitalkClientSecret
+  repo: ayuki_blog
+  owner: TeamPimcServer
+  admin: ['yupix', 'sousuke0422']
 
 
 bottomIcon: 
