@@ -1,16 +1,19 @@
 # ウェブサイト名
 title: あゆき's BLOG
 # ウェブサイトのタイトルの接尾辞
-suffix: Next
+suffix: あゆき's BLOG
 # 作者名(CopyRightなどに使用)
 author: TeamPimcServer
 # サイト説明
 home_describe: A STUDENT WITH IDEALS AND BELIEFS.
 # サイトのキーワード
 keyword: hexo, あゆき's Blog, ayuki's blog
-is_article_img: false  #false是否开启文章背景图显示(随机图片)
+is_article_img: true  #false是否开启文章背景图显示(随机图片)
 # ogp
 web_description: あきとゆぴによる気ままな共同ブログ
+
+home_layout: card # card / block-card
+
 # メニューの名前
 menus_title:
   home: HOME
@@ -43,10 +46,39 @@ topIcon:
 # 标签页显示多少个标签
 tagsNum: 1000
 # 网页访问统计
-web_analytics:  
-  enable: false #需要改为true
-  baidu: 4b5fe1472f22fa  # （替换）百度统计的 Key，参见 https://tongji.baidu.com/sc-web/10000033910/home/site/getjs?siteId=13751376 代码获取中 hm.js? 后边的字符串
-# 底部显示的图标（github 或者其他）
+
+
+headers:
+    home: {
+      message: "A STUDENT WITH IDEALS AND BELIEFS.",
+      icon: "/image/logo.webp"
+    }
+    archives: {
+      # 这里会替换掉两个变量{ year 年，number 总数 } 当然也可以不写这两个变量
+      message: "year 年で number 個の記事を作成しました",
+      icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imgicon-remixicon.svg"
+    }
+    tags: {
+      message: "タグ一覧",
+      icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imgtags.svg"
+    }
+    links: {
+      message: "本ブログの著者たち",
+      icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imga20r7-cftji.svg"
+    }
+    categories: {
+      message: "カテゴリ一覧",
+      icon: "https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imgblogmyCategory.svg"
+    }
+
+gitalk:
+  clientID: defaultGitalkClientID # どうするか検討
+  clientSecret: defaultGitalkClientSecret
+  repo: ayuki_blog
+  owner: TeamPimcServer
+  admin: ['yupix', 'sousuke0422']
+
+
 bottomIcon: 
   #可以多个
   - {
@@ -77,6 +109,12 @@ linksList:
     link: 'https://discord.gg/CcT997U',
     image: '/image/icon/pimc-logo.svg'
   }
+
+linkIcons:
+  'ゆぴ': '/image/icon/yupix.webp'
+  'あき': '/image/icon/aki.webp'
+  'TeamPimcServer': '/image/icon/pimc-logo.svg'
+
 # 文字内点击图片放大相关配置
 picture:
   # 蒙版的颜色也就是 打开图片背景 显示的颜色

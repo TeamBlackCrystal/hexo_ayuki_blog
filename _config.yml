@@ -95,9 +95,6 @@ include:
 exclude:
 ignore:
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
 theme: hexo-theme-quiet-master
 
 # Deployment
@@ -106,6 +103,11 @@ deploy:
   type: git
   repo: https://github.com/TeamPimcServer/ayuki_blog.git
   branch: gh-pages
+
+# サイトマップに関する設定
+sitemap:
+  path: sitemap.xml
+
 
 pwa:
   manifest:
@@ -164,13 +166,6 @@ cookieconsent:
     }
   }
 
-toc:
-  maxdepth: 3
-  class: toc
-  slugify: transliteration
-  decodeEntities: false
-  anchor: false
-
 markdown:
   render:
     html: true
@@ -185,7 +180,6 @@ markdown:
         enable: true
         options:
           tocClassName: 'toc'
-          anchorClassName: 'anchor'
     - plugin:
         name: markdown-it-multimd-table
         enable: true
@@ -213,29 +207,10 @@ markdown:
         name: markdown-it-footnote
         enable: true
 
-# options for minify
-minify:
-  html:
-    enable: true
-    exclude:
-      - '**/json.ejs'
-      - '**/atom.ejs'
-      - '**/rss.ejs'
-  css:
-    enable: false
-    exclude:
-      - '**/*.min.css'
-  js:
-    enable: true
-    mangle:
-      toplevel: true
-    output:
-    compress:
-    exclude:
-      - '**/*.min.js'
+
 
 lazyload:
-  enable: true
+  enable: false
   onlypost: false # optional
   loadingImg: # optional eg ./images/loading.gif
   isSPA: false # optional
@@ -260,7 +235,7 @@ filter_optimize:
     # minify all js files
     minify: true
     # bundle loaded js files into one
-    bundle: true
+    bundle: false
     excludes:
   # set the priority of this plugin,
   # lower means it will be executed first, default of Hexo is 10
