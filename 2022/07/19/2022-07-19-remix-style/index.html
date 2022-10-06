@@ -29,10 +29,6 @@
 <script src="/js/gitalk.min.js"></script>
 
 
-<script src="/js/hljs.min.js"></script>
-
-<script>hljs.highlightAll();</script>
-
 	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
 
 	<body>
@@ -144,7 +140,7 @@
     </ul>
     <div class="my_foot">
         
-        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+        <a target="_blank" rel="noopener" href="https://github.com/TeamPimcServer/ayuki_blog">
             <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
         </a>
         
@@ -361,7 +357,7 @@ SSR なので OGP などが容易に設定できます。これに関しては�
 <figure class="highlight tsx"><table><tbody><tr><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">type</span> <span class="hljs-title class_">LoaderData</span> = <span class="hljs-title class_">Awaited</span>&lt;<span class="hljs-title class_">ReturnType</span>&lt;<span class="hljs-keyword">typeof</span> getLoaderData&gt;&gt;;<br><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">meta</span>: <span class="hljs-title class_">MetaFunction</span> = <span class="hljs-function">(<span class="hljs-params">{ data }</span>) =&gt;</span> {<br>    <span class="hljs-keyword">let</span> <span class="hljs-attr">_data</span>: <span class="hljs-title class_">LoaderData</span> = data<br>    <span class="hljs-keyword">return</span> {<br>        <span class="hljs-attr">charset</span>: <span class="hljs-string">"utf-8"</span>,<br>        <span class="hljs-attr">title</span>: _data?.<span class="hljs-property">data</span>.<span class="hljs-property">name</span>,<br>        <span class="hljs-string">"og:title"</span>: _data?.<span class="hljs-property">data</span>.<span class="hljs-property">name</span>,<br>        <span class="hljs-string">"og:site_name"</span>: <span class="hljs-string">"テスト"</span>,<br>        <span class="hljs-string">"og:image"</span>: _data?.<span class="hljs-property">data</span>.<span class="hljs-property">icon_url</span>,<br>    };<br>};<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getLoaderData</span>(<span class="hljs-params"></span>) {<br>	<span class="hljs-keyword">return</span> {<span class="hljs-attr">name</span>: <span class="hljs-string">"ゆぴ"</span>, <span class="hljs-attr">image</span>: <span class="hljs-string">"リンク"</span>}<br>}<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-attr">loader</span>: <span class="hljs-title class_">LoaderFunction</span> = <span class="hljs-keyword">async</span> () =&gt; {<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">json</span>(<span class="hljs-keyword">await</span> <span class="hljs-title function_">getLoaderData</span>());<br>};<br></code></pre></td></tr></tbody></table></figure>
 <p>こんな感じに loader で取得したデータを meta で使用することができます。loader で params を取得してパラメータの ID を用いてデータベースからアイテム情報を取得、OGP に表示みたいなことが簡単にできます。</p>
 <h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
-<p>正直 fetcher に関しては 2 日ぐらい苦しんでいろいろと GitHub の数少ないリポジトリを探して、使い方が分かりました。fetcher.data が空にしかならなくて、割とマジで苦しんだ覚えがあります... 記事とかでも fetcher 使ってる人全くいなくて、大変でした。そういう方のお役に立てれば幸いです。最後にコードに関しては確認せず書いてるので少し間違ってたり、普通に動かないやつあるかもしれないので、見つけたら<a href="https://github.com/TeamPimcServer/ayuki_blog/issues">ここ</a>とかに連絡ください。</p>
+<p>正直 fetcher に関しては 2 日ぐらい苦しんでいろいろと GitHub の数少ないリポジトリを探して、使い方が分かりました。fetcher.data が空にしかならなくて、割とマジで苦しんだ覚えがあります... 記事とかでも fetcher 使ってる人全くいなくて、大変でした。そういう方のお役に立てれば幸いです。最後にコードに関しては確認せず書いてるので少し間違ってたり、普通に動かないやつあるかもしれないので、見つけたら<a target="_blank" rel="noopener" href="https://github.com/TeamPimcServer/ayuki_blog/issues">ここ</a>とかに連絡ください。</p>
 
     </div>
     <div id="gitalk-container"></div>
@@ -441,11 +437,11 @@ SSR なので OGP などが容易に設定できます。これに関しては�
 		
 <div class="footer">
 	<div class="Copyright">
-		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
 	</div>
 	<div class="contact">
 		
-		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+		<a target="_blank" rel="noopener" href="https://github.com/TeamPimcServer/ayuki_blog">
 			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
 		</a>
 		
@@ -547,7 +543,7 @@ SSR なので OGP などが容易に設定できます。これに関しては�
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+  navigator.serviceWorker.register('/sw.js?t=1665064824266')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

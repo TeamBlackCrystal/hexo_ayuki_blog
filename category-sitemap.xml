@@ -2,70 +2,70 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/</loc>
+        <loc>https://blog.akarinext.org/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/%25E9%2596%258B%25E7%2599%25BA/</loc>
+        <loc>https://blog.akarinext.org/categories/%25E9%2596%258B%25E7%2599%25BA/</loc>
         <lastmod>2022-10-06T13:02:23.391Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/dev/</loc>
+        <loc>https://blog.akarinext.org/categories/dev/</loc>
         <lastmod>2022-10-06T10:28:45.222Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/Misskey%25E3%2582%25A2%25E3%2583%2589%25E3%2583%2599%25E3%2583%25B3%25E3%2583%2588%25E3%2582%25AB%25E3%2583%25AC%25E3%2583%25B3%25E3%2583%2580%25E3%2583%25BC2021/</loc>
+        <loc>https://blog.akarinext.org/categories/Misskey%25E3%2582%25A2%25E3%2583%2589%25E3%2583%2599%25E3%2583%25B3%25E3%2583%2588%25E3%2582%25AB%25E3%2583%25AC%25E3%2583%25B3%25E3%2583%2580%25E3%2583%25BC2021/</loc>
         <lastmod>2022-10-04T17:05:09.148Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/%25E3%2583%25A1%25E3%2583%25A2/</loc>
+        <loc>https://blog.akarinext.org/categories/%25E3%2583%25A1%25E3%2583%25A2/</loc>
         <lastmod>2022-10-04T17:05:09.147Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/Ayuskey/</loc>
+        <loc>https://blog.akarinext.org/categories/Ayuskey/</loc>
         <lastmod>2022-10-04T17:05:09.146Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/%25E3%2581%258A%25E7%259F%25A5%25E3%2582%2589%25E3%2581%259B/</loc>
+        <loc>https://blog.akarinext.org/categories/%25E3%2581%258A%25E7%259F%25A5%25E3%2582%2589%25E3%2581%259B/</loc>
         <lastmod>2022-10-04T17:05:09.146Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/%25E8%25A7%25A3%25E8%25AA%25AC/</loc>
+        <loc>https://blog.akarinext.org/categories/%25E8%25A7%25A3%25E8%25AA%25AC/</loc>
         <lastmod>2022-10-04T17:05:09.145Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/%25E6%2597%25A5%25E8%25A8%2598/</loc>
+        <loc>https://blog.akarinext.org/categories/%25E6%2597%25A5%25E8%25A8%2598/</loc>
         <lastmod>2022-10-04T17:05:09.144Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/%25E4%25B8%2580%25E8%2588%25AC/</loc>
+        <loc>https://blog.akarinext.org/categories/%25E4%25B8%2580%25E8%2588%25AC/</loc>
         <lastmod>2022-10-04T17:05:09.144Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

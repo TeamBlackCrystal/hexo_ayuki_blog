@@ -29,10 +29,6 @@
 <script src="/js/gitalk.min.js"></script>
 
 
-<script src="/js/hljs.min.js"></script>
-
-<script>hljs.highlightAll();</script>
-
 	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
 
 	<body>
@@ -144,7 +140,7 @@
     </ul>
     <div class="my_foot">
         
-        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+        <a target="_blank" rel="noopener" href="https://github.com/TeamPimcServer/ayuki_blog">
             <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
         </a>
         
@@ -324,20 +320,20 @@
 </ul>
 <!-- tocstop -->
 <h1 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h1>
-<p>まず初めに、このサイトは hexo という project を用いて作成されているのですが、その hexo には<a href="https://github.com/lavas-project/hexo-pwa"> hexo-pwa</a><br>
+<p>まず初めに、このサイトは hexo という project を用いて作成されているのですが、その hexo には<a target="_blank" rel="noopener" href="https://github.com/lavas-project/hexo-pwa"> hexo-pwa</a><br>
  という物があり、これを使うことで簡単に pwa に対応することができます、ですが大本が既に更新されていない状態になっており 2020/12 月頃には既に動作しなかった覚えがありますが、<br>
-私はその fork である<a href="https://github.com/marcofranssen/hexo-pwa"> hexo-pwa</a> を使わせていただいていました。ですが少し前に<a href="https://github.com/hexojs/hexo/releases/tag/5.4.0"> hexo v5.4.0</a><br>
+私はその fork である<a target="_blank" rel="noopener" href="https://github.com/marcofranssen/hexo-pwa"> hexo-pwa</a> を使わせていただいていました。ですが少し前に<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/releases/tag/5.4.0"> hexo v5.4.0</a><br>
  がリリースされました。これには依存関係の更新として <code>js-yaml</code>  という物が含まれていました。そして js-yaml の更新で safeload がデフォルトで使用されるようになった<br>
 というのが今回の問題点です。そちらを理解しつつご覧ください。</p>
 <h2 id="直し方"><a class="anchor" href="#直し方">#</a> 直し方</h2>
 <p>はじめにでも言った通り、今回の不具合というかは <code>js-yaml</code>  には safeload という機能があり、hexo-pwa ではそれを使用していました。README の config の書き方を引用してみましょう。</p>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">routes:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">pattern:</span> <span class="hljs-type">!!js/regexp</span> <span class="hljs-string">/hm.baidu.com/</span><br>    <span class="hljs-attr">strategy:</span> <span class="hljs-string">networkOnly</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">pattern:</span> <span class="hljs-type">!!js/regexp</span> <span class="hljs-string">/.*\.(js|css|jpg|jpeg|png|gif)$/</span><br>    <span class="hljs-attr">strategy:</span> <span class="hljs-string">cacheFirst</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">pattern:</span> <span class="hljs-type">!!js/regexp</span> <span class="hljs-string">/\//</span><br>    <span class="hljs-attr">strategy:</span> <span class="hljs-string">networkFirst</span><br></code></pre></td></tr></tbody></table></figure>
-<p>引用元: <a href="https://github.com/lavas-project/hexo-pwa">https://github.com/lavas-project/hexo-pwa</a></p>
+<p>引用元: <a target="_blank" rel="noopener" href="https://github.com/lavas-project/hexo-pwa">https://github.com/lavas-project/hexo-pwa</a></p>
 <p>このように書かれているわけですが、引用した yml にもある <code>!!js/regexp</code>  という部分が safeload を使うという明言です、そして最初にも言った通り、safeload は js-yaml の更新で<br>
 <strong>デフォルトで使用するようになったわけです</strong>つまり、これは既に js-yaml では存在しない tag になったわけです、そしてエラーでは存在しない tag だという事を示唆しています。<br>
 なので <code>!!js/regexp</code>  を削除し、以下のようにすると正常に動作します。</p>
 <figure class="highlight yml"><table><tbody><tr><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">routes:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">pattern:</span> <span class="hljs-string">/hm.baidu.com/</span><br>    <span class="hljs-attr">strategy:</span> <span class="hljs-string">networkOnly</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">pattern:</span> <span class="hljs-string">/.*\.(js|css|jpg|jpeg|png|gif)$/</span><br>    <span class="hljs-attr">strategy:</span> <span class="hljs-string">cacheFirst</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-attr">pattern:</span> <span class="hljs-string">/\//</span><br>    <span class="hljs-attr">strategy:</span> <span class="hljs-string">networkFirst</span><br></code></pre></td></tr></tbody></table></figure>
-<p>これらの点を変更し、依存関係を更新した fork を作成したので是非使ってみてください。 <a href="https://github.com/yupix/hexo-pwa">hexo-pwa</a></p>
+<p>これらの点を変更し、依存関係を更新した fork を作成したので是非使ってみてください。 <a target="_blank" rel="noopener" href="https://github.com/yupix/hexo-pwa">hexo-pwa</a></p>
 <h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
 <p>hexo はとても軽量で、便利な物ですが、plugin 等の多くは更新されていない事が多いです。他にも wordpress の用に多機能な plugin は少なく、<br>
 自分で作成するなどしないと使えない機能等があります。なので好き嫌いが分かれそうですが、好きという方で助かったという方がいれば幸いです。</p>
@@ -422,11 +418,11 @@
 		
 <div class="footer">
 	<div class="Copyright">
-		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
 	</div>
 	<div class="contact">
 		
-		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+		<a target="_blank" rel="noopener" href="https://github.com/TeamPimcServer/ayuki_blog">
 			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
 		</a>
 		
@@ -528,7 +524,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+  navigator.serviceWorker.register('/sw.js?t=1665064824266')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

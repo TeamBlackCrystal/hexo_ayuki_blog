@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/</loc>
+        <loc>https://blog.akarinext.org/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
@@ -10,7 +10,7 @@
     
     
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/about/</loc>
+        <loc>https://blog.akarinext.org/about/</loc>
         <lastmod>2022-10-05T09:56:44.801Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +19,7 @@
     
     
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/tags/</loc>
+        <loc>https://blog.akarinext.org/tags/</loc>
         <lastmod>2022-10-04T17:05:09.151Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -28,7 +28,7 @@
     
     
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/links/</loc>
+        <loc>https://blog.akarinext.org/links/</loc>
         <lastmod>2022-10-04T17:05:09.150Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -37,7 +37,7 @@
     
     
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/cookiepolicy/</loc>
+        <loc>https://blog.akarinext.org/cookiepolicy/</loc>
         <lastmod>2022-10-04T17:05:09.150Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -46,7 +46,7 @@
     
     
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/categories/</loc>
+        <loc>https://blog.akarinext.org/categories/</loc>
         <lastmod>2022-10-04T17:05:09.149Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -55,7 +55,7 @@
     
     
     <url>
-        <loc>https://github.com/TeamPimcServer/ayuki_blog/404.html</loc>
+        <loc>https://blog.akarinext.org/404.html</loc>
         <lastmod>2022-10-04T17:05:09.133Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

@@ -29,10 +29,6 @@
 <script src="/js/gitalk.min.js"></script>
 
 
-<script src="/js/hljs.min.js"></script>
-
-<script>hljs.highlightAll();</script>
-
 	<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"></head>
 
 	<body>
@@ -144,7 +140,7 @@
     </ul>
     <div class="my_foot">
         
-        <a href="https://github.com/TeamPimcServer/ayuki_blog">
+        <a target="_blank" rel="noopener" href="https://github.com/TeamPimcServer/ayuki_blog">
             <img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
         </a>
         
@@ -315,9 +311,9 @@
   
       <p>これは <a target="_blank" rel="noopener" href="https://adventar.org/calendars/6273">Misskey Advent Calendar</a> 21 日目の記事です。</p>
 <h1 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h1>
-<p>Python で Misskey の Bot を作って見る際に第一に選択肢に出てくるのが、 YuzuRyo61 さんの<a href="https://github.com/YuzuRyo61/Misskey.py"> Misskey.py</a> です。ですが、私は WebSocket を受信してリアルタイムにタイムラインや通知の情報を取得したかったため、この BotFrameWork を作ってみました。</p>
+<p>Python で Misskey の Bot を作って見る際に第一に選択肢に出てくるのが、 YuzuRyo61 さんの<a target="_blank" rel="noopener" href="https://github.com/YuzuRyo61/Misskey.py"> Misskey.py</a> です。ですが、私は WebSocket を受信してリアルタイムにタイムラインや通知の情報を取得したかったため、この BotFrameWork を作ってみました。</p>
 <h2 id="使い方"><a class="anchor" href="#使い方">#</a> 使い方</h2>
-<p>まず、今回作成したライブラリ <a href="https://github.com/yupix/mi.py">Mi.py</a> をインストールします</p>
+<p>まず、今回作成したライブラリ <a target="_blank" rel="noopener" href="https://github.com/yupix/mi.py">Mi.py</a> をインストールします</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip install mi.py<br></code></pre></td></tr></tbody></table></figure>
 <p>次に実際に実行するためのコードを書きます。</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> asyncio<br><span class="hljs-keyword">from</span> mi <span class="hljs-keyword">import</span> Note<br><span class="hljs-keyword">from</span> mi.ext <span class="hljs-keyword">import</span> commands<br><span class="hljs-keyword">from</span> mi.router <span class="hljs-keyword">import</span> Router<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyBot</span>(commands.Bot):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, cmd_prefix: <span class="hljs-built_in">str</span></span>):<br>        <span class="hljs-built_in">super</span>().__init__(cmd_prefix)<br>    <br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_ready</span>(<span class="hljs-params">self, ws</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f'<span class="hljs-subst">{self.i.username}</span>'</span> に接続しました)<br>        <span class="hljs-keyword">await</span> Router(ws).connect_channel([<span class="hljs-string">'global'</span>, <span class="hljs-string">'main'</span>])<br>    <br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_message</span>(<span class="hljs-params">self, note: Note</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f'<span class="hljs-subst">{note.author.username}</span>: <span class="hljs-subst">{note.content}</span>'</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>    uri = <span class="hljs-string">"wss://example.com/streaming"</span><br>    token = <span class="hljs-string">"This is your token"</span><br><br>    bot = MyBot(<span class="hljs-string">'!'</span>)<br>    asyncio.run(bot.start(url, token))<br></code></pre></td></tr></tbody></table></figure>
@@ -334,7 +330,7 @@
 <p><a target="_blank" rel="noopener" href="https://yupix.github.io/Mi.py/mi.html">ここ</a> に commit したら自動で生成するようにしてあるドキュメントがあるので、何かわからないことがあれば参考にしてみてください。</p>
 <h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
 <p>このプロジェクトは一応頑張って作っているつもりなので、もしよければ、使った感想などを <a target="_blank" rel="noopener" href="https://rn.akarinext.org/@yupix">私の Misskey アカウント</a> に送ってくださるとモチベーションも上がってとても嬉しいです。<br>
-あと、MIT License で <a href="https://github.com/yupix/Mi.py">GitHub</a> にて公開しています。 pull request なども歓迎していますので、もしよければやってみてください。</p>
+あと、MIT License で <a target="_blank" rel="noopener" href="https://github.com/yupix/Mi.py">GitHub</a> にて公開しています。 pull request なども歓迎していますので、もしよければやってみてください。</p>
 <p>最後になりますが、Misskey は リアクションなどをインスタンスごとのカスタム絵文字で貰うことができ、自分のつぶやきに Twitter のようなハート以外のリアクションがほしいという方にも楽しめると思うので、Misskey にご興味がある場合は <a target="_blank" rel="noopener" href="https://join.misskey.page">joinmisskey</a> をぜひご覧ください。</p>
 <p>ここまでご覧頂きありがとうございました。</p>
 
@@ -418,11 +414,11 @@
 		
 <div class="footer">
 	<div class="Copyright">
-		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
+		©2022 By TeamPimcServer. テーマ：<a style="text-decoration: none;display: contents; color: #898F9F;" target="_blank" rel="noopener" href="https://github.com/79e/hexo-theme-quiet">Quiet</a>
 	</div>
 	<div class="contact">
 		
-		<a href="https://github.com/TeamPimcServer/ayuki_blog">
+		<a target="_blank" rel="noopener" href="https://github.com/TeamPimcServer/ayuki_blog">
 			<img src="https://cdn.jsdelivr.net/gh/duogongneng/MyBlogImg/imggithub.png" alt="Quiet主题">
 		</a>
 		
@@ -524,7 +520,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665061860704')
+  navigator.serviceWorker.register('/sw.js?t=1665064824266')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
