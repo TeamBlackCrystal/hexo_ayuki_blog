@@ -13,3 +13,5 @@ public/
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+.idea
