@@ -33,12 +33,12 @@
     "hexo-renderer-ejs": "2.0.0",
     "hexo-renderer-less": "4.0.0",
     "hexo-renderer-multi-markdown-it": "0.1.5",
+    "hexo-server": "3.0.0",
     "markdown-it-container": "3.0.0",
     "markdown-it-emoji": "2.0.2",
     "markdown-it-footnote": "3.0.3"
   },
   "devDependencies": {
-    "hexo-server": "3.0.0",
     "node-gyp": "9.2.0"
   }
 }
