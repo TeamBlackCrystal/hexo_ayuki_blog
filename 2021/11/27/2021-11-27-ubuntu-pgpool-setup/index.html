@@ -311,11 +311,11 @@
     <div id="article" class="post-content-info">
       
   
-      <h3 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h3>
+      <h3 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h3>
 <p>また、結構期間空いてしまいましたね・・・<br>
 3 ヶ月ぶりです。</p>
 <p>さて、今回は Misskey を Pgpool-II に載せたいと思います。レプリケーションは別の機会にやります。</p>
-<h3 id="前提"><a class="anchor" href="#前提">#</a> 前提</h3>
+<h3 id="前提"><a class="markdownIt-Anchor" href="#前提">#</a> 前提</h3>
 <ul>
 <li>Ubuntu 20.4</li>
 <li>PostgreSQL 13 (pgdg)</li>
@@ -323,9 +323,9 @@
 </ul>
 <div class="admonition info"><p class="admonition-title">info</p><p>pgdgのリポジトリを事前に追加していることを想定しています。</p>
 </div>
-<h3 id="インストール"><a class="anchor" href="#インストール">#</a> インストール</h3>
+<h3 id="インストール"><a class="markdownIt-Anchor" href="#インストール">#</a> インストール</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo apt install pgpool2<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="設定"><a class="anchor" href="#設定">#</a> 設定</h3>
+<h3 id="設定"><a class="markdownIt-Anchor" href="#設定">#</a> 設定</h3>
 <p>ここからが本番ですよ〜<s>めんどくさい</s></p>
 <p>事前に postgres 本体のポートを変えておきましょう。(今回は <code>60001</code>  にします。)</p>
 <figure class="highlight diff"><table><tbody><tr><td class="code"><pre><code class="hljs diff"># /etc/postgresql/13/main/postgresql.conf<br><span class="hljs-deletion">- port = 5432</span><br><span class="hljs-addition">+ port = 60001</span><br></code></pre></td></tr></tbody></table></figure>
@@ -334,7 +334,7 @@
 <div class="admonition error"><p class="admonition-title">error</p><p>misskey用に使う場合、TLが壊れるなどの不具合が出るため<strong>絶対に</strong><code>memory_cache_enabled</code>をonにしないこと</p>
 </div>
 <p>以上で設定はおしまい。</p>
-<h3 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h3>
+<h3 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h3>
 <p>あとは postgres と pgpool を再起動しておしまい</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 失敗する場合は再起動するといいらしい。</span><br>sudo systemctl restart postgresql<br>sudo systemctl restart pgpool2<br></code></pre></td></tr></tbody></table></figure>
     </div>
@@ -523,7 +523,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

@@ -309,33 +309,33 @@
     <div id="article" class="post-content-info">
       
   
-      <h2 id="まずはじめに"><a class="anchor" href="#まずはじめに">#</a> まずはじめに</h2>
+      <h2 id="まずはじめに"><a class="markdownIt-Anchor" href="#まずはじめに">#</a> まずはじめに</h2>
 <p>前回の<a href="2020-09-20-handling-strings-in-python.md"> python での文字列の扱い方</a>の続きとなります。前回同様、ネットの拾い知識で python を触り始めたので、その際によく使うようなことを書いていきます。<br>
 初歩的なことだと思いますが、温かい目で見ていただけると幸いです。※間違っていたらごめんなさい</p>
 <p>今回は主に文字列の置き換えに関することを紹介します。<br>
 正規表現に関してはまだ自信がないため、しばらくしたら追加します (´・ω・｀)</p>
-<h2 id="環境"><a class="anchor" href="#環境">#</a> 環境</h2>
+<h2 id="環境"><a class="markdownIt-Anchor" href="#環境">#</a> 環境</h2>
 <ul>
 <li>ArchLinux</li>
 <li>python 3.8.5</li>
 </ul>
-<h2 id="一般的な文字列の置き換え"><a class="anchor" href="#一般的な文字列の置き換え">#</a> 一般的な文字列の置き換え</h2>
-<h3 id="特定の文字列を全て置き換える"><a class="anchor" href="#特定の文字列を全て置き換える">#</a> 特定の文字列を全て置き換える</h3>
+<h2 id="一般的な文字列の置き換え"><a class="markdownIt-Anchor" href="#一般的な文字列の置き換え">#</a> 一般的な文字列の置き換え</h2>
+<h3 id="特定の文字列を全て置き換える"><a class="markdownIt-Anchor" href="#特定の文字列を全て置き換える">#</a> 特定の文字列を全て置き換える</h3>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">text = <span class="hljs-string">'ゆぴだよー!'</span><br><span class="hljs-built_in">print</span>(text.replace(<span class="hljs-string">'ゆぴ'</span>, <span class="hljs-string">'yupix'</span>))<br><br><span class="hljs-comment"># 出力結果:  yupixだよー!</span><br></code></pre></td></tr></tbody></table></figure>
 <p>しかし、このままでは「ゆぴ」という単語があるたびに「yupix」に置き換えられてしまいます。<br>
 そこで使用するのが第三引数の <code>count</code>  です</p>
-<h3 id="指定した数だけ特定の文字列を置き換える"><a class="anchor" href="#指定した数だけ特定の文字列を置き換える">#</a> 指定した数だけ特定の文字列を置き換える</h3>
+<h3 id="指定した数だけ特定の文字列を置き換える"><a class="markdownIt-Anchor" href="#指定した数だけ特定の文字列を置き換える">#</a> 指定した数だけ特定の文字列を置き換える</h3>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">text = <span class="hljs-string">'あるところにゆぴという青年がいました。ゆぴはパソコンゲームが大好きです！そんなところにあきがやってきて、ゆぴにこう言いました[一緒にゲームを作ってみないかい?]'</span><br><span class="hljs-built_in">print</span>(text.replace(<span class="hljs-string">'ゆぴ'</span>, <span class="hljs-string">'yupix'</span>, <span class="hljs-number">2</span>))<br><br><span class="hljs-comment"># 出力結果: あるところにyupixという青年がいました。yupixはパソコンゲームが大好きです！そんなところにあきがやってきて、ゆぴにこう言いました[一緒にゲームを作ってみないかい?]</span><br></code></pre></td></tr></tbody></table></figure>
 <p>今回は 2 回指定した為、最初の方に見つかった「ゆぴ」が 2 つ「yupix」に置き換えられました。</p>
-<h3 id="複数の文字列を置き換える"><a class="anchor" href="#複数の文字列を置き換える">#</a> 複数の文字列を置き換える</h3>
+<h3 id="複数の文字列を置き換える"><a class="markdownIt-Anchor" href="#複数の文字列を置き換える">#</a> 複数の文字列を置き換える</h3>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">text = <span class="hljs-string">'ゆぴ&amp;あきだよー!'</span><br><span class="hljs-built_in">print</span>(text.replace(<span class="hljs-string">'ゆぴ'</span>, <span class="hljs-string">'hoge'</span>).replace(<span class="hljs-string">'あき'</span>,  <span class="hljs-string">'age'</span>))<br><br><span class="hljs-comment"># 出力結果: hoge&amp;ageだよー!</span><br></code></pre></td></tr></tbody></table></figure>
 <p>このように「ゆぴ」と「あき」をそれぞれ指定した単語に置き換えることに成功しました。</p>
-<h2 id="応用"><a class="anchor" href="#応用">#</a> 応用</h2>
-<h3 id="指定した文字列を削除する"><a class="anchor" href="#指定した文字列を削除する">#</a> 指定した文字列を削除する</h3>
+<h2 id="応用"><a class="markdownIt-Anchor" href="#応用">#</a> 応用</h2>
+<h3 id="指定した文字列を削除する"><a class="markdownIt-Anchor" href="#指定した文字列を削除する">#</a> 指定した文字列を削除する</h3>
 <p>これは replace の応用で消したい文字を指定し、置き換え後の文字を空にすることで文字列を削除しています。</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python">text = <span class="hljs-string">'ゆぴだよー!'</span><br><span class="hljs-built_in">print</span>(text.replace(<span class="hljs-string">'ゆぴ'</span>, <span class="hljs-string">''</span>))<br><br><span class="hljs-comment"># 出力結果: だよー!</span><br></code></pre></td></tr></tbody></table></figure>
 <p>このように、「ゆぴ」という単語が削除されおかしな文を作ることに成功しました（？）</p>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>最後まで読んでくださりありがとうございました。一応動作テストはしていますが、私の知識に誤りがあった際は教えていただけると幸いです。<br>
 次回は文字列の置き換えなどを紹介します。</p>
 
@@ -525,7 +525,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

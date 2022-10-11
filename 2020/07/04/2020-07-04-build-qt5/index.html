@@ -329,9 +329,9 @@
 <li><a href="#%E6%9C%80%E5%BE%8C%E3%81%AB">最後に</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<h2 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h2>
 <p>なぜか知らんが、mozc を windows で build したくなったが、qt がないので build してみる。</p>
-<h2 id="環境"><a class="anchor" href="#環境">#</a> 環境</h2>
+<h2 id="環境"><a class="markdownIt-Anchor" href="#環境">#</a> 環境</h2>
 <ul>
 <li>git</li>
 <li>python2.7</li>
@@ -341,10 +341,10 @@
 <div class="admonition info"><p class="admonition-title">tip
 </p><p>追加でvsを準備してください。C関係が必要です。</p>
 </div>
-<h3 id="どうやって入れるの"><a class="anchor" href="#どうやって入れるの">#</a> どうやって入れるの？</h3>
+<h3 id="どうやって入れるの"><a class="markdownIt-Anchor" href="#どうやって入れるの">#</a> どうやって入れるの？</h3>
 <p>めんどくさいのでパッケージマネージャーを使いましょう。</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell">scoop bucket add versions<br><br>scoop install git python27 perl make<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="下準備"><a class="anchor" href="#下準備">#</a> 下準備</h2>
+<h2 id="下準備"><a class="markdownIt-Anchor" href="#下準備">#</a> 下準備</h2>
 <div class="admonition info"><p class="admonition-title">tip
 </p><p><code>~/work</code>を作業場所として想定しています。</p>
 </div>
@@ -354,7 +354,7 @@
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">git checkout v5.15.0<br></code></pre></td></tr></tbody></table></figure>
 <p>このままだと、準備が完璧ではないので、仕上げに次のものを実行します。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">perl init-repository --module-subset=qtbase<br><span class="hljs-comment">#エラーが出たら "-f" をつけましょう。</span><br><br><span class="hljs-comment">#~/work直下に移動</span><br><span class="hljs-built_in">cd</span> ..<br><span class="hljs-built_in">mkdir</span> qt5_build<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="build-start"><a class="anchor" href="#build-start">#</a> build start!!!</h2>
+<h2 id="build-start"><a class="markdownIt-Anchor" href="#build-start">#</a> build start!!!</h2>
 <div class="admonition info"><p class="admonition-title">tip
 </p><p>スタートメニューから<code>x64 Native Tools Command Prompt for VS 2019</code>を探して実行しましょう。(2019は環境によっては、2017や2015)
 windowがおかしくなる場合は<code>x64 Native Tools Command Prompt for VS 2019</code>の実態のbatファイルをwindows-terminal等で動いたcmdで実行することができます。
@@ -362,7 +362,7 @@ windowがおかしくなる場合は<code>x64 Native Tools Command Prompt for VS
 </div>
 <p>いざ、びるど</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#~/work/qt5_build</span><br>..\qt5\configure -developer-build -opensource -nomake examples -nomake tests<br><br>nmake<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p><s>これを書いてる時点では結果が出てないけど、多分動くと思う。</s><br>
 32bit でビルドしないと、mozc 用としては使えないの忘れてた・・・</p>
 
@@ -552,7 +552,7 @@ windowがおかしくなる場合は<code>x64 Native Tools Command Prompt for VS
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

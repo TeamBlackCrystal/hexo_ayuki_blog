@@ -310,25 +310,25 @@
       
   
       <p>これは <a target="_blank" rel="noopener" href="https://adventar.org/calendars/6273">Misskey Advent Calendar</a> 21 日目の記事です。</p>
-<h1 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h1>
+<h1 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h1>
 <p>Python で Misskey の Bot を作って見る際に第一に選択肢に出てくるのが、 YuzuRyo61 さんの<a target="_blank" rel="noopener" href="https://github.com/YuzuRyo61/Misskey.py"> Misskey.py</a> です。ですが、私は WebSocket を受信してリアルタイムにタイムラインや通知の情報を取得したかったため、この BotFrameWork を作ってみました。</p>
-<h2 id="使い方"><a class="anchor" href="#使い方">#</a> 使い方</h2>
+<h2 id="使い方"><a class="markdownIt-Anchor" href="#使い方">#</a> 使い方</h2>
 <p>まず、今回作成したライブラリ <a target="_blank" rel="noopener" href="https://github.com/yupix/mi.py">Mi.py</a> をインストールします</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">pip install mi.py<br></code></pre></td></tr></tbody></table></figure>
 <p>次に実際に実行するためのコードを書きます。</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> asyncio<br><span class="hljs-keyword">from</span> mi <span class="hljs-keyword">import</span> Note<br><span class="hljs-keyword">from</span> mi.ext <span class="hljs-keyword">import</span> commands<br><span class="hljs-keyword">from</span> mi.router <span class="hljs-keyword">import</span> Router<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">MyBot</span>(commands.Bot):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, cmd_prefix: <span class="hljs-built_in">str</span></span>):<br>        <span class="hljs-built_in">super</span>().__init__(cmd_prefix)<br>    <br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_ready</span>(<span class="hljs-params">self, ws</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f'<span class="hljs-subst">{self.i.username}</span>'</span> に接続しました)<br>        <span class="hljs-keyword">await</span> Router(ws).connect_channel([<span class="hljs-string">'global'</span>, <span class="hljs-string">'main'</span>])<br>    <br>    <span class="hljs-keyword">async</span> <span class="hljs-keyword">def</span> <span class="hljs-title function_">on_message</span>(<span class="hljs-params">self, note: Note</span>):<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">f'<span class="hljs-subst">{note.author.username}</span>: <span class="hljs-subst">{note.content}</span>'</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:<br>    uri = <span class="hljs-string">"wss://example.com/streaming"</span><br>    token = <span class="hljs-string">"This is your token"</span><br><br>    bot = MyBot(<span class="hljs-string">'!'</span>)<br>    asyncio.run(bot.start(url, token))<br></code></pre></td></tr></tbody></table></figure>
 <p>これで、グローバルタイムラインを受信する初期的な bot ができました。</p>
-<h2 id="投稿をしてみる"><a class="anchor" href="#投稿をしてみる">#</a> 投稿をしてみる</h2>
+<h2 id="投稿をしてみる"><a class="markdownIt-Anchor" href="#投稿をしてみる">#</a> 投稿をしてみる</h2>
 <p>今度は投稿をしてみましょう、先程のコードを一部書き換えてみます</p>
 <figure class="highlight diff"><table><tbody><tr><td class="code"><pre><code class="hljs diff">async def on_ready(self, ws):<br>    print(f'{self.i.username}' に接続しました)<br>    await Router(ws).connect_channel(['global', 'main'])<br><span class="hljs-addition">+   res = await self.post_note('hello~')</span><br><span class="hljs-addition">+   print(res.author.username, res.content)</span><br></code></pre></td></tr></tbody></table></figure>
 <p>このように、自分で投稿し、そのレスポンスをオブジェクトとして取得することが可能です。</p>
-<h2 id="大変だったこと"><a class="anchor" href="#大変だったこと">#</a> 大変だったこと</h2>
+<h2 id="大変だったこと"><a class="markdownIt-Anchor" href="#大変だったこと">#</a> 大変だったこと</h2>
 <p>今回のライブラリは絶賛開発中なのですが、Python の循環参照がとにかく最初の頃多く発生してとても大変でした。他には、非同期の websocket ライブラリが少なかったことなど、色々とあり、作成にとても時間がかかりました。（まだできてないですけど）</p>
-<h2 id="ドキュメントについて"><a class="anchor" href="#ドキュメントについて">#</a> ドキュメントについて</h2>
+<h2 id="ドキュメントについて"><a class="markdownIt-Anchor" href="#ドキュメントについて">#</a> ドキュメントについて</h2>
 <div class="admonition warning"><p class="admonition-title">warning</p><p>まだドキュメントは作成途中であり、一部のモデルが不足しています。</p>
 </div>
 <p><a target="_blank" rel="noopener" href="https://yupix.github.io/Mi.py/mi.html">ここ</a> に commit したら自動で生成するようにしてあるドキュメントがあるので、何かわからないことがあれば参考にしてみてください。</p>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>このプロジェクトは一応頑張って作っているつもりなので、もしよければ、使った感想などを <a target="_blank" rel="noopener" href="https://rn.akarinext.org/@yupix">私の Misskey アカウント</a> に送ってくださるとモチベーションも上がってとても嬉しいです。<br>
 あと、MIT License で <a target="_blank" rel="noopener" href="https://github.com/yupix/Mi.py">GitHub</a> にて公開しています。 pull request なども歓迎していますので、もしよければやってみてください。</p>
 <p>最後になりますが、Misskey は リアクションなどをインスタンスごとのカスタム絵文字で貰うことができ、自分のつぶやきに Twitter のようなハート以外のリアクションがほしいという方にも楽しめると思うので、Misskey にご興味がある場合は <a target="_blank" rel="noopener" href="https://join.misskey.page">joinmisskey</a> をぜひご覧ください。</p>
@@ -520,7 +520,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

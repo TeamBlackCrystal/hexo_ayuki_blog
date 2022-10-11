@@ -327,22 +327,22 @@
 <li><a href="#%E6%9C%80%E5%BE%8C%E3%81%AB">最後に</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="まずはじめに"><a class="anchor" href="#まずはじめに">#</a> まずはじめに</h2>
+<h2 id="まずはじめに"><a class="markdownIt-Anchor" href="#まずはじめに">#</a> まずはじめに</h2>
 <p>ShellScript で変数に値がある場合だけ動かしたい処理などは多くあるはずです。</p>
-<h2 id="やりかた"><a class="anchor" href="#やりかた">#</a> やりかた</h2>
-<h3 id="変数が空の場合"><a class="anchor" href="#変数が空の場合">#</a> 変数が空の場合</h3>
+<h2 id="やりかた"><a class="markdownIt-Anchor" href="#やりかた">#</a> やりかた</h2>
+<h3 id="変数が空の場合"><a class="markdownIt-Anchor" href="#変数が空の場合">#</a> 変数が空の場合</h3>
 <p>今回は test という変数を使ってテストします。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-keyword">if</span> [[ -z <span class="hljs-string">"<span class="hljs-variable">$test</span>"</span> ]];<span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"変数がないよ!"</span><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></tbody></table></figure>
 <p>-z を使うことで変数がある場合は<strong>真</strong>となります</p>
-<h3 id="変数がある場合"><a class="anchor" href="#変数がある場合">#</a> 変数がある場合</h3>
+<h3 id="変数がある場合"><a class="markdownIt-Anchor" href="#変数がある場合">#</a> 変数がある場合</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#変数を定義</span><br><span class="hljs-built_in">test</span>=<span class="hljs-string">"test"</span><br><br><span class="hljs-keyword">if</span> [[ -n <span class="hljs-string">"<span class="hljs-variable">$test</span>"</span> ]];<span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"変数があるよ!"</span><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></tbody></table></figure>
 <p>-n を使うことで変数がない場合<strong>真</strong>となります。</p>
-<h3 id="1-つで確認する方法"><a class="anchor" href="#1つで確認する方法">#</a> 1 つで確認する方法</h3>
+<h3 id="1-つで確認する方法"><a class="markdownIt-Anchor" href="#1つで確認する方法">#</a> 1 つで確認する方法</h3>
 <p>if の使い方をある程度知ってる場合は当たり前のような話ですが<br>
 一応書いておきます。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#変数を定義(elseで動作)</span><br><span class="hljs-built_in">test</span>=<span class="hljs-string">"test"</span><br><br><span class="hljs-keyword">if</span> [[ -z <span class="hljs-string">"<span class="hljs-variable">$test</span>"</span> ]];<span class="hljs-keyword">then</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"変数がないよ!"</span><br><span class="hljs-keyword">else</span><br>    <span class="hljs-built_in">echo</span> <span class="hljs-string">"変数があるよ!"</span><br><span class="hljs-keyword">fi</span><br></code></pre></td></tr></tbody></table></figure>
 <p>-z で変数がない場合<strong>真</strong>となるため、else を使うことで変数がある場合の動作を作ることができます。</p>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>ShellScript は楽しいので、今後もこういった事を書いていく予定です。<br>
 あと、昔作った記事で書きかけのやつとかは今度書きます。<br>
 最後に更新が遅くなってしまったのは純粋無為に何も書くようなことが無かったからです</p>
@@ -533,7 +533,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

@@ -309,31 +309,31 @@
     <div id="article" class="post-content-info">
       
   
-      <h2 id="まずはじめに"><a class="anchor" href="#まずはじめに">#</a> まずはじめに</h2>
+      <h2 id="まずはじめに"><a class="markdownIt-Anchor" href="#まずはじめに">#</a> まずはじめに</h2>
 <p>Ubuntu などのメジャーなディストリビューションでは多くの記事がすでに出回っています。<br>
 そこで、ArchLinux だとパッケージが変わっていたり個人的によく忘れてしまうので備忘録として残しておきます。</p>
-<h2 id="やりかた"><a class="anchor" href="#やりかた">#</a> やりかた</h2>
-<h3 id="パッケージのインストール"><a class="anchor" href="#パッケージのインストール">#</a> パッケージのインストール</h3>
+<h2 id="やりかた"><a class="markdownIt-Anchor" href="#やりかた">#</a> やりかた</h2>
+<h3 id="パッケージのインストール"><a class="markdownIt-Anchor" href="#パッケージのインストール">#</a> パッケージのインストール</h3>
 <p>以下の 2 つのパッケージが必要です。</p>
 <ul>
 <li>tigervnc（公式パッケージ）</li>
 <li>x2vnc-no-xinerama（AUR）</li>
 </ul>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -S tigervnc<br>yay -S x2vnc-no-xinerama<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="サーバー側の準備"><a class="anchor" href="#サーバー側の準備">#</a> サーバー側の準備</h3>
+<h3 id="サーバー側の準備"><a class="markdownIt-Anchor" href="#サーバー側の準備">#</a> サーバー側の準備</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ vncserver :1<br>You will require a password to access your desktops.<br>Password: ******<br>Verify: ******<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="android-側の準備"><a class="anchor" href="#android-側の準備">#</a> Android　側の準備</h3>
+<h3 id="android-側の準備"><a class="markdownIt-Anchor" href="#android-側の準備">#</a> Android　側の準備</h3>
 <p>クライアント側では Android で<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.realvnc.viewer.android&amp;hl=ja"> VNC Viewer - Remote Desktop</a> を今回は使用します。<br>
 その他にも私の環境では<a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=nine.viewer&amp;hl=ja"> VNC Viewer</a> での動作も確認しています。</p>
-<h3 id="マウスの行き来の準備"><a class="anchor" href="#マウスの行き来の準備">#</a> マウスの行き来の準備</h3>
+<h3 id="マウスの行き来の準備"><a class="markdownIt-Anchor" href="#マウスの行き来の準備">#</a> マウスの行き来の準備</h3>
 <p>ここで使用するパスワードはさきほど<a href="#%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%81%B4%E3%81%AE%E6%BA%96%E5%82%99">サーバーの準備</a>で設定したパスワードを入力します</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ x2vnc -shared -west localhost:1<br>x2vnc: VNC server supports protocol version 3.8 (viewer 3.3)<br>Password: ******<br></code></pre></td></tr></tbody></table></figure>
 <p>これでマウスが行き来できるようになりました。</p>
 <div class="admonition warning"><p class="admonition-title">warning</p><p>注意点として、ウィンドウをサブディスプレイに持っていく事などはできません（その逆もしかり）</p>
 </div>
-<h3 id="起動"><a class="anchor" href="#起動">#</a> 起動</h3>
+<h3 id="起動"><a class="markdownIt-Anchor" href="#起動">#</a> 起動</h3>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ vncserver :1 -geometry 1280x800 -alwaysshared<br>$ x2vnc -shared -west localhost:1<br></code></pre></td></tr></tbody></table></figure>
-<h4 id="x2vnc-のオプションについて"><a class="anchor" href="#x2vncのオプションについて">#</a> x2vnc のオプションについて</h4>
+<h4 id="x2vnc-のオプションについて"><a class="markdownIt-Anchor" href="#x2vncのオプションについて">#</a> x2vnc のオプションについて</h4>
 <p>-west などはマウスカーソルをどの向きに持っていった際サブディスプレイに移動するかを設定するものです。<br>
 以下がその一覧です</p>
 <table>
@@ -362,7 +362,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="xstartup-の編集"><a class="anchor" href="#xstartupの編集">#</a> xstartup の編集</h3>
+<h3 id="xstartup-の編集"><a class="markdownIt-Anchor" href="#xstartupの編集">#</a> xstartup の編集</h3>
 <p>xstartup とは VNC のデスクトップ環境設定ファイルです。<br>
 デフォルトではおそらく<br>
 ～/.vnc/xstartup<br>
@@ -371,11 +371,11 @@
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">$ nano ~/.vnc/xstartup<br><br><span class="hljs-comment">#元からあった行を...で表しています</span><br>...<br><br><span class="hljs-comment">#⬇を追加</span><br><span class="hljs-built_in">exec</span> cinnamon &amp;<br></code></pre></td></tr></tbody></table></figure>
 <p>今回の場合は cinnamon が vncserver に接続すると表示されるはずです。<br>
 ここを自分のすでに入れてあるデスクトップ環境のコマンドに書き換えることで変更が可能です。</p>
-<h2 id="謝辞"><a class="anchor" href="#謝辞">#</a> 謝辞</h2>
+<h2 id="謝辞"><a class="markdownIt-Anchor" href="#謝辞">#</a> 謝辞</h2>
 <p>この記事は<strong>ともの技術メモ</strong>様の記事を見て ArchLinux で実際にできるのか<br>
 パッケージ名などが違う為忘れないように書かせていただきました。<br>
 内容の多くが<strong>ともの技術メモ</strong>様の内容と被ってしまっている事をここで謝罪します。</p>
-<h2 id="参考"><a class="anchor" href="#参考">#</a> 参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h2>
 <ul>
 <li>全般コマンド</li>
 </ul>
@@ -574,7 +574,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

@@ -328,30 +328,30 @@
 <li><a href="#%E6%9C%80%E5%BE%8C%E3%81%AB">最後に</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<h2 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h2>
 <p>Forge 1.7.10 で環境構築ができないので、色々調べてみたのでその結果をまとめてみる。</p>
-<h2 id="環境"><a class="anchor" href="#環境">#</a> 環境</h2>
+<h2 id="環境"><a class="markdownIt-Anchor" href="#環境">#</a> 環境</h2>
 <ul>
 <li>IDEA Community</li>
 <li>java 8</li>
 </ul>
-<h2 id="どうやるの"><a class="anchor" href="#どうやるの">#</a> どうやるの？</h2>
+<h2 id="どうやるの"><a class="markdownIt-Anchor" href="#どうやるの">#</a> どうやるの？</h2>
 <p>方法は大きく分けて 2 つあります。</p>
 <ol>
 <li>gradle のバージョンを上げる</li>
 <li>改造版の ForgeGradle を使う</li>
 </ol>
 <p>どちらがいいかは好みの問題です。</p>
-<h3 id="gradle-のバージョンを上げる"><a class="anchor" href="#gradleのバージョンを上げる">#</a> gradle のバージョンを上げる</h3>
+<h3 id="gradle-のバージョンを上げる"><a class="markdownIt-Anchor" href="#gradleのバージョンを上げる">#</a> gradle のバージョンを上げる</h3>
 <p>デフォルトの ForgeGradle は実は 4.4.1 辺りまで対応しているので、HTTPS に対応した 2.1 以降にするだけです。</p>
 <p><code>gradle/wrapper/gradle-wrapper.properties</code>  を編集します</p>
 <p>2.1 にする場合</p>
 <figure class="highlight sh"><table><tbody><tr><td class="code"><pre><code class="hljs sh">distributionBase=GRADLE_USER_HOME<br>distributionPath=wrapper/dists<br>zipStoreBase=GRADLE_USER_HOME<br>zipStorePath=wrapper/dists<br>distributionUrl=https\://services.gradle.org/distributions/gradle-2.1-bin.zip<br></code></pre></td></tr></tbody></table></figure>
 <p>4.4.1 にする場合</p>
 <figure class="highlight sh"><table><tbody><tr><td class="code"><pre><code class="hljs sh">distributionBase=GRADLE_USER_HOME<br>distributionPath=wrapper/dists<br>zipStoreBase=GRADLE_USER_HOME<br>zipStorePath=wrapper/dists<br>distributionUrl=https\://services.gradle.org/distributions/gradle-4.4.1-bin.zip<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="改造版の-forgegradle-を使う"><a class="anchor" href="#改造版のforgegradleを使う">#</a> 改造版の ForgeGradle を使う</h3>
+<h3 id="改造版の-forgegradle-を使う"><a class="markdownIt-Anchor" href="#改造版のforgegradleを使う">#</a> 改造版の ForgeGradle を使う</h3>
 <p>公式から src をダウンロードする代わりに、<a target="_blank" rel="noopener" href="https://github.com/anatawa12/ForgeGradle-example">anatawa12/ForgeGradle-1.2</a> から <code>code</code>  ボタンを押して <code>Download ZIP</code>  を押してダウンロードするか、git clone し通常どうりに使用します。</p>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>実は 3 つ目に既存の build.gradle を書き換えて対応させる方法もありますが、それは<a target="_blank" rel="noopener" href="https://github.com/anatawa12/ForgeGradle-example#how-to-replace-forgegradle-12-with-anatawa12s-fork">ここ</a>に書いてあるので、頑張ってみてください！！</p>
 
     </div>
@@ -540,7 +540,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

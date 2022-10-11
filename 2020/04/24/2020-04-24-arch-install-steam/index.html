@@ -321,11 +321,11 @@
 <li><a href="#%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88">サポート</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="概要"><a class="anchor" href="#概要">#</a> 概要</h2>
+<h2 id="概要"><a class="markdownIt-Anchor" href="#概要">#</a> 概要</h2>
 <p>ArchLinux を入れてよし、いざゲームするぞー！と意気込んで<br>
  sudo pacman -S steam<br>
  をやろうとした人は少なからずいるはずです。しかし、ArchLinux はデフォルトで 32bit パッケージが無効化されている為、有効化した後にインストールしてもコアダンプが発生します。今回は 32bit の有効化、コアダンプの修正を解説します。</p>
-<h2 id="32bit-パッケージの有効化"><a class="anchor" href="#32bitパッケージの有効化">#</a> 32bit パッケージの有効化</h2>
+<h2 id="32bit-パッケージの有効化"><a class="markdownIt-Anchor" href="#32bitパッケージの有効化">#</a> 32bit パッケージの有効化</h2>
 <p>さて、こんな辺境の地の blog を見てる時点で大体の方はご存知でしょうが、<br>
 一応解説を ArchLinux では 32bit パッケージがデフォルトでは無効になっています。<br>
 なので、最初にいきなり</p>
@@ -340,7 +340,7 @@
 <p>この様に先頭についていた #を外すことによりパッケージの有効化ができます。<br>
 しかしながら、このままだとパッケージリストが更新されていないため、以下のコマンドを実行して、パッケージリストを最新の状態にしましょう。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -Syy<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="steam-のインストール-amp-パッケージのインストール"><a class="anchor" href="#steamのインストール-パッケージのインストール">#</a> Steam のインストール &amp; パッケージのインストール</h2>
+<h2 id="steam-のインストール-amp-パッケージのインストール"><a class="markdownIt-Anchor" href="#steamのインストール-パッケージのインストール">#</a> Steam のインストール &amp; パッケージのインストール</h2>
 <p>さて、ここまで来ればフィニッシュに近いです。<br>
 ではいよいよ Steam をインストールしましょう。</p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -S steam<br></code></pre></td></tr></tbody></table></figure>
@@ -349,9 +349,9 @@
 <strong>そこで追加するのが 32bit の nvidia driver です</strong></p>
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><code class="hljs bash">sudo pacman -S lib32-nvidia-utils<br></code></pre></td></tr></tbody></table></figure>
 <p>さて、これで遂に Steam が起動できると思います。</p>
-<h2 id="参考"><a class="anchor" href="#参考">#</a> 参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h2>
 <p><a class="button yx-background-color-archlinux font1 button-a-tag" style="font-size:1.5em;" target="_blank" rel="noopener" href="https://wiki.archlinux.jp/index.php/Multilib"><i class="mdi mdi-arch"></i> ArchWiki</a></p>
-<h2 id="サポート"><a class="anchor" href="#サポート">#</a> サポート</h2>
+<h2 id="サポート"><a class="markdownIt-Anchor" href="#サポート">#</a> サポート</h2>
 <p><a class="button yx-background-color-discord font1 button-a-tag" style="font-size:1.5em;" target="_blank" rel="noopener" href="https://discord.gg/gsjcMQe"><i class="fab fa-discord"></i> Discord</a></p>
 
     </div>
@@ -540,7 +540,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

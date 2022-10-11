@@ -310,25 +310,25 @@
       
   
       <p><strong><a target="_blank" rel="noopener" href="https://adventar.org/calendars/5026">Misskey Advent Calendar 2020</a> の 21 日目の記事です。</strong></p>
-<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<h2 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h2>
 <p>多分多くの人が初めてだと思います。<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/@aki">aki</a> といいます。<br>
 今回は私と<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/@yupix@ne.akarinext.org"> @yupix@ne.akarinext.org</a> 氏で作っている Ayuskey についてお話させていただきたいと思います。</p>
-<h3 id="名前の由来について"><a class="anchor" href="#名前の由来について">#</a> 名前の由来について</h3>
+<h3 id="名前の由来について"><a class="markdownIt-Anchor" href="#名前の由来について">#</a> 名前の由来について</h3>
 <p>名前の由来は、<strong>a</strong>ki と<strong> yu</strong>pix からとって Ayu となっています。(このブログも同じ)<br>
  なお、初期の頃は私一人で開発していたので Reiskey という名前をつけておりました。その頃の名残として、バージョンに <code>rei0784</code>  をつけるのを継承しています。</p>
-<h2 id="技術的なあれこれ"><a class="anchor" href="#技術的なあれこれ">#</a> 技術的なあれこれ</h2>
+<h2 id="技術的なあれこれ"><a class="markdownIt-Anchor" href="#技術的なあれこれ">#</a> 技術的なあれこれ</h2>
 <p>現在もパッケージ更新などのメンテナンスがされている<a target="_blank" rel="noopener" href="https://github.com/mei23/misskey-v11"> mei23/misskey-v11</a> をベースに開発しています。<br>
 また、筆頭となる<a target="_blank" rel="noopener" href="https://kr.akirin.xyz">私のインスタンス</a>と<a target="_blank" rel="noopener" href="https://ne.akarinext.org"> yupix 氏のインスタンス</a>は、Raspberry Pi 4 で運用しているため、arm64 で動かしやすいように Dockerfile 等が調整されていたりします。</p>
 <p>動かなかったり、ビルドができなかったりした場合は気軽に<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/@aki"> @aki</a> までご連絡ください。</p>
-<h2 id="鯖缶にやさしく"><a class="anchor" href="#鯖缶にやさしく">#</a> 鯖缶にやさしく</h2>
+<h2 id="鯖缶にやさしく"><a class="markdownIt-Anchor" href="#鯖缶にやさしく">#</a> 鯖缶にやさしく</h2>
 <p>全文検索で重い Elasticsearch を使う必要がなくなりました！！<br>
 本流にある<s>放置されていそうな</s><a target="_blank" rel="noopener" href="https://github.com/syuilo/misskey/pull/5138"> #5138</a> をマージして sonic という検索エンジンを使えるようにしました。とても軽く、Raspberry Pi 4 であっても軽快に動作します。実際に、私のインスタンスで使用しております。(ただ、短い単語とかだと精度が終わってるので、要調整)</p>
 <p>他の鯖にある絵文字をコピーしたいときありますよね？<br>
 本流の api を移植してできるようにしました！！<br>
 現在は api を直接叩くのが 1 番安定していますが、GUI でのコピーができるように作業中です。</p>
-<h3 id="より高機能を目指して"><a class="anchor" href="#より高機能を目指して">#</a> より高機能を目指して</h3>
+<h3 id="より高機能を目指して"><a class="markdownIt-Anchor" href="#より高機能を目指して">#</a> より高機能を目指して</h3>
 <p>本来の misskey v11 にはあまりぼかし (blur) や透明度がついていないのですが、より近代的な見た目を目指しています。現在は未実装ですが重い環境では <code>インスタンスのurl/flags</code>  (例:<a target="_blank" rel="noopener" href="https://kr.akirin.xyz/flags">kr.akirin.xyz/flags</a>) から無効化できるようにする予定です。最終的には他の設定と同じ場所に配置されます。</p>
-<h3 id="mfm-の拡張"><a class="anchor" href="#mfmの拡張">#</a> MFM の拡張</h3>
+<h3 id="mfm-の拡張"><a class="markdownIt-Anchor" href="#mfmの拡張">#</a> MFM の拡張</h3>
 <p>基本的に文法は m544 と互換性があります。<a target="_blank" rel="noopener" href="https://ti.akirin.xyz/mfm-cheat-sheet">チートシート</a> (私の m544 インスタンスに飛びます)<br>
  <code>:@aki:</code>  や <code>:@rei_k@misskey.io:</code>  でアバター絵文字が使えます。なお、一部の場所 (こことか) だと動きませんが、普通にノートを投稿する分には問題なく使えます。</p>
 <style>
@@ -347,20 +347,20 @@
 <p><code>[font.size=20px,color=#86b300 みすきーぐりーん]</code></p>
 <p style="font-size: 20px; color: #86b300">みすきーぐりーん</p>
 <p>ただ、Ayuskey 同士だと正常に表示できていますが、他の実装からだとうまく表示されないことが多いです。(逆は回転速度とかの指定に <code>ms</code>  を使わないようにすればだいたいいけそう)</p>
-<h3 id="独自機能"><a class="anchor" href="#独自機能">#</a> 独自機能</h3>
+<h3 id="独自機能"><a class="markdownIt-Anchor" href="#独自機能">#</a> 独自機能</h3>
 <p>他の Misskey には存在しない独自の機能として bot であることを宣言するのと同じようにお嬢様 (Lady) であることを宣言できます。しっかりと連合できるように作ってあります。</p>
 <p>ブラーのところで書きましたが、実験的な機能を <code>/flags</code>  で有効化できます。<s>まあ、これ書いてる時点だとどれも今は機能しないんですけど</s></p>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>読んでいただきありがとうございます。<br>
 もしよろしければ<a target="_blank" rel="noopener" href="https://kr.akirin.xyz">私のインスタンス</a>に登録していただけると幸いです。</p>
-<h2 id="おまけ"><a class="anchor" href="#おまけ">#</a> おまけ</h2>
-<h3 id="既知のバグ"><a class="anchor" href="#既知のバグ">#</a> 既知のバグ</h3>
+<h2 id="おまけ"><a class="markdownIt-Anchor" href="#おまけ">#</a> おまけ</h2>
+<h3 id="既知のバグ"><a class="markdownIt-Anchor" href="#既知のバグ">#</a> 既知のバグ</h3>
 <p>トークの読み込みが終わらない =&gt;<s> 原因調査中...</s><a target="_blank" rel="noopener" href="https://github.com/TeamOrangeServer/misskey/issues/61">#61</a> =&gt; <a target="_blank" rel="noopener" href="https://github.com/TeamOrangeServer/misskey/releases/tag/11.37.1-rei0784-5.0.0-rc.10">5.0.0-rc.10</a> で解決<br>
 モバイルで引用 RN できない =&gt; 原因調査中...</p>
-<h3 id="夢は大きく-今後の目標"><a class="anchor" href="#夢は大きく-今後の目標">#</a> 夢は大きく 〜今後の目標〜</h3>
+<h3 id="夢は大きく-今後の目標"><a class="markdownIt-Anchor" href="#夢は大きく-今後の目標">#</a> 夢は大きく 〜今後の目標〜</h3>
 <p>独自に Vue3 対応 =&gt;v12 と根本的に作りが違うのでほとんどバックポートで対応できないので、少なくとも init はほとんど書き直しです。<br>
 それと、BootstrapVue の対応ができたら少しずつやってみたいと思います。</p>
-<h3 id="xe-の終了に伴う記事の移植"><a class="anchor" href="#xeの終了に伴う記事の移植">#</a> XE の終了に伴う記事の移植</h3>
+<h3 id="xe-の終了に伴う記事の移植"><a class="markdownIt-Anchor" href="#xeの終了に伴う記事の移植">#</a> XE の終了に伴う記事の移植</h3>
 <p>最初は XE (私の旧インスタンス) の pages で書いていたのですが、諸事情で Kr に移行することになったのでここのブログに移植することにしました。MFM 周りは実際の Ayuskey の css を引っ張って Markdown に書いて実現しているため、疲れました・・・</p>
 
     </div>
@@ -549,7 +549,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

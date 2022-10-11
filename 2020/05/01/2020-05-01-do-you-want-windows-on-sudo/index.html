@@ -340,18 +340,18 @@
 <li><a href="#%E6%9C%80%E5%BE%8C%E3%81%AB">最後に</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<h2 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h2>
 <p>Windows に sudo<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup> ほしいけどわからない！！とか、調べても本物に程遠い<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup>のしか見つからない！！という人に向けて書いています。</p>
-<h2 id="q-使えるものはあるの"><a class="anchor" href="#q使えるものはあるの">#</a> Q. 使えるものはあるの？</h2>
+<h2 id="q-使えるものはあるの"><a class="markdownIt-Anchor" href="#q使えるものはあるの">#</a> Q. 使えるものはあるの？</h2>
 <p>A. あります</p>
-<h3 id="使えるもの"><a class="anchor" href="#使えるもの">#</a> 使えるもの</h3>
+<h3 id="使えるもの"><a class="markdownIt-Anchor" href="#使えるもの">#</a> 使えるもの</h3>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://github.com/gerardog/gsudo">gerardog/gsudo</a></li>
 <li><a target="_blank" rel="noopener" href="https://github.com/lukesampson/psutils">lukesampson/psutils(sudo.ps1)</a></li>
 </ul>
-<h2 id="どうやって入れるの"><a class="anchor" href="#どうやって入れるの">#</a> どうやって入れるの？</h2>
+<h2 id="どうやって入れるの"><a class="markdownIt-Anchor" href="#どうやって入れるの">#</a> どうやって入れるの？</h2>
 <p>めんどくさいのでパッケージマネージャーを使いましょう。</p>
-<h3 id="使えるやつ"><a class="anchor" href="#使えるやつ">#</a> 使えるやつ</h3>
+<h3 id="使えるやつ"><a class="markdownIt-Anchor" href="#使えるやつ">#</a> 使えるやつ</h3>
 <div class="admonition info"><p class="admonition-title">tip
 </p><p>chocoのインストール手順は準備中です。
 scoopのインストール方法は <a href="/2020/05/01/2020-05-01-install-scoop/" title="scoopを入れよう！！">こちら</a></p>
@@ -360,14 +360,14 @@ scoopのインストール方法は <a href="/2020/05/01/2020-05-01-install-scoo
 <li><abbr title="要administratorだが、少ない手間でたくさんのパッケージを入れられる。">choco</abbr></li>
 <li>scoop</li>
 </ul>
-<h2 id="インストール"><a class="anchor" href="#インストール">#</a> インストール</h2>
+<h2 id="インストール"><a class="markdownIt-Anchor" href="#インストール">#</a> インストール</h2>
 <p>実際に入れてみましょう。</p>
-<h3 id="gerardoggsudo-の場合個人的なオススメ"><a class="anchor" href="#gerardoggsudoの場合個人的なオススメ">#</a> gerardog/gsudo の場合（個人的なオススメ）</h3>
+<h3 id="gerardoggsudo-の場合個人的なオススメ"><a class="markdownIt-Anchor" href="#gerardoggsudoの場合個人的なオススメ">#</a> gerardog/gsudo の場合（個人的なオススメ）</h3>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><code class="hljs powershell{1-2}">#非administratorでできるのでオススメ<br>scoop install gsudo<br><br>#要administrator<br>choco install gsudo<br></code></pre></td></tr></tbody></table></figure>
-<h3 id="lukesampsonpsutils-sudops1-の場合"><a class="anchor" href="#lukesampsonpsutilssudops1の場合">#</a> lukesampson/psutils (sudo.ps1) の場合</h3>
+<h3 id="lukesampsonpsutils-sudops1-の場合"><a class="markdownIt-Anchor" href="#lukesampsonpsutilssudops1の場合">#</a> lukesampson/psutils (sudo.ps1) の場合</h3>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell">scoop install sudo<br></code></pre></td></tr></tbody></table></figure>
 <p>choco にも同名の物があるがこれは完成度低い<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup></p>
-<h2 id="how-to"><a class="anchor" href="#how-to">#</a> How to</h2>
+<h2 id="how-to"><a class="markdownIt-Anchor" href="#how-to">#</a> How to</h2>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell">sudo choco install windows<span class="hljs-literal">-terminal</span><br></code></pre></td></tr></tbody></table></figure>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment">#hostsファイルが楽に編集できるよ！やったね！！</span><br>sudo notepad C:\Windows\System32\drivers\etc\hosts<br></code></pre></td></tr></tbody></table></figure>
 <div class="admonition warning"><p class="admonition-title">warning</p><p>何も気にせず乱用してはいけません。
@@ -376,7 +376,7 @@ scoopのインストール方法は <a href="/2020/05/01/2020-05-01-install-scoo
 <div class="admonition error"><p class="admonition-title">danger
 </p><p><code>rm</code>や<code>rd</code>(及び<code>rmdir</code>)などのファイルを削除するコマンドに対して<code>C:\</code>や<code>/</code>を指定してはいけません。(OSや個人データをを破壊する可能性があります。)</p>
 </div>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>管理者権限なので扱いには気をつけましょう。</p>
 <p>Linux や mac を使っているあなたもですよ？root の扱いには気をつけましょう。</p>
 <hr class="footnotes-sep">
@@ -577,7 +577,7 @@ scoopのインストール方法は <a href="/2020/05/01/2020-05-01-install-scoo
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

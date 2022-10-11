@@ -321,19 +321,19 @@
 </li>
 </ul>
 <!-- tocstop -->
-<h1 id="前置き"><a class="anchor" href="#前置き">#</a> 前置き</h1>
+<h1 id="前置き"><a class="markdownIt-Anchor" href="#前置き">#</a> 前置き</h1>
 <p>久々に Windows10 Insiders になってみたら、いろいろとアプリとの相性が悪く、ブルスク吐きまくるわ、更新したらブルスク吐いて起動できなくなって結局巻き戻すわでキリがなかったので、クリーンインストールして、環境を作り直して、いざ開発に取り掛かろうと<br>
 思い Git の GPG 署名を有効にしようとしたところで今回の出来事は起きています（（</p>
-<h2 id="何が起きたの"><a class="anchor" href="#何が起きたの">#</a> 何が起きたの？</h2>
+<h2 id="何が起きたの"><a class="markdownIt-Anchor" href="#何が起きたの">#</a> 何が起きたの？</h2>
 <p>以下のようにシークレットキーが使用できないといった感じのエラーが出ました。</p>
 <figure class="highlight subunit"><table><tbody><tr><td class="code"><pre><code class="hljs subunit">gpg: skipped "*******": secret key not available<br>gpg: signing failed: secret key not available<br><span class="hljs-keyword">error: </span>gpg failed to sign the data<br>fatal: failed to write commit object<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="解決策"><a class="anchor" href="#解決策">#</a> 解決策</h2>
+<h2 id="解決策"><a class="markdownIt-Anchor" href="#解決策">#</a> 解決策</h2>
 <p>まあ、これはいたって単純で、gpg がどこにいるのか認識できていないので、以下のようにコマンドを打つと修正されます。</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment"># gpgがC:\Program Files (x86)\GnuPGにインストールされている場合</span><br>git config <span class="hljs-literal">--global</span> gpg.program <span class="hljs-string">"C:\Program Files (x86)\GnuPG\bin\gpg.exe"</span><br></code></pre></td></tr></tbody></table></figure>
 <p>これでもう一度コミットを行ってみると無事にコミットできました！</p>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>最近はほんとに忙しくて開発事とかあんまりできないけど、環境だけは整えていつでも開発できるようにしときたいから、今後の後学のためにも残しておきます！それではまたこんど！</p>
-<h2 id="参考"><a class="anchor" href="#参考">#</a> 参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h2>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/36810467/git-commit-signing-failed-secret-key-not-available">https://stackoverflow.com/questions/36810467/git-commit-signing-failed-secret-key-not-available</a></p>
 
     </div>
@@ -522,7 +522,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

@@ -322,28 +322,28 @@
 <li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<h2 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h2>
 <p>お久しぶりです。前回の記事から 8 ヶ月ぶりですね。</p>
 <p>最近久しぶりに Windows Server の VM を触ったら起動時とかの詳細メッセージを表示したくなったので調べてみました。<br>
 次に Windows 入れるときには絶対に忘れていそうなので、忘れてもいいようにメモしておきます。</p>
-<h2 id="環境"><a class="anchor" href="#環境">#</a> 環境</h2>
+<h2 id="環境"><a class="markdownIt-Anchor" href="#環境">#</a> 環境</h2>
 <ul>
 <li>Windows11 (win2k 以降)</li>
 </ul>
-<h2 id="やり方"><a class="anchor" href="#やり方">#</a> やり方</h2>
-<h3 id="かんたん"><a class="anchor" href="#かんたん">#</a> かんたん</h3>
+<h2 id="やり方"><a class="markdownIt-Anchor" href="#やり方">#</a> やり方</h2>
+<h3 id="かんたん"><a class="markdownIt-Anchor" href="#かんたん">#</a> かんたん</h3>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><code class="hljs reg">Windows Registry Editor Version 5.00<br><br>[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]<br>"VerboseStatus"=dword:00000001<br></code></pre></td></tr></tbody></table></figure>
 <p>上のをわかりやすい名前 (例:  <code>VerboseStatus.reg</code> ) で保存します。<br>
 その後ダブルクリックまたは、右クリック &gt; 結合でレジストリエディターに許可を与えます。</p>
-<h3 id="ローカル-グループポリシー-エディターを使う"><a class="anchor" href="#ローカル-グループポリシー-エディターを使う">#</a> ローカル グループポリシー エディターを使う</h3>
+<h3 id="ローカル-グループポリシー-エディターを使う"><a class="markdownIt-Anchor" href="#ローカル-グループポリシー-エディターを使う">#</a> ローカル グループポリシー エディターを使う</h3>
 <p>コンピューターの構成 &gt; システム &gt; 詳細な状態メッセージを表示する</p>
 <p>有効をオンにする。</p>
-<h3 id="レジストリエディタを使う"><a class="anchor" href="#レジストリエディタを使う">#</a> レジストリエディタを使う</h3>
+<h3 id="レジストリエディタを使う"><a class="markdownIt-Anchor" href="#レジストリエディタを使う">#</a> レジストリエディタを使う</h3>
 <p><code>regedit</code>  を起動し、 <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System</code>  へ移動する。<br>
  <code>VerboseStatus</code>  を dword で作成し、編集して <code>1</code>  をセットする。</p>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>これで一度ログアウトしてログインし、正しく動作することを確認して完了です。</p>
-<h2 id="参考"><a class="anchor" href="#参考">#</a> 参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考">#</a> 参考</h2>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://news.mynavi.jp/article/windows-297/">Win 8/8.1 編：サインアウト時などに詳細メッセージを表示する</a></li>
 <li><a target="_blank" rel="noopener" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.WindowsLogon::VerboseStatus&amp;Language=ja-jp">詳細な状態メッセージを表示する</a></li>
@@ -535,7 +535,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }

@@ -323,9 +323,9 @@
 <li><a href="#%E6%9C%80%E5%BE%8C%E3%81%AB">最後に</a></li>
 </ul>
 <!-- tocstop -->
-<h2 id="はじめに"><a class="anchor" href="#はじめに">#</a> はじめに</h2>
+<h2 id="はじめに"><a class="markdownIt-Anchor" href="#はじめに">#</a> はじめに</h2>
 <p>sudo 回で使ってる <code>scoop</code>  を入れます。<s>投稿順序逆だね</s></p>
-<h2 id="前提環境"><a class="anchor" href="#前提環境">#</a> 前提環境</h2>
+<h2 id="前提環境"><a class="markdownIt-Anchor" href="#前提環境">#</a> 前提環境</h2>
 <ul>
 <li>PowerShell (^5) または　PowerShell Core</li>
 <li>.Net Framework (^4.5)</li>
@@ -333,14 +333,14 @@
 <div class="admonition info"><p class="admonition-title">tip
 </p><p>サポート中のWindowsなら問題ないはずです。</p>
 </div>
-<h2 id="インストール"><a class="anchor" href="#インストール">#</a> インストール</h2>
+<h2 id="インストール"><a class="markdownIt-Anchor" href="#インストール">#</a> インストール</h2>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment">#非administrator</span><br><span class="hljs-built_in">iwr</span> <span class="hljs-literal">-useb</span> get.scoop.sh | <span class="hljs-built_in">iex</span><br></code></pre></td></tr></tbody></table></figure>
 <p>上記のコマンドを実行した際以下のようなエラーが発生した場合は、次のコマンドを実行した後に再度上記のコマンドを実行してください。</p>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell"><span class="hljs-comment">#エラー内容</span><br>PowerShell requires an execution policy <span class="hljs-keyword">in</span> [<span class="hljs-type">Unrestricted</span>, <span class="hljs-type">RemoteSigned</span>, <span class="hljs-type">ByPass</span>] to run Scoop.<br><span class="hljs-keyword">For</span> example, to <span class="hljs-built_in">set</span> the execution policy to <span class="hljs-string">'RemoteSigned'</span> please run :<br><span class="hljs-string">'Set-ExecutionPolicy RemoteSigned -scope CurrentUser'</span><br></code></pre></td></tr></tbody></table></figure>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell"><span class="hljs-built_in">Set-ExecutionPolicy</span> RemoteSigned <span class="hljs-literal">-scope</span> CurrentUser<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="how-to"><a class="anchor" href="#how-to">#</a> How to</h2>
+<h2 id="how-to"><a class="markdownIt-Anchor" href="#how-to">#</a> How to</h2>
 <figure class="highlight powershell"><table><tbody><tr><td class="code"><pre><code class="hljs powershell">scoop install git<br></code></pre></td></tr></tbody></table></figure>
-<h2 id="最後に"><a class="anchor" href="#最後に">#</a> 最後に</h2>
+<h2 id="最後に"><a class="markdownIt-Anchor" href="#最後に">#</a> 最後に</h2>
 <p>便利でしょ？<br>
 追加で java や php などの bucket（scoop でのリポジトリ）もあるので追加することが可能です。</p>
 <p>じゃんじゃん使っていこうね～</p>
@@ -535,7 +535,7 @@
 	console.log('\n %c Hexo-Quiet 主题 %c https://github.com/79e/hexo-theme-quiet \n', 'color: #fadfa3; background: #030307; padding:5px 0;', 'background: #fadfa3; padding:5px 0;')
 </script>
 	<script>if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js?t=1665064824266')
+  navigator.serviceWorker.register('/sw.js?t=1665517160330')
     .then(function () {console.log('ServiceWorker Register Successfully.')})
     .catch(function (e) {console.error(e)});
 }
