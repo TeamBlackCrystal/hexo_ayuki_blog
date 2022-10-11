@@ -39,6 +39,6 @@
     "markdown-it-footnote": "3.0.3"
   },
   "devDependencies": {
-    "node-gyp": "9.2.0"
+    "node-gyp": "9.3.0"
   }
 }
