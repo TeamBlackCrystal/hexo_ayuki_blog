@@ -439,7 +439,7 @@ __metadata:
     hexo-fontawesome: 2.3.0
     hexo-generator-archive: 1.0.0
     hexo-generator-category: 1.0.0
-    hexo-generator-index: 2.0.0
+    hexo-generator-index: 3.0.0
     hexo-generator-seo-friendly-sitemap: 0.2.1
     hexo-generator-tag: 1.0.0
     hexo-lazyload-image: 1.0.12
@@ -2067,13 +2067,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"hexo-generator-index@npm:2.0.0":
-  version: 2.0.0
-  resolution: "hexo-generator-index@npm:2.0.0"
+"hexo-generator-index@npm:3.0.0":
+  version: 3.0.0
+  resolution: "hexo-generator-index@npm:3.0.0"
   dependencies:
-    hexo-pagination: 1.0.0
-    timsort: ^0.3.0
-  checksum: cd66d28d7dadf61640e1444db8e0296d4865abd46b83f6ec9081a1ce2c49edb1cdf98a8b66eec0d43539e205dc11eba962f8cfb641f5850635e331209a421b4a
+    hexo-pagination: 3.0.0
+  checksum: 33af94ea04b4f6f00b67052aaf0f09ccb3226793c1434dfa676719abebf9c525e02f340222586dad08ccbdf559103ab652a9930a36fac52cb80b203ff8f5e677
   languageName: node
   linkType: hard
 
@@ -2140,6 +2139,13 @@ fsevents@~2.3.2:
   version: 1.0.0
   resolution: "hexo-pagination@npm:1.0.0"
   checksum: 6b2bc110d52df7f173781791678df8dbf865fc1ea65be2664b5cef0f182053920cef5a348b9348fb563d2e3981afce79847834e6e3908e5d1d2f7e9d242f4ba4
+  languageName: node
+  linkType: hard
+
+"hexo-pagination@npm:3.0.0":
+  version: 3.0.0
+  resolution: "hexo-pagination@npm:3.0.0"
+  checksum: f21830577da09cef70fa797241ed77727c6e006a95e56bff5d769e4791c716590f83d2603e470108cb48f5c876cdaf8237589b00517fa0ec1868dfd9f30b2458
   languageName: node
   linkType: hard
 
@@ -4905,13 +4911,6 @@ fsevents@~2.3.2:
   version: 2.0.0
   resolution: "tildify@npm:2.0.0"
   checksum: c5743c23c5ad4da4afa4c4282bebcd999a702ab39b728d288741b2aa3a7dd40c7c869399170a24ed4f914abb455d1dfd3098749c1b2bd643f6ce833f361892fa
-  languageName: node
-  linkType: hard
-
-"timsort@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "timsort@npm:0.3.0"
-  checksum: d8300c3ecf1a3751413de82b04ad283b461ab6fb1041820c825d13b4ae74526e2101ab5fb84c57a0c6e1f4d7f67173b5d8754ed8bb7447c6a9ce1db8562eb82c
   languageName: node
   linkType: hard
 
