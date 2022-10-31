@@ -438,7 +438,7 @@ __metadata:
     hexo-filter-optimize: 0.3.1
     hexo-fontawesome: 2.3.0
     hexo-generator-archive: 1.0.0
-    hexo-generator-category: 1.0.0
+    hexo-generator-category: 2.0.0
     hexo-generator-index: 3.0.0
     hexo-generator-seo-friendly-sitemap: 0.2.1
     hexo-generator-tag: 1.0.0
@@ -2058,12 +2058,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"hexo-generator-category@npm:1.0.0":
-  version: 1.0.0
-  resolution: "hexo-generator-category@npm:1.0.0"
+"hexo-generator-category@npm:2.0.0":
+  version: 2.0.0
+  resolution: "hexo-generator-category@npm:2.0.0"
   dependencies:
-    hexo-pagination: 1.0.0
-  checksum: a29929a38521d4faa12aef51b44f74ebbd41cac5503e2b2cf2708dced49ca488670fd936e3860304a9addadcb944b8651d72b3b05987453000e26f45cb2d2346
+    hexo-pagination: 3.0.0
+  checksum: ef520ca4b48da0d56c8fd4194accf86789eb1484250db52ddf54df57d073cd5642f39a2a877162c756659893dd77b461c7b3e560cd1766b730a0f13f98e15ffa
   languageName: node
   linkType: hard
 
