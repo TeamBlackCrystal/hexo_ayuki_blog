@@ -41,11 +41,14 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: false
   auto_detect: true
   tab_replace: ''
@@ -95,7 +98,11 @@ include:
 exclude:
 ignore:
 
-theme: hexo-theme-quiet-master
+theme: quiet
+
+theme_plus:
+  custom_path: custom/theme
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
@@ -165,47 +172,6 @@ cookieconsent:
       "href": "/cookiepolicy/index"
     }
   }
-
-markdown:
-  render:
-    html: true
-    xhtmlOut: true
-    breaks: true
-    linkify: true
-    typographer:
-    quotes: '“”‘’'
-  plugins:
-    - plugin:
-        name: markdown-it-toc-and-anchor
-        enable: true
-        options:
-          tocClassName: 'toc'
-    - plugin:
-        name: markdown-it-multimd-table
-        enable: true
-        options:
-          multiline: true
-          rowspan: true
-          headerless: true
-    - plugin:
-        name: ./markdown-it-furigana
-        enable: true
-        options:
-          fallbackParens: "()"
-    - plugin:
-        name: ./markdown-it-spoiler
-        enable: true
-        options:
-          title: "你知道得太多了"
-    - plugin:
-        name: ./markdown-it-container
-        enable: true
-    - plugin:
-        name: markdown-it-emoji
-        enable: true
-    - plugin:
-        name: markdown-it-footnote
-        enable: true
 
 
 
