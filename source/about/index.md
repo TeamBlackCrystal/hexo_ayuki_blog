@@ -4,6 +4,7 @@ date: 2020-11-03
 author: 'TeamPimcServer'
 aubot: あゆき's BLOG
 describe: 'あきとゆぴによる共同ブログです'
+portrait: "/image/logo.webp"
 type: "about"
 layout: "about"
 ---
