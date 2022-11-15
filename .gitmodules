@@ -1,0 +1,3 @@
+[submodule "themes/quiet"]
+	path = themes/quiet
+	url = https://github.com/TeamPimcServer/hexo-theme-quiet.git
