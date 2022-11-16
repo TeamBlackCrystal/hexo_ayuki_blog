@@ -433,6 +433,7 @@ __metadata:
     hexo-renderer-less: 4.0.0
     hexo-renderer-marked: ^6.0.0
     hexo-server: ^3.0.0
+    js-yaml: latest
     marked: ^4.2.2
     node-gyp: 9.3.0
   languageName: unknown
@@ -2424,7 +2425,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:^4.1.0":
+"js-yaml@npm:^4.1.0, js-yaml@npm:latest":
   version: 4.1.0
   resolution: "js-yaml@npm:4.1.0"
   dependencies:
