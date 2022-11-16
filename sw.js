@@ -19,7 +19,7 @@
 self.addEventListener('install', function () { return self.skipWaiting(); });
 self.addEventListener('active', function () { return self.clients.claim(); });
 
-toolbox.precache(['/','/2022/07/19/2022-07-19-remix-style/','/2022/07/12/2022-07-12-about-fmpe/','/2021/12/21/2021-12-21-misskey-advent-calendar-2021-12-21/','/2021/11/29/2021-11-29-deriving-a-decorator-from-a-function-created-with-a-decorator-in-python/','/2021/11/27/2021-11-27-ubuntu-pgpool-setup/']);
+toolbox.precache(['/','/2022/11/16/2022-11-16-ayuskey-v6/','/2022/07/19/2022-07-19-remix-style/','/2022/07/12/2022-07-12-about-fmpe/','/2021/12/21/2021-12-21-misskey-advent-calendar-2021-12-21/','/2021/11/29/2021-11-29-deriving-a-decorator-from-a-function-created-with-a-decorator-in-python/']);
 toolbox.options = {"networkTimeoutSeconds":5};
 
 toolbox.router.any("/hm.baidu.com/", toolbox.networkOnly);
