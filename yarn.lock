@@ -428,7 +428,7 @@ __metadata:
     hexo-generator-index: 3.0.0
     hexo-generator-seo-friendly-sitemap: 0.2.1
     hexo-generator-tag: 2.0.0
-    hexo-lazyload-image: 1.0.12
+    hexo-lazyload-image: 1.0.13
     hexo-renderer-ejs: 2.0.0
     hexo-renderer-less: 4.0.0
     hexo-renderer-marked: ^6.0.0
@@ -1832,12 +1832,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"hexo-lazyload-image@npm:1.0.12":
-  version: 1.0.12
-  resolution: "hexo-lazyload-image@npm:1.0.12"
+"hexo-lazyload-image@npm:1.0.13":
+  version: 1.0.13
+  resolution: "hexo-lazyload-image@npm:1.0.13"
   dependencies:
     uglify-js: ^3.0.27
-  checksum: 951dbf9ea186f418565596ff97b849c7004d73322c951632bd13c9ef03a57895f4cbf91e8cc0b5f1647e1a3ea91346258ba0a4fbfcd5069f02ad38c4037529ca
+  checksum: 950f807e733adbf97b1b8e57771073b1036e2458ce9a8a967ad2ab34a3f00072ff71a33998154288292860137ab12609922252daa3bcff6f076289ea8a6e38b9
   languageName: node
   linkType: hard
 
@@ -1856,13 +1856,6 @@ fsevents@~2.3.2:
   dependencies:
     picocolors: ^1.0.0
   checksum: 408c13cfeb11584c872ad8e15005fe9ae5b132bce7cb38ad8b57c754419ae40a98579ea6acb4cd3ad5fa0dc1326320bcd97a0a24595e163a6052318972054abe
-  languageName: node
-  linkType: hard
-
-"hexo-pagination@npm:1.0.0":
-  version: 1.0.0
-  resolution: "hexo-pagination@npm:1.0.0"
-  checksum: 6b2bc110d52df7f173781791678df8dbf865fc1ea65be2664b5cef0f182053920cef5a348b9348fb563d2e3981afce79847834e6e3908e5d1d2f7e9d242f4ba4
   languageName: node
   linkType: hard
 
