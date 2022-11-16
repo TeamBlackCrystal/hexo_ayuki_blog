@@ -427,7 +427,7 @@ __metadata:
     hexo-generator-category: 2.0.0
     hexo-generator-index: 3.0.0
     hexo-generator-seo-friendly-sitemap: 0.2.1
-    hexo-generator-tag: 1.0.0
+    hexo-generator-tag: 2.0.0
     hexo-lazyload-image: 1.0.12
     hexo-renderer-ejs: 2.0.0
     hexo-renderer-less: 4.0.0
@@ -1814,12 +1814,12 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"hexo-generator-tag@npm:1.0.0":
-  version: 1.0.0
-  resolution: "hexo-generator-tag@npm:1.0.0"
+"hexo-generator-tag@npm:2.0.0":
+  version: 2.0.0
+  resolution: "hexo-generator-tag@npm:2.0.0"
   dependencies:
-    hexo-pagination: 1.0.0
-  checksum: 4c73da83da09eb1d84661af4a3317114a504d68801fea988cbbfda7c51470f14fcb8c3368ccf1925a2dca578feb72cbbf4722903123f7aa422f80adbaec445f9
+    hexo-pagination: 3.0.0
+  checksum: c1eb343379e5eeecc82dbd88756121a48ebb2ba7c953871d20e7cc4cceff4f55a44c336765d27bcd260b4f56855e8f74e741d52496a8c12a5c3975b60baaa1d4
   languageName: node
   linkType: hard
 
