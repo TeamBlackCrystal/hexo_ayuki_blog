@@ -91,6 +91,7 @@
 #article pre code {
   flex: 1;
   text-align: left;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 40px 20px 20px 20px;
   margin: 20px 0;

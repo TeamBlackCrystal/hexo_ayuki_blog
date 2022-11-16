@@ -93,6 +93,7 @@
 #article pre code {
   flex: 1;
   text-align: left;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 40px 20px 20px 20px;
   margin: 20px 0;
@@ -1306,6 +1307,11 @@ hue-6-2: #e6c07b
 .post-header-img .post-header-info-author {
   position: relative;
   z-index: 4;
+}
+.post-header-img .post-header-info-author img {
+  height: 30px;
+  width: 30px;
+  border-radius: 14px;
 }
 .post-header-img .post-header-info-author span a {
   color: #fff !important;
