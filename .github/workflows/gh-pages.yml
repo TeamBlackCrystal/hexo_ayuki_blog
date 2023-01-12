@@ -28,6 +28,13 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-yarn-cache
 
+      - name: Cache cover image
+        uses: actions/cache@v3
+        with:
+          path: .covers
+          key: ${{ runner.OS }}-cover-image-cache
+          restore-keys: ${{ runner.OS }}-cover-image-cache
+
       - name: Install Package and Dependencies
         run: |
           sudo apt-get update
@@ -38,13 +45,6 @@ jobs:
 
       - name: Build
         run: yarn run build
-
-      - name: Cache cover image
-        uses: actions/cache@v2
-        with:
-          path: .covers
-          key: ${{ runner.OS }}-cover-image-cache
-          restore-keys: ${{ runner.OS }}-cover-image-cache
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
