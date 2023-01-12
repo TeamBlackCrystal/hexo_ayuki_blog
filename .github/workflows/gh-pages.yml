@@ -42,9 +42,9 @@ jobs:
       - name: Cache cover image
         uses: actions/cache@v2
         with:
-          path: ~/.covers
-          key: covers-${{ hashFiles('**/*.md') }}
-          restore-keys: covers-
+          path: .covers
+          key: ${{ runner.OS }}-cover-image-cache
+          restore-keys: ${{ runner.OS }}-cover-image-cache
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
