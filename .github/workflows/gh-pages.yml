@@ -44,7 +44,9 @@ jobs:
           yarn install
 
       - name: Build
-        run: yarn run build
+        run: |
+          rm db.json
+          yarn run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
