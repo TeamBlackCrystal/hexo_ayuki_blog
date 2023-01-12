@@ -1,6 +1,7 @@
 ---
 title: scoopを入れよう！！
-categories: 解説
+categories:
+- 解説
 author: 'あき'
 tags:
 - ja

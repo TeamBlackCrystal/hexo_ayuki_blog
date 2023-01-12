@@ -1,6 +1,7 @@
 ---
 title: '私的使ってみて便利なタスク管理ツール'
-categories: 一般
+categories:
+- 一般
 author: 'ゆぴ'
 tags:
 - ja

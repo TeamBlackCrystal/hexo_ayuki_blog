@@ -1,6 +1,7 @@
 ---
 title: 本ブログの更新内容
-categories: お知らせ
+categories:
+- お知らせ
 author: 'TeamPimcServer'
 tags:
 - ja

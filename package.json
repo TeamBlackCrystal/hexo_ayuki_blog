@@ -22,6 +22,7 @@
     "@teampimcserver/hexo-user-posts-count": "1.0.0",
     "hexo": "6.3.0",
     "hexo-admonition": "1.1.2",
+    "hexo-covers": "^2.0.0",
     "hexo-filter-auto-crossorigin": "1.0.1",
     "hexo-filter-optimize": "0.3.1",
     "hexo-fontawesome": "2.3.0",

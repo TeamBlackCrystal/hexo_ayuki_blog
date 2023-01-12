@@ -74,6 +74,13 @@ default_category: uncategorized
 category_map:
 tag_map:
 
+covers:
+  enable: true
+  title: "あゆき's blog"
+  base_dir: '.covers'
+  manifestFileName: 'covers.json'
+  categoriesUrl: category
+
 # Metadata elements
 ## https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta
 meta_generator: true

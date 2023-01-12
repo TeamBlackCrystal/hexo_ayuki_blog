@@ -1,7 +1,8 @@
 ---
 title: Remixの流儀
 date: 2022-07-19
-categories: dev
+categories:
+- dev
 author: 'ゆぴ'
 tags:
 - Dev

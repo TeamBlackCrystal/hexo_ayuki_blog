@@ -1,6 +1,7 @@
 ---
 title: 初めてのゆぴ
-categories: 一般
+categories:
+- 一般
 author: 'ゆぴ'
 tags:
 - 自己紹介

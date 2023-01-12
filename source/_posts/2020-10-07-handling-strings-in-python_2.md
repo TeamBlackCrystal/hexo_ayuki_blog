@@ -1,6 +1,7 @@
 ---
 title: pythonでの文字列の扱い方2
-categories: 一般
+categories:
+- 一般
 author: 'ゆぴ'
 tags:
 - ja

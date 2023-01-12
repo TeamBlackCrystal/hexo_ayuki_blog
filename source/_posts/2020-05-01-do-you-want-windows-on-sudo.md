@@ -1,6 +1,7 @@
 ---
 title: Windowsにsudoが欲しいかい？
-categories: 解説
+categories:
+- 解説
 author: 'あき'
 tags:
 - ja

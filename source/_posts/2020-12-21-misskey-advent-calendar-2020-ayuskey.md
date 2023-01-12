@@ -1,6 +1,7 @@
 ---
 title: Ayuskeyって何？
-categories: Ayuskey
+categories:
+- Ayuskey
 author: 'あき'
 tags:
 - ja
