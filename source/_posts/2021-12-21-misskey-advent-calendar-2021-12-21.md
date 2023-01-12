@@ -1,7 +1,8 @@
 ---
 title: PythonでMisskeyのBotFrameWorkを作ってみた
 date: 2021-12-21 17:41:26
-categories: Misskeyアドベントカレンダー2021
+categories:
+- Misskeyアドベントカレンダー2021
 author: 'ゆぴ'
 tags:
 - misskey

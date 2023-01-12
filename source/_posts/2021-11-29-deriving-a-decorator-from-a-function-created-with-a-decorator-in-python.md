@@ -1,7 +1,8 @@
 ---
 title: Pythonでデコレーターで作った関数からデコレーターを派生させる
 date: 2021-11-29 21:42:46
-categories: メモ
+categories:
+- メモ
 author: 'ゆぴ'
 tags:
 - ja

@@ -28,8 +28,13 @@ jobs:
           restore-keys: |
             ${{ runner.OS }}-yarn-cache
 
-      - name: Install Dependencies
-        run: yarn install
+      - name: Install Package and Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get -y install locales fonts-ipafont fonts-ipaexfont
+          sudo sh -c "echo ja_JP UTF-8 > /etc/locale.gen"
+          locale-gen
+          yarn install
 
       - name: Build
         run: yarn run build

@@ -1,6 +1,7 @@
 ---
 title: Pgpool-IIを導入するだけ
-categories: Ayuskey
+categories:
+- Ayuskey
 author: 'あき'
 tags:
 - ja

@@ -1,6 +1,7 @@
 ---
-title: MisskeyのBotをPythonで開発できるBotFrameWorkを公開しました
-categories: 開発
+title: MisskeyのBotをPythonで開発できるライブラリを公開しました
+categories:
+- 開発
 author: 'ゆぴ'
 tags:
 - ja

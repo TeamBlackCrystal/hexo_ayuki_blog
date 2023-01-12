@@ -1,6 +1,7 @@
 ---
 title: ArchLinuxにVNCを使ってサブディスプレイを作る
-categories: 一般
+categories:
+- 一般
 author: 'ゆぴ'
 tags:
 - ja

@@ -1,6 +1,7 @@
 ---
 title: Windowsの起動時とかの詳細メッセージを表示する
-categories: 一般
+categories:
+- 一般
 author: 'あき'
 tags:
 - ja

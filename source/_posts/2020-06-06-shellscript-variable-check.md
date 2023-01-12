@@ -1,6 +1,7 @@
 ---
 title: ShellScriptで変数に値があるかどうかを判断する方法
-categories: 一般
+categories:
+- 一般
 author: 'ゆぴ'
 tags:
 - ja

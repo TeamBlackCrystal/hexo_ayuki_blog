@@ -1,7 +1,8 @@
 ---
 title: FMProjectEについて
 date: 2022-07-12
-categories: dev
+categories:
+- dev
 author: 'あき'
 tags:
 - Dev

@@ -1,6 +1,7 @@
 ---
 title: リニューアルのお知らせ
-categories: お知らせ
+categories:
+- お知らせ
 author: 'TeamPimcServer'
 tags:
 - ja
