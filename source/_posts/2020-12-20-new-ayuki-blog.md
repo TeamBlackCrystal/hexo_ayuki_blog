@@ -10,7 +10,7 @@ tags:
 - リニューアル
 excerpt: 新しく変更された「あゆき's BLOG」を見てみましょう！
 date: 2020-12-20
-cover: '/image/BLOGRENEWAL.webp'
+custom_cover: '/image/cover/BLOGRENEWAL.webp'
 ---
 
 ## まずはじめに
