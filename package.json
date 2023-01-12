@@ -40,6 +40,6 @@
   },
   "devDependencies": {
     "hexo-server": "^3.0.0",
-    "node-gyp": "9.3.0"
+    "node-gyp": "9.3.1"
   }
 }
