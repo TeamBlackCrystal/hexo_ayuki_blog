@@ -19,7 +19,7 @@
 self.addEventListener('install', function () { return self.skipWaiting(); });
 self.addEventListener('active', function () { return self.clients.claim(); });
 
-toolbox.precache(['/','/2023/01/13/2023-01-13-happy-new-year/','/2022/11/16/2022-11-16-ayuskey-v6/','/2022/07/19/2022-07-19-remix-style/','/2022/07/12/2022-07-12-about-fmpe/','/2021/12/21/2021-12-21-misskey-advent-calendar-2021-12-21/']);
+toolbox.precache(['/','/2023/01/13/2023-01-13-happy-new-year/','/2023/01/13/2023-01-13-use-nestjs-with-swc/','/2022/11/16/2022-11-16-ayuskey-v6/','/2022/07/19/2022-07-19-remix-style/','/2022/07/12/2022-07-12-about-fmpe/']);
 toolbox.options = {"networkTimeoutSeconds":5};
 
 toolbox.router.any("/hm.baidu.com/", toolbox.networkOnly);
