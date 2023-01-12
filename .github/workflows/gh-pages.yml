@@ -45,7 +45,6 @@ jobs:
 
       - name: Build
         run: |
-          rm db.json
           yarn run build
 
       - name: Deploy
