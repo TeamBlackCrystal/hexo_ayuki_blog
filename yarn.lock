@@ -575,7 +575,7 @@ __metadata:
     hexo-server: ^3.0.0
     js-yaml: 4.1.0
     marked: ^4.2.2
-    node-gyp: 9.3.0
+    node-gyp: 9.3.1
   languageName: unknown
   linkType: soft
 
@@ -4772,27 +4772,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:9.3.0":
-  version: 9.3.0
-  resolution: "node-gyp@npm:9.3.0"
-  dependencies:
-    env-paths: ^2.2.0
-    glob: ^7.1.4
-    graceful-fs: ^4.2.6
-    make-fetch-happen: ^10.0.3
-    nopt: ^6.0.0
-    npmlog: ^6.0.0
-    rimraf: ^3.0.2
-    semver: ^7.3.5
-    tar: ^6.1.2
-    which: ^2.0.2
-  bin:
-    node-gyp: bin/node-gyp.js
-  checksum: 3686be2431ed5fa9da379189de297714cb900a312d3cd5f501cbd2ca92a0d72273d3f1791ca63b32cc4ac1aae908c55c64c660ee883427ed065ef979cd159847
-  languageName: node
-  linkType: hard
-
-"node-gyp@npm:latest":
+"node-gyp@npm:9.3.1, node-gyp@npm:latest":
   version: 9.3.1
   resolution: "node-gyp@npm:9.3.1"
   dependencies:
