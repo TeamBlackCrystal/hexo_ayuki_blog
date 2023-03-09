@@ -6,13 +6,4 @@ node_modules/
 public/
 .deploy*/
 .covers
-
-# yarn
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
-
 .idea
